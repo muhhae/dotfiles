@@ -1,0 +1,156 @@
+{
+    "reload_style_on_change": "true",
+    "fixed-center": "true",
+    "layer": "top",
+    "position": "top",
+    "spacing": 12,
+    "modules-left": [
+        "group/arch-workspaces",
+        "group/hardware"
+    ],
+    "modules-center": [
+        "group/spotify"
+    ],
+    "modules-right": [
+        "clock",
+        "network",
+        "battery",
+        "tray"
+    ],
+    "group/hardware": {
+        "orientation": "inherit",
+        "modules": [
+            "cpu",
+            "memory",
+            "disk"
+        ]
+    },
+    "group/arch-workspaces": {
+        "orientation": "inherit",
+        "modules": [
+            "custom/arch-icon",
+            "hyprland/workspaces"
+        ]
+    },
+    "custom/arch-icon": {
+        "format": "<span size='large'></span>",
+        "on-click": "pkill rofi || rofi-launcher"
+    },
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "disable-scroll": false,
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "format": "<span size='large'>{windows}</span>",
+        "format-icons": {
+            "empty": "",
+            "default": ""
+        },
+        "window-rewrite-default": "",
+        "format-window-separator": " ",
+        "window-rewrite": {
+            "title<.*youtube.*>": "<span foreground='red'></span>",
+            "class<firefox> title<.*github.*>": "",
+            "class<firefox>": "<span foreground='#ff9e64'></span>",
+            "foot": "",
+            "title<nvim>": "<span foreground='#66ac44'></span>",
+            "class<alacritty>": "",
+            "spotify": "<span foreground='#1ed760'></span>",
+            "class<Google-chrome>": "<span foreground='#1b73e8'></span>",
+            "class<whatsapp-for-linux>": "<span foreground='#9ece6a'>󰖣</span>",
+            "class<discord>": "<span foreground='#5865f2'>󰙯</span>"
+        }
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "locale": "en_US.UTF-8",
+        "interval": 1,
+        "format": "{:%a, %d %b %Y | %H:%M:%S}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "<span foreground='#e0af68'> </span> {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 5,
+        "format": "<span foreground='#ad8ee6'> </span>{used} GiB/{total} GiB"
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "<span size='large'>{icon}</span> {capacity}%",
+        "format-charging": " <span size='large'>{icon}</span> {capacity}% ",
+        "format-plugged": "  <span size='large'>{icon}</span> {capacity}%",
+        "format-icons": [
+            "<span foreground='#f7768e'></span>",
+            "<span foreground='#e0af68'></span>",
+            "<span foreground='#e0af68'></span>",
+            "<span foreground='#9ece6a'></span>",
+            "<span foreground='#9ece6a'></span>"
+        ]
+    },
+    "disk": {
+        "interval": 30,
+        "format": "<span foreground='#0db9d7'>󰆼</span> {free}",
+        "path": "/"
+    },
+    "network": {
+        "interval": 5,
+        "format-wifi": " {bandwidthUpBytes}  {bandwidthDownBytes}  <span size='large'>{icon}</span>",
+        "format-ethernet": "󰑩",
+        "format-disconnected": "󰤭",
+        "format-icons": [
+            "<span foreground='#f7768e'>󰤯</span>",
+            "<span foreground='#e0af68'>󰤟</span>",
+            "<span foreground='#e0af68'>󰤢</span>",
+            "<span foreground='#9ece6a'>󰤥</span>",
+            "<span foreground='#9ece6a'>󰤨</span>"
+        ]
+    },
+    "group/spotify": {
+        "orientation": "inherit",
+        "modules": [
+            "custom/spotify-icon",
+            "custom/spotify-status"
+        ]
+    },
+    "custom/spotify-icon": {
+        "format": "<span foreground='#1ed760'>  </span>"
+    },
+    "custom/spotify-status": {
+        "format": "{}",
+        "restart-interval": 1,
+        "on-click": "playerctl -p spotify play-pause",
+        "on-scroll-up": "playerctl -p spotify next",
+        "on-scroll-down": "playerctl -p spotify previous",
+        "exec": "$HOME/.config/waybar/scroll_spotify_status.sh 2> /dev/null"
+    }
+}
