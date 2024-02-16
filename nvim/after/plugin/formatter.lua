@@ -1,0 +1,85 @@
+-- -- Utilities for creating configurations
+-- local util = require "formatter.util"
+-- -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
+-- local augroup = vim.api.nvim_create_augroup
+-- local autocmd = vim.api.nvim_create_autocmd
+--
+-- local templ_format = function()
+--     vim.cmd('undojoin')
+--     if vim.bo.filetype == "templ" then
+--         local bufnr = vim.api.nvim_get_current_buf()
+--         local filename = vim.api.nvim_buf_get_name(bufnr)
+--         local cmd = "templ fmt " .. vim.fn.shellescape(filename)
+--         vim.fn.jobstart(cmd, {
+--             on_exit = function()
+--                 -- reload the buffer only if it's still the current buffer
+--                 if vim.api.nvim_get_current_buf() == bufnr then
+--                     vim.cmd('e!')
+--                 end
+--             end,
+--         })
+--     end
+-- end
+--
+-- augroup("__formatter__", { clear = true })
+-- autocmd("BufWritePost", {
+--     group = "__formatter__",
+--     desc = "Auto-format Files after saving",
+--     callback = function()
+--         vim.cmd("FormatWrite")
+--         templ_format()
+--     end,
+-- })
+--
+--
+-- require("formatter").setup {
+--     -- Enable or disable logging
+--     logging = true,
+--     -- Set the log level
+--     log_level = vim.log.levels.WARN,
+--     -- All formatter configurations are opt-in
+--     filetype = {
+--         -- Formatter configurations for filetype "lua" go here
+--         -- and will be executed in order
+--         lua = {
+--             -- "formatter.filetypes.lua" defines default configurations for the
+--             -- "lua" filetype
+--             require("formatter.filetypes.lua").stylua,
+--
+--             -- You can also define your own configuration
+--             function()
+--                 -- Supports conditional formatting
+--                 -- if util.get_current_buffer_file_name() == "special.lua" then
+--                 --     return nil
+--                 -- end
+--
+--                 -- Full specification of configurations is down below and in Vim help
+--                 -- files
+--                 return {
+--                     exe = "stylua",
+--                     args = {
+--                         "--search-parent-directories",
+--                         "--stdin-filepath",
+--                         util.escape_path(util.get_current_buffer_file_path()),
+--                         "--",
+--                         "-",
+--                     },
+--                     stdin = true,
+--                 }
+--             end
+--         },
+--         go = {
+--             require("formatter.filetypes.go").goimports
+--         },
+--         templ = {
+--             require("formatter.filetypes.go").goimports
+--         },
+--         -- Use the special "*" filetype for defining formatter configurations on
+--         -- any filetype
+--         ["*"] = {
+--             -- "formatter.filetypes.any" defines default configurations for any
+--             -- filetype
+--             require("formatter.filetypes.any").remove_trailing_whitespace
+--         }
+--     }
+-- }

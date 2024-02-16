@@ -1,0 +1,33 @@
+{
+    "workspace.library": [
+        "/home/muhhae/.local/share/bob/v0.9.4/nvim-linux64/share/nvim/runtime/lua",
+        "/home/muhhae/.config/nvim/lua",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/start",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/opt",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/start/?",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/start/?/lua",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/start/?/lua/?",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/start/?/lua/?/init.lua",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/start/?.nvim",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/start/?.nvim/lua",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/start/?.nvim/lua/?",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/start/?.nvim/lua/?/init.lua",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/start/?-nvim",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/start/?-nvim/lua",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/start/?-nvim/lua/?",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/start/?-nvim/lua/?/init.lua",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/opt/?",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/opt/?/lua",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/opt/?/lua/?",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/opt/?/lua/?/init.lua",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/opt/?.nvim",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/opt/?.nvim/lua",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/opt/?.nvim/lua/?",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/opt/?.nvim/lua/?/init.lua",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/opt/?-nvim",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/opt/?-nvim/lua",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/opt/?-nvim/lua/?",
+        "/home/muhhae/.local/share/nvim/site/pack/packer/opt/?-nvim/lua/?/init.lua",
+        "${3rd}/luassert/library"
+    ]
+}
