@@ -20,5 +20,4 @@ config.window_padding = {
   bottom = 0,
 }
 config.window_close_confirmation = 'NeverPrompt'
--- and finally, return the configuration to wezterm
 return config
