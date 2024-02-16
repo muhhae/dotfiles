@@ -9,7 +9,7 @@
         "group/hardware"
     ],
     "modules-center": [
-        "group/spotify"
+        "custom/spotify"
     ],
     "modules-right": [
         "clock",
@@ -28,7 +28,6 @@
     "group/arch-workspaces": {
         "orientation": "inherit",
         "modules": [
-            "custom/arch-icon",
             "hyprland/workspaces"
         ]
     },
@@ -53,8 +52,9 @@
             "class<firefox> title<.*github.*>": "",
             "class<firefox>": "<span foreground='#ff9e64'></span>",
             "foot": "",
-            "title<nvim>": "<span foreground='#66ac44'></span>",
+            "title<.*nvim.*>": "<span foreground='#66ac44'></span>",
             "class<alacritty>": "",
+            "class<org.wezfurlong.wezterm>": "",
             "spotify": "<span foreground='#1ed760'></span>",
             "class<Google-chrome>": "<span foreground='#1b73e8'></span>",
             "class<whatsapp-for-linux>": "<span foreground='#9ece6a'>󰖣</span>",
@@ -135,22 +135,12 @@
             "<span foreground='#9ece6a'>󰤨</span>"
         ]
     },
-    "group/spotify": {
-        "orientation": "inherit",
-        "modules": [
-            "custom/spotify-icon",
-            "custom/spotify-status"
-        ]
-    },
-    "custom/spotify-icon": {
-        "format": "<span foreground='#1ed760'>  </span>"
-    },
-    "custom/spotify-status": {
-        "format": "{}",
+    "custom/spotify": {
+        "format": "<span foreground='#1ed760'> </span> {}",
         "restart-interval": 1,
         "on-click": "playerctl -p spotify play-pause",
         "on-scroll-up": "playerctl -p spotify next",
         "on-scroll-down": "playerctl -p spotify previous",
-        "exec": "$HOME/.config/waybar/scroll_spotify_status.sh 2> /dev/null"
+        "exec": "$HOME/dotfiles/waybar/scroll_spotify_status.sh 2> /dev/null"
     }
 }
