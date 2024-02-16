@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
     use 'wakatime/vim-wakatime'
     use "numToStr/FTerm.nvim"
     use {
-        'jellydn/CopilotChat.nvim',
+        'CopilotC-Nvim/CopilotChat.nvim',
         as = 'CopilotChat',
         run = function()
             vim.defer_fn(function()
@@ -26,7 +26,7 @@ return require('packer').startup(function(use)
         end,
     }
     use "github/copilot.vim"
-    -- use { 'mhartington/formatter.nvim' }
+    use { 'mhartington/formatter.nvim' }
     use {
         'fatih/vim-go',
         run = ':GoUpdateBinaries'

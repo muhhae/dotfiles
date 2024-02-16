@@ -26,30 +26,6 @@ function CChat()
     end
 end
 
-local function tes()
-    vim.api.nvim_open_win(989, false,
-        {
-            relative = 'win',
-            -- row = 3,
-            -- col = 3,
-            -- width = 12,
-            -- height = 3
-        })
-
-    local a = vim.fn.bufname()
-    vim.fn.bufload(713)
-    print(vim.fn.bufnr())
-    vim.fn.prompt_setprompt()
-    --713
-    print(vim.api.nvim_buf_is_loaded(713))
-    vim.fn.bufname()
-    print(vim.fn.bufexists(713) == 1)
-end
-
--- vim.ui.input({ prompt = 'Enter value for shiftwidth: ' }, function(input)
---     print(input)
--- end)
-
 vim.keymap.set("n", "<leader>ca", ":CopilotChat ", { desc = "Copilot Chat" })
 vim.keymap.set("n", "<leader>ce", "<cmd>CopilotChatExplain<CR>", { desc = "Copilot Chat Explain" })
 vim.keymap.set("n", "<leader>ct", "<cmd>CopilotChatTest<CR>", { desc = "Copilot Chat Test" })
