@@ -14,10 +14,10 @@ config.font = wezterm.font_with_fallback {
 config.font_size = 14
 config.enable_tab_bar = false
 config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
+  left = 8,
+  right = 8,
+  top = 8,
+  bottom =8,
 }
 config.window_close_confirmation = 'NeverPrompt'
 return config
