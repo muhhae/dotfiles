@@ -52,7 +52,7 @@
             "class<firefox> title<.*github.*>": "",
             "class<firefox>": "<span foreground='#ff9e64'></span>",
             "foot": "",
-            "title<.*nvim.*>": "<span foreground='#66ac44'></span>",
+            "class<org.wezfurlong.wezterm> title<.*nvim.*>": "<span foreground='#66ac44'></span>",
             "class<alacritty>": "",
             "class<org.wezfurlong.wezterm>": "",
             "spotify": "<span foreground='#1ed760'></span>",
