@@ -12,3 +12,4 @@ ln -sr  $DIR/wezterm $HOME/.config/.
 ln -sr  $DIR/xdg-desktop-portal $HOME/.config/.
 ln -sr  $DIR/wofi $HOME/.config/.
 ln -sr  $DIR/.zshrc $HOME/.
+ln -sr  $DIR/alacritty $HOME/.config/.
