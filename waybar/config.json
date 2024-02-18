@@ -45,20 +45,16 @@
             "empty": "",
             "default": ""
         },
-        "window-rewrite-default": "",
+        "window-rewrite-default": "",
         "format-window-separator": " ",
         "window-rewrite": {
-            "title<.*youtube.*>": "<span foreground='red'></span>",
-            "class<firefox> title<.*github.*>": "",
             "class<firefox>": "<span foreground='#ff9e64'></span>",
-            "foot": "",
             "class<org.wezfurlong.wezterm> title<.*nvim.*>": "<span foreground='#66ac44'></span>",
             "class<alacritty>": "",
             "class<org.wezfurlong.wezterm>": "",
             "spotify": "<span foreground='#1ed760'></span>",
-            "class<Google-chrome>": "<span foreground='#1b73e8'></span>",
-            "class<whatsapp-for-linux>": "<span foreground='#9ece6a'>󰖣</span>",
-            "class<discord>": "<span foreground='#5865f2'>󰙯</span>"
+            "class<discord>": "<span foreground='#5865f2'>󰙯</span>",
+            "class<ferdium>": "<span foreground='#5865f2'>󰭹</span>"
         }
     },
     "tray": {
