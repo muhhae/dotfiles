@@ -1,66 +1,29 @@
-## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
-##
-## Configuration for Alacritty, the GPU enhanced terminal emulator.
-## It's a very basic and simple config file, for full configuration, Run `man 5 alacritty`
-
-## GENERAL --------------------------------------------------------
-
-## Import additional configuration files.
-import = ["~/.config/alacritty/colors.toml", "~/.config/alacritty/fonts.toml"]
-
-## You can set shell.program to the path of your favorite shell, e.g. /bin/zsh.
-## Entries in shell.args are passed as arguments to the shell.
-#shell = { program = "/bin/zsh", args = ["--login"] }
-
-## Directory the shell is started in. When this is unset, or "None",
-## the working directory of the parent process will be used.
-#working_directory = "None"
-
-## Live config reload
+import = ["~/dotfiles/alacritty/colorschemes/Tokyo_night_storm.toml", "~/dotfiles/alacritty/fonts.toml"]
 live_config_reload = true
-
-## Offer IPC using alacritty msg
 ipc_socket = true
-
-## ENVIRONMENT ----------------------------------------------------
-
-## All key-value pairs in the [env] section will be added as environment variables for any process spawned
-## by Alacritty, including its shell. Some entries may override variables set by alacritty itself.
 [env]
 TERM = "alacritty"
 WINIT_X11_SCALE_FACTOR = "1"
-# GDK_SCALE= "1.4"
-
-## WINDOW ---------------------------------------------------------
 [window]
 position = "None"
 dynamic_padding = true
 decorations = "None"
-opacity = 0.9
+opacity = 1
 blur = true
 startup_mode = "Maximized"
 dynamic_title = true
 class = { instance = "Alacritty", general = "Alacritty" }
 decorations_theme_variant = "None"
-
-## Number of lines/columns (not pixels) in the terminal.
 [window.dimensions]
 columns = 82
 lines = 24
-
-## Blank space added around the window in pixels.
 [window.padding]
-x = 0
-y = 0
-
-## SCROLLING ------------------------------------------------------
+x = 8
+y = 8
 [scrolling]
-# ZSH_THEME="agnoster"
-# ZSH_THEME="archcraft"
 history = 10000
 multiplier = 3
 
-## BELL -----------------------------------------------------------
 [bell]
 animation = "Linear"
 duration = 20
