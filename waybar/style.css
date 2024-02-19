@@ -30,14 +30,13 @@
 }
 
 window#waybar {
-    background: rgba(36, 40, 59, 0.6);
+    border-radius: 10px;
+    background: linear-gradient(45deg, rgba(51, 204, 255, 0.4), rgba(0, 255, 153, 0.4));
 }
 
 #arch-workspaces {
     padding: 2px;
     margin-left: 10px;
-    margin-bottom: 4px;
-    margin-top: 4px;
     background: transparent;
 }
 

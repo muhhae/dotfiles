@@ -1,5 +1,6 @@
 {
     "reload_style_on_change": "true",
+    "margin": "10 10 0 10",
     "fixed-center": "true",
     "layer": "top",
     "position": "top",
@@ -119,7 +120,8 @@
         "path": "/"
     },
     "network": {
-        "interval": 5,
+        "on-click": "pkill wofi || networkmanager_dmenu",
+        "interval": 2,
         "format-wifi": " {bandwidthUpBytes}  {bandwidthDownBytes}  <span size='large'>{icon}</span>",
         "format-ethernet": "󰑩",
         "format-disconnected": "󰤭",
@@ -129,7 +131,11 @@
             "<span foreground='#e0af68'>󰤢</span>",
             "<span foreground='#9ece6a'>󰤥</span>",
             "<span foreground='#9ece6a'>󰤨</span>"
-        ]
+        ],
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected"
     },
     "custom/spotify": {
         "format": "<span foreground='#1ed760'> </span> {}",
