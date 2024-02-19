@@ -51,7 +51,6 @@ window {
 }
 
 #entry:selected {
-    margin: 10px;
     border-radius: 5px;
     background-color: #44475a;
 }
