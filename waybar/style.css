@@ -31,7 +31,8 @@
 
 window#waybar {
     border-radius: 10px;
-    background: linear-gradient(45deg, rgba(51, 204, 255, 0.4), rgba(0, 255, 153, 0.4));
+    background: rgba(36, 40, 59, 1.0);
+    /* background: linear-gradient(45deg, rgba(51, 204, 255, 0.4), rgba(0, 255, 153, 0.4)); */
 }
 
 #arch-workspaces {
