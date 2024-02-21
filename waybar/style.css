@@ -30,8 +30,9 @@
 }
 
 window#waybar {
-    border-radius: 10px;
-    background: rgba(36, 40, 59, 1.0);
+    /* border: 3px solid white; */
+    border-radius: 20px;
+    background-color: rgba(30, 30, 46, 0.8);
     /* background: linear-gradient(45deg, rgba(51, 204, 255, 0.4), rgba(0, 255, 153, 0.4)); */
 }
 
@@ -45,6 +46,7 @@ window#waybar {
     border-top-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
+    border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
     margin-right: 1px;
     margin-left: 1px;
