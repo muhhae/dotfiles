@@ -1,4 +1,8 @@
-import = ["~/dotfiles/alacritty/colorschemes/tokyonight_moon.toml", "~/dotfiles/alacritty/fonts.toml"]
+import = [
+    "~/dotfiles/alacritty/colorschemes/tokyonight_moon.toml", 
+    "~/dotfiles/alacritty/fonts.toml"
+]
+
 live_config_reload = true
 ipc_socket = true
 
@@ -8,7 +12,7 @@ WINIT_X11_SCALE_FACTOR = "1"
 
 [window]
 position = "None"
-dynamic_padding = false
+dynamic_padding = true
 decorations = "Full" # None | Full 
 opacity = 1
 blur = false
