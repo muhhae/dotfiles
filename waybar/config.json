@@ -95,7 +95,7 @@
     },
     "memory": {
         "interval": 5,
-        "format": "<span foreground='#ad8ee6'> </span>{used} GiB/{total} GiB"
+        "format": "<span foreground='#ad8ee6'> </span>{used}/{total}"
     },
     "battery": {
         "states": {
