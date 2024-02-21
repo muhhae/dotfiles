@@ -56,7 +56,8 @@
             "class<org.wezfurlong.wezterm>": "",
             "spotify": "<span foreground='#1ed760'></span>",
             "class<discord>": "<span foreground='#5865f2'>󰙯</span>",
-            "class<ferdium>": "<span foreground='#5865f2'>󰭹</span>"
+            "class<ferdium>": "<span foreground='#5865f2'>󰭹</span>",
+            "class<rambox>": "<span foreground='#5865f2'>󰭹</span>"
         }
     },
     "tray": {
