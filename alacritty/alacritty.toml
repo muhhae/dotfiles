@@ -1,25 +1,30 @@
 import = ["~/dotfiles/alacritty/colorschemes/tokyonight_moon.toml", "~/dotfiles/alacritty/fonts.toml"]
 live_config_reload = true
 ipc_socket = true
+
 [env]
 TERM = "alacritty"
 WINIT_X11_SCALE_FACTOR = "1"
+
 [window]
 position = "None"
 dynamic_padding = false
-decorations = "None"
+decorations = "Full" # None | Full 
 opacity = 1
-blur = true
+blur = false
 startup_mode = "Maximized"
 dynamic_title = true
 class = { instance = "Alacritty", general = "Alacritty" }
 decorations_theme_variant = "None"
+
 [window.dimensions]
 columns = 82
 lines = 24
+
 [window.padding]
 x = 8
 y = 8
+
 [scrolling]
 history = 10000
 multiplier = 3
@@ -40,7 +45,7 @@ unfocused_hollow = false
 thickness = 0.15
 
 [cursor.style]
-shape = "Block"
+shape = "beam"
 blinking = "On"
 
 ## MOUSE ----------------------------------------------------------
