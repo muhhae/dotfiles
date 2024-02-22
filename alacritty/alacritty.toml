@@ -1,5 +1,5 @@
 import = [
-    "~/dotfiles/alacritty/colorschemes/tokyonight_moon.toml", 
+    "~/dotfiles/alacritty/colorschemes/Nord.toml", 
     "~/dotfiles/alacritty/fonts.toml"
 ]
 

@@ -1,6 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+    use 'nordtheme/vim'
     use 'karb94/neoscroll.nvim'
     use "folke/persistence.nvim"
     use 'andweeb/presence.nvim'
