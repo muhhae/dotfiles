@@ -529,9 +529,9 @@
     border-radius: 7px;
     padding: 0;
     background-color: @noti-bg;
-    margin-top: 14px;
-    margin-left: 14px;
-    margin-right: 14px;
+    /* margin-top: 14px; */
+    /* margin-left: 14px; */
+    /* margin-right: 14px; */
 }
 
 .control-center:hover .notification-row:hover .notification-background:hover {
