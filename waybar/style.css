@@ -9,7 +9,7 @@
 
 window#waybar {
     border-radius: 20px;
-    background-color: alpha(@background, 0.8);
+    background-color: alpha(@background, 0.0);
     /* background: linear-gradient(45deg, rgba(51, 204, 255, 0.4), rgba(0, 255, 153, 0.4)); */
 }
 
