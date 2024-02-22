@@ -1,13 +1,15 @@
+@import url("/home/muhhae/dotfiles/colorscheme/nord.css");
+
 * {
-    font-family: Fira Code Nerd Font;
+    font-family: Oxygen;
     font-size: 16px;
 }
 
 window {
     border-radius: 10px;
     margin: 0px;
-    border: 0px solid #bd93f9;
-    background-color: #282a36;
+    border: 0px solid @altblack;
+    background-color: @black;
 }
 
 #input {
@@ -15,20 +17,20 @@ window {
     padding: 10px;
     margin: 5px;
     border: none;
-    color: #f8f8f2;
-    background-color: #44475a;
+    color: @foreground;
+    background-color: @altblack;
 }
 
 #inner-box {
     margin: 5px;
     border: none;
-    background-color: #282a36;
+    background-color: @black;
 }
 
 #outer-box {
     margin: 5px;
     border: none;
-    background-color: #282a36;
+    background-color: @black;
 }
 
 #scroll {
@@ -39,22 +41,24 @@ window {
 #text {
     margin: 5px;
     border: none;
-    color: #f8f8f2;
+    color: @foreground;
 }
 
 #entry.activatable #text {
-    color: #282a36;
+    color: @white;
 }
 
 #entry>* {
+    padding: 5px;
     color: #f8f8f2;
 }
 
 #entry:selected {
-    border-radius: 5px;
-    background-color: #44475a;
+    border-radius: 20px;
+    background-color: @altblack;
 }
 
 #entry:selected #text {
+    font-style: italic;
     font-weight: bold;
 }
