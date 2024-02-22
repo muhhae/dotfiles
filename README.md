@@ -1,5 +1,5 @@
 # My Personal Linux Config
  
 ## Screenshoot
-![Screenshoot](./screenshout/1.png)
-![Screenshoot](./screenshout/2.png)
+![Screenshoot](./screenshoot/1.png)
+![Screenshoot](./screenshoot/2.png)
