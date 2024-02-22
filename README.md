@@ -1,4 +1,4 @@
 # My Personal Linux Config
  
-## Screenshot
+## Screenshoot
 ![Screenshot](./screenshot/1.png)
