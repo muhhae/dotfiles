@@ -13,10 +13,11 @@
         "custom/spotify"
     ],
     "modules-right": [
-        "clock",
         "network",
         "battery",
-        "tray"
+        "tray",
+        "clock",
+        "custom/notification"
     ],
     "group/hardware": {
         "orientation": "inherit",
@@ -146,5 +147,25 @@
         "on-scroll-up": "playerctl -p spotify next",
         "on-scroll-down": "playerctl -p spotify previous",
         "exec": "$HOME/dotfiles/waybar/scroll_spotify_status.sh 2> /dev/null"
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     }
 }
