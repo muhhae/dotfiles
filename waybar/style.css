@@ -86,3 +86,7 @@ window#waybar {
     margin-left: 10px;
     margin-right: 10px
 }
+
+#custom-powermenu {
+    margin-right: 15px;
+}

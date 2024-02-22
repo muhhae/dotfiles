@@ -17,7 +17,8 @@
         "battery",
         "tray",
         "clock",
-        "custom/notification"
+        "custom/notification",
+        "custom/powermenu"
     ],
     "group/hardware": {
         "orientation": "inherit",
@@ -123,7 +124,7 @@
         "path": "/"
     },
     "network": {
-        "on-click": "pkill wofi || networkmanager_dmenu",
+        "on-click-release": "pkill wofi || networkmanager_dmenu",
         "interval": 2,
         "format-wifi": " {bandwidthUpBytes}  {bandwidthDownBytes}  <span size='large'>{icon}</span>",
         "format-ethernet": "󰑩",
@@ -148,6 +149,10 @@
         "on-scroll-down": "playerctl -p spotify previous",
         "exec": "$HOME/dotfiles/waybar/scroll_spotify_status.sh 2> /dev/null"
     },
+    "custom/powermenu": {
+        "format": "<span color='#f7768e'>⏻</span>",
+        "on-click-release": "pkill wofi || wofi-powermenu.sh"
+    },
     "custom/notification": {
         "tooltip": false,
         "format": "{icon}",
@@ -164,7 +169,7 @@
         "return-type": "json",
         "exec-if": "which swaync-client",
         "exec": "swaync-client -swb",
-        "on-click": "swaync-client -t -sw",
+        "on-click-release": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     }
