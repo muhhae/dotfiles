@@ -297,7 +297,7 @@
 }
 
 .floating-notifications .notification {
-    box-shadow: none;
+    box-shadow: 0 0 10 4 @noti-bg-darker;
 }
 
 /*** Widgets ***/
