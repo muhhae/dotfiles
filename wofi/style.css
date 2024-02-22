@@ -1,11 +1,15 @@
 @import url("/home/muhhae/dotfiles/colorscheme/nord.css");
 
 * {
+    outline-style: none;
+    border: none;
+    background: transparent;
     font-family: Oxygen;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 window {
+    /* box-shadow: 0 0 10 20 @altblack; */
     border-radius: 10px;
     margin: 0px;
     border: 0px solid @altblack;
