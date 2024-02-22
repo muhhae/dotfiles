@@ -1,0 +1,6 @@
+[submodule "wallpaper/nordic-wallpapers"]
+	path = wallpaper/nordic-wallpapers
+	url = https://github.com/linuxdotexe/nordic-wallpapers.git
+[submodule "wallpaper/nord-backgrounds"]
+	path = wallpaper/nord-backgrounds
+	url = https://github.com/dxnst/nord-backgrounds.git
