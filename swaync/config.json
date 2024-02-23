@@ -24,6 +24,7 @@
     "image-visibility": "always",
     "hide-on-clear": true,
     "widgets": [
+        "mpris",
         "title",
         "dnd",
         "notifications"
