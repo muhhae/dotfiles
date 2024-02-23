@@ -6,3 +6,4 @@ vim.keymap.set('n', '<leader>gr', function()
 end, { desc = "Grep String" })
 
 vim.keymap.set('n', 'T', ':Telescope ', { desc = "Open Telescope" })
+require 'telescope'.load_extension("ascii")
