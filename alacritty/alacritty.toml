@@ -14,8 +14,8 @@ WINIT_X11_SCALE_FACTOR = "1"
 position = "None"
 dynamic_padding = true
 decorations = "Full" # None | Full 
-opacity = 1
-blur = false
+opacity = 0.8
+blur = true
 startup_mode = "Maximized"
 dynamic_title = true
 class = { instance = "Alacritty", general = "Alacritty" }
