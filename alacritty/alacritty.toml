@@ -26,8 +26,8 @@ columns = 82
 lines = 24
 
 [window.padding]
-x = 8
-y = 8
+x = 0
+y = 0
 
 [scrolling]
 history = 10000
