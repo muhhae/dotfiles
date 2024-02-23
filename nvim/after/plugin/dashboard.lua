@@ -1,4 +1,6 @@
 local db = require("dashboard")
+local ascii = require 'ascii'
+local logo = ascii.art.text.neovim.bloody
 db.setup({
     theme = 'hyper',
     disable_move = true,
@@ -8,6 +10,7 @@ db.setup({
     },
     config = {
         -- header = vim.split(logo, "\n"),
+        header = logo,
         week_header = {
             enable = false,
         },

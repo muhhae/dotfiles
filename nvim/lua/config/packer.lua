@@ -1,6 +1,12 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+    use({
+        "MaximilianLloyd/ascii.nvim",
+        requires = {
+            "MunifTanjim/nui.nvim"
+        }
+    })
     use "luckasRanarison/tree-sitter-hyprlang"
     use 'nordtheme/vim'
     use 'karb94/neoscroll.nvim'
