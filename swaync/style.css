@@ -4,6 +4,7 @@
 }
 
 @import url('colorscheme/nord.css');
+@import url('/home/muhhae/dotfiles/colorscheme/nord.css');
 
 .notification-row {
     outline: none;
@@ -511,7 +512,8 @@
 }
 
 .control-center {
-    border-radius: 0;
+    margin: 6;
+    border-radius: 10 10 10 10;
     padding: 14px;
-    box-shadow: 0 0 10 6 @noti-bg-darker;
+    box-shadow: 0 0 2 1 @blue;
 }
