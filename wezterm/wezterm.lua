@@ -7,7 +7,7 @@ config.font = wezterm.font_with_fallback {
     'JetBrainsMono Nerd Font',
     'Fira Code Nerd Font',
 }
-
+config.default_cursor_style = 'SteadyBar'
 config.font_size = 15
 config.enable_tab_bar = false
 config.window_padding = {
