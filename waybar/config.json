@@ -125,7 +125,7 @@
     },
     "network": {
         "on-click-release": "pkill wofi || networkmanager_dmenu",
-        "interval": 2,
+        "intervalfalse": 2,
         "format-wifi": " {bandwidthUpBytes}  {bandwidthDownBytes}  <span size='large'>{icon}</span>",
         "format-ethernet": "󰑩",
         "format-disconnected": "󰤭",
