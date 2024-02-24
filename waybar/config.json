@@ -25,7 +25,8 @@
         "modules": [
             "cpu",
             "memory",
-            "disk"
+            "disk",
+            "custom/gpu"
         ]
     },
     "group/arch-workspaces": {
@@ -93,11 +94,13 @@
         }
     },
     "cpu": {
+        "on-click-release": "wezterm -e htop",
         "interval": 5,
         "format": "<span foreground='#e0af68'> </span> {usage}%",
         "tooltip": false
     },
     "memory": {
+        "on-click-release": "wezterm -e htop",
         "interval": 5,
         "format": "<span foreground='#ad8ee6'> </span>{used}/{total}"
     },
@@ -119,6 +122,7 @@
         ]
     },
     "disk": {
+        "on-click-release": "baobab",
         "interval": 30,
         "format": "<span foreground='#0db9d7'>󰆼</span> {free}",
         "path": "/"
@@ -172,5 +176,11 @@
         "on-click-release": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
+    },
+    "custom/gpu": {
+        "on-click-release": "wezterm -e nvtop",
+        "format": "<span foreground='#1ed760'> </span>NVIDIA {}%",
+        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+        "interval": 5
     }
 }
