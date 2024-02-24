@@ -96,6 +96,10 @@ local function rust_runner()
     local bins, err = get_cargo_bins()
     local default_run = get_default_run()
     if bins then
+        if bins[2] == nil then
+            run('cargo run --bin ' .. bins[1])
+            return
+        end
         vim.ui.select(
             bins, {
                 prompt = 'Choose binary to run',
