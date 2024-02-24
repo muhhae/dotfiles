@@ -1,5 +1,6 @@
 -- vim.cmd("colorscheme tokyonight-moon")
 vim.cmd("colorscheme nord")
+vim.cmd("colorscheme nordic")
 -- vim.cmd [[highlight Normal guibg=none]]
 
 vim.wo.fillchars = 'eob: '
