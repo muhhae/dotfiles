@@ -124,17 +124,17 @@ cmp.setup({
     }),
 })
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        -- Enable virtual_text for errors only
-        virtual_text = {
-            severity_limit = 'Error',
-        },
-        -- Show signs
-        signs = true,
-        -- Disable underline
-        underline = false,
-        -- Enable popup
-        update_in_insert = false,
-    }
-)
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+--     vim.lsp.diagnostic.on_publish_diagnostics, {
+--         -- Enable virtual_text for errors only
+--         virtual_text = {
+--             severity_limit = 'Error',
+--         },
+--         -- Show signs
+--         signs = true,
+--         -- Disable underline
+--         underline = false,
+--         -- Enable popup
+--         update_in_insert = false,
+--     }
+-- )
