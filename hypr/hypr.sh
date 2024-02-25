@@ -1,4 +1,4 @@
 #!/bin/bash
 
-export PATH=$PATH:$HOME/dotfiles/hypr/scripts
+export PATH=$PATH:$HOME/dotfiles/scripts
 exec Hyprland
