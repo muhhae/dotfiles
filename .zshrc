@@ -98,3 +98,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:/usr/local/go/bin
 
 eval "$(zoxide init zsh)"
+
+alias cls="clear"
+alias cd="z"
+alias pacfzf="pacman -Ss | paste -d '' - - | fzf --multi --preview 'pacman -Si {1}' | cut -d ' ' -f 1 | xargs -ro pacman -Si"
