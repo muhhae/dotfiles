@@ -1,6 +1,7 @@
 @import url("/home/muhhae/dotfiles/colorscheme/nord.css");
 
 * {
+    background: transparent;
     font-family: Symbols Nerd Font Mono, JetBrains Mono;
     font-size: 14px;
     margin-top: 0px;
