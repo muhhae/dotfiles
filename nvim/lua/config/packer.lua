@@ -1,6 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+    use 'nvim-pack/nvim-spectre'
     use 'rmagatti/auto-session'
     use 'lewis6991/gitsigns.nvim'
     use 'AlexvZyl/nordic.nvim'
