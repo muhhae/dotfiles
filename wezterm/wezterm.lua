@@ -17,5 +17,10 @@ config.window_padding = {
     bottom = 6,
 }
 
+-- local gpus = wezterm.gui.enumerate_gpus()
+-- config.webgpu_preferred_adapter = gpus[1]
+
+config.front_end = "WebGpu"
+-- config.webgpu_power_preference = "HighPerformance"
 config.window_close_confirmation = 'NeverPrompt'
 return config
