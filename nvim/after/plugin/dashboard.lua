@@ -51,12 +51,35 @@ db.setup({
                 desc = " Quit",
             }
         },
-        project = { enable = true, limit = 8, icon = 'your icon', label = '', action = 'LoadSession ' },
+        project = {
+            enable = true,
+            limit = 16,
+            icon = '',
+            label = '\t Recent Project',
+            action = 'LoadSession '
+        },
     },
 })
 
+local function file_exists(filename)
+    local ok, err, code = os.rename(filename, filename)
+    if not ok then
+        if code == 13 then
+            -- Permission denied, but it exists
+            return true
+        end
+    end
+    return ok, err
+end
+
 vim.api.nvim_create_user_command('LoadSession', function(opts)
     local path = opts.fargs[1]
+    local data_path = vim.fn.stdpath('data') .. "/sessions/"
+    local session_path = data_path .. path:gsub("/", "%%") .. '.vim'
     vim.cmd('cd ' .. path)
-    vim.cmd('SessionRestore ')
+    if file_exists(session_path) then
+        vim.cmd('SessionRestore')
+    else
+        vim.cmd("Telescope find_files")
+    end
 end, { nargs = 1 })
