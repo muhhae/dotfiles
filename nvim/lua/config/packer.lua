@@ -1,6 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+    use 'rmagatti/auto-session'
     use 'lewis6991/gitsigns.nvim'
     use 'AlexvZyl/nordic.nvim'
     use({
@@ -12,7 +13,6 @@ return require('packer').startup(function(use)
     use "luckasRanarison/tree-sitter-hyprlang"
     use 'nordtheme/vim'
     use 'karb94/neoscroll.nvim'
-    use "folke/persistence.nvim"
     use 'andweeb/presence.nvim'
     use 'nvimdev/dashboard-nvim'
     use 'nanozuki/tabby.nvim'
