@@ -5,6 +5,6 @@ vim.g.neovide_padding_bottom = 8
 vim.g.neovide_padding_right = 8
 vim.g.neovide_padding_left = 8
 
-vim.g.neovide_transparency = 0.8
+vim.g.neovide_transparency = 1
 
 vim.api.nvim_set_keymap('n', '<F11>', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
