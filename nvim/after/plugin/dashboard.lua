@@ -9,7 +9,6 @@ db.setup({
         statusline = false,
     },
     config = {
-        -- header = vim.split(logo, "\n"),
         header = logo,
         week_header = {
             enable = false,
@@ -46,17 +45,18 @@ db.setup({
                 key = "g"
             },
             {
-                action = 'lua require("persistence").load()',
-                desc = " Restore Session",
-                icon = " ",
-                key = "s"
-            },
-            {
                 icon = "󰩈 ",
                 key = "q",
                 action = "qa",
                 desc = " Quit",
             }
         },
+        project = { enable = true, limit = 8, icon = 'your icon', label = '', action = 'LoadSession ' },
     },
 })
+
+vim.api.nvim_create_user_command('LoadSession', function(opts)
+    local path = opts.fargs[1]
+    vim.cmd('cd ' .. path)
+    vim.cmd('SessionRestore ')
+end, { nargs = 1 })
