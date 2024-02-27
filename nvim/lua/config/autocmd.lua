@@ -50,3 +50,11 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
     end,
     group = autocmd_group,
 })
+
+vim.api.nvim_create_autocmd("VimEnter", {
+    group = vim.api.nvim_create_augroup("restore_session", { clear = true }),
+    callback = function()
+        require("persistence").load()
+    end,
+    nested = true,
+})
