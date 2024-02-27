@@ -56,6 +56,7 @@
             "class<firefox>": "<span foreground='#ff9e64'></span>",
             "class<org.wezfurlong.wezterm> title<.*nvim.*>": "<span foreground='#66ac44'></span>",
             "class<alacritty> title<.*nvim.*>": "<span foreground='#66ac44'></span>",
+            "class<neovide>": "<span foreground='#66ac44'></span>",
             "class<alacritty>": "<span foreground='#81A1C1'></span>",
             "class<org.wezfurlong.wezterm>": "<span foreground='#81A1C1'></span>",
             "spotify": "<span foreground='#1ed760'></span>",
