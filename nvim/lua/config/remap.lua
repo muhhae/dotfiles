@@ -4,20 +4,25 @@ vim.keymap.set('n', '<leader>..', ':Neotree<CR>', { noremap = true, silent = tru
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set('v', 'jj', "4j")
+vim.keymap.set('v', 'kk', "4k")
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
--- next greatest remap ever : asbjornHaland
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set("v", "y", '"+y')
+vim.keymap.set("v", "p", '"+p')
 
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+vim.keymap.set('n', '<C-S-C>', '"+y')    -- Copy normal mode
+vim.keymap.set('v', '<C-S-C>', '"+y')    -- Copy visual mode
+vim.keymap.set('n', '<C-S-V>', '"+p')    -- Paste normal mode
+vim.keymap.set('v', '<C-S-V>', '"+p')    -- Paste visual mode
+vim.keymap.set('c', '<C-S-V>', '<C-R>+') -- Paste command mode
+vim.keymap.set('i', '<C-S-V>', '<C-R>+') -- Paste command mode
 
 -- This is going to get me cancelled
 vim.keymap.set({ "i", "v" }, "<C-c>", "<Esc>")
