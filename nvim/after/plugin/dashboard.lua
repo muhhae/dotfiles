@@ -20,7 +20,6 @@ db.setup({
                 desc = 'Packer Sync',
                 key = 'p',
                 action = 'PackerSync',
-
             },
             {
                 action = "Telescope find_files",
