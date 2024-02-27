@@ -15,40 +15,28 @@ db.setup({
         },
         shortcut = {
             {
-                icon = " ",
-                desc = 'Packer Sync',
-                key = 'p',
-                action = 'PackerSync',
-            },
-            {
                 action = "lua require('auto-session.session-lens').search_session()",
                 desc = " Find Session",
                 icon = "",
                 key = "s"
             },
             {
+                action = "Neotree ~/dotfiles/",
+                desc = " Dotfiles",
+                icon = " ",
+                key = "d"
+            },
+            {
+                action = "Neotree ~/personal/",
+                desc = " Personal",
+                icon = " ",
+                key = "p"
+            },
+            {
                 action = "Telescope find_files",
                 desc = " Find file",
                 icon = " ",
                 key = "f"
-            },
-            {
-                action = "ene | startinsert",
-                desc = " New file",
-                icon = " ",
-                key = "n"
-            },
-            {
-                action = "Telescope oldfiles",
-                desc = " Recent files",
-                icon = " ",
-                key = "r"
-            },
-            {
-                action = "Telescope live_grep",
-                desc = " Find text",
-                icon = " ",
-                key = "g"
             },
             {
                 icon = "󰩈 ",
