@@ -96,13 +96,13 @@
         }
     },
     "cpu": {
-        "on-click-release": "wezterm -e htop",
+        "on-click-release": "wezterm -e btop",
         "interval": 5,
         "format": "<span foreground='#e0af68'> </span> {usage}%",
         "tooltip": false
     },
     "memory": {
-        "on-click-release": "wezterm -e htop",
+        "on-click-release": "wezterm -e btop",
         "interval": 5,
         "format": "<span foreground='#ad8ee6'> </span>{used}/{total}"
     },
