@@ -25,6 +25,6 @@ vim.api.nvim_create_user_command('LoadSession', function(opts)
     end
 end, { nargs = 1 })
 
-vim.keymap.set("n", "<C-s>", require("auto-session.session-lens").search_session, {
-    noremap = true,
-})
+-- vim.keymap.set("n", "<A-s>", require("auto-session.session-lens").search_session, {
+--     noremap = true,
+-- })
