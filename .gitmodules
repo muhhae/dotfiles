@@ -4,3 +4,6 @@
 [submodule "wallpaper/nord-backgrounds"]
 	path = wallpaper/nord-backgrounds
 	url = https://github.com/dxnst/nord-backgrounds.git
+[submodule "wallpaper/catppuccin"]
+	path = wallpaper/catppuccin
+	url = https://github.com/Gingeh/wallpapers.git
