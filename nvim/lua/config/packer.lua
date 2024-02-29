@@ -1,6 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+    use 'iamcco/markdown-preview.nvim'
     use 'nvim-pack/nvim-spectre'
     use 'rmagatti/auto-session'
     use 'lewis6991/gitsigns.nvim'
