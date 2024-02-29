@@ -3,6 +3,7 @@
     border: transparent;
 }
 
+@import url('mocha.css');
 @import url('/home/muhhae/dotfiles/colorscheme/current.css');
 
 .notification-row {
@@ -11,7 +12,7 @@
 
 .notification-row:focus,
 .notification-row:hover {
-    background: @altblue;
+    background: transparent;
 }
 
 .notification-row .notification-background {
@@ -75,7 +76,7 @@
 .notification-row .notification-background .notification .notification-action:hover,
 .notification-row .notification-background .notification .notification-default-action:hover {
     -gtk-icon-effect: none;
-    background: @blue;
+    background: transparent;
 }
 
 .notification-row .notification-background .notification .notification-default-action {
@@ -251,7 +252,7 @@
 }
 
 .notification-group.collapsed:hover .notification-row:not(:only-child) .notification {
-    background-color: @blue;
+    background-color: transparent;
     /* cursor: pointer; */
 }
 
@@ -273,6 +274,7 @@
 }
 
 .control-center .control-center-list .notification {
+    color: white;
     border: none;
     box-shadow: none;
 }
@@ -284,7 +286,7 @@
 
 .control-center .control-center-list .notification .notification-default-action:hover,
 .control-center .control-center-list .notification .notification-action:hover {
-    background-color: @blue;
+    background-color: transparent;
 }
 
 .blank-window {
@@ -298,6 +300,7 @@
 
 .floating-notifications .notification {
     box-shadow: 0 0 2 1 @blue;
+    background: @purple;
 }
 
 /*** Widgets ***/
@@ -507,7 +510,7 @@
 }
 
 .control-center:hover .notification-row:hover .notification-background:hover {
-    background-color: white;
+    background-color: transparent;
 }
 
 .control-center {
