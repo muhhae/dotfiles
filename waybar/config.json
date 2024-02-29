@@ -148,7 +148,8 @@
         "tooltip-format-disconnected": "Disconnected"
     },
     "custom/spotify": {
-        "format": "<span foreground='#1ed760'> </span> {}",
+        "format": "{}",
+        //"format": "<span foreground='#1ed760'> </span> {}",
         "restart-interval": 1,
         "on-click": "playerctl -p spotify play-pause",
         "on-scroll-up": "playerctl -p spotify next",
