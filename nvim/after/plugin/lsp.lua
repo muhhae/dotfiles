@@ -16,10 +16,6 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
--- for _, path in ipairs(vim.split(package.path, ';')) do
---     print(path)
--- end
-
 local lspconfig = require 'lspconfig'
 require('mason').setup({})
 require('mason-lspconfig').setup({
