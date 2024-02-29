@@ -73,7 +73,7 @@ require('mason-lspconfig').setup({
                 }
             }
 
-            lspconfig.lua_ls.setup { lua_conf }
+            lspconfig.lua_ls.setup(lua_conf)
         end,
         tsserver = function()
             lspconfig.tsserver.setup({
