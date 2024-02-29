@@ -49,7 +49,7 @@ db.setup({
             enable = true,
             limit = 8,
             icon = '',
-            label = '\t Recent Project',
+            label = '\tRecent Project',
             action = 'LoadSession '
         },
     },
