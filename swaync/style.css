@@ -3,7 +3,7 @@
     border: transparent;
 }
 
-@import url('mocha.css');
+/* @import url('mocha.css'); */
 @import url('/home/muhhae/dotfiles/colorscheme/current.css');
 
 .notification-row {
@@ -21,8 +21,8 @@
 
 .notification-row .notification-background .close-button {
     /* The notification Close Button */
-    background: @foreground;
-    color: @foreground;
+    background: @red;
+    color: @black;
     text-shadow: none;
     padding: 0;
     border-radius: 100%;
@@ -36,7 +36,7 @@
 
 .notification-row .notification-background .close-button:hover {
     box-shadow: none;
-    background: @foreground;
+    background: @altred;
     transition: background 0.15s ease-in-out;
     border: none;
 }
@@ -47,7 +47,7 @@
     border: 0px solid @border;
     padding: 0;
     transition: background 0.15s ease-in-out;
-    background: @altblack;
+    background: @background;
 }
 
 .notification-row .notification-background .notification.low {
@@ -93,7 +93,7 @@
 .notification-row .notification-background .notification .notification-default-action .notification-content {
     background: transparent;
     border-radius: 12px;
-    padding: 4px;
+    padding: 12px;
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .image {
@@ -164,7 +164,7 @@
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .inline-reply .inline-reply-button {
-    margin-left: 4px;
+    margin-left: 0px;
     background: @altblack;
     border: 0px solid @border;
     border-radius: 12px;
@@ -238,7 +238,7 @@
 }
 
 .notification-group.collapsed .notification-row .notification {
-    background-color: @altblack;
+    background-color: @background;
 }
 
 .notification-group.collapsed .notification-row:not(:last-child) {
@@ -252,6 +252,7 @@
 }
 
 .notification-group.collapsed:hover .notification-row:not(:only-child) .notification {
+
     background-color: transparent;
     /* cursor: pointer; */
 }
@@ -274,9 +275,10 @@
 }
 
 .control-center .control-center-list .notification {
-    color: white;
+    color: @foreground;
     border: none;
-    box-shadow: none;
+    box-shadow: inset 0 0 1 1 @foreground;
+    padding: 0;
 }
 
 .control-center .control-center-list .notification .notification-default-action,
@@ -286,7 +288,8 @@
 
 .control-center .control-center-list .notification .notification-default-action:hover,
 .control-center .control-center-list .notification .notification-action:hover {
-    background-color: transparent;
+    background-color: @altblack;
+    box-shadow: inset 0 0 1 1 @foreground;
 }
 
 .blank-window {
@@ -299,8 +302,8 @@
 }
 
 .floating-notifications .notification {
-    box-shadow: 0 0 2 1 @blue;
-    background: @purple;
+    background-color: @background;
+    box-shadow: inset 0 0 1 1 @altblack;
 }
 
 /*** Widgets ***/
@@ -399,7 +402,7 @@
 }
 
 .widget-mpris .widget-mpris-player>box>button:hover {
-    background-color: @mpris-button-hover;
+    background-color: @altblack;
 }
 
 .widget-mpris>box>button {
@@ -503,7 +506,7 @@
 }
 
 .control-center .notification-row .notification-background {
-    border: 2px solid @black;
+    border: 0px solid @black;
     border-radius: 14px;
     padding: 0;
     background-color: @altblack;
@@ -514,8 +517,9 @@
 }
 
 .control-center {
+    background-color: @background;
     margin: 6;
     border-radius: 10 10 10 10;
     padding: 14px;
-    box-shadow: inset 0 0 3 2 @altblack;
+    box-shadow: inset 0 0 1 1 @foreground;
 }
