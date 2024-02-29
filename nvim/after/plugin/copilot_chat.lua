@@ -1,5 +1,4 @@
 require('CopilotChat').setup {
-    mode = "split",
     prompts = {
         Explain = "Explain how it works in details",
         Review = "Review the following code and provide concise suggestions.",
@@ -35,3 +34,15 @@ vim.keymap.set("v", "<leader>ca", "y:CopilotChat ", { desc = "Copilot Chat" })
 vim.keymap.set("v", "<leader>ce", "y<cmd>CopilotChatExplain<CR>", { desc = "Copilot Chat Explain" })
 vim.keymap.set("v", "<leader>ct", "y<cmd>CopilotChatTest<CR>", { desc = "Copilot Chat Test" })
 vim.keymap.set("v", "<leader>cr", "y<cmd>CopilotChatRefactor<CR>", { desc = "Copilot Chat Refactor" })
+
+vim.keymap.set({ "n", "v" }, "<leader>ccq",
+    function()
+        local input = vim.fn.input("Quick Chat: ")
+        if input ~= "" then
+            vim.cmd("CopilotChatBuffer " .. input)
+        end
+    end, {
+        desc = "CopilotChat - Quick chat"
+    }
+)
+vim.keymap.set({ "n", "v" }, "<leader>ccv", "<cmd>CopilotChatVsplitToggle<cr>", { desc = "CopilotChat - Toggle Vsplit" })

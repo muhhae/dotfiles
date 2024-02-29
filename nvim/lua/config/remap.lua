@@ -17,6 +17,9 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("v", "y", '"+y')
 vim.keymap.set("v", "p", '"+p')
 
+vim.keymap.set("n", "y", '"+y')
+vim.keymap.set("n", "p", '"+p')
+
 vim.keymap.set('n', '<C-S-C>', '"+y')    -- Copy normal mode
 vim.keymap.set('v', '<C-S-C>', '"+y')    -- Copy visual mode
 vim.keymap.set('n', '<C-S-V>', '"+p')    -- Paste normal mode
