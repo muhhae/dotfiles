@@ -20,8 +20,8 @@
 
 .notification-row .notification-background .close-button {
     /* The notification Close Button */
-    background: @white;
-    color: @white;
+    background: @foreground;
+    color: @foreground;
     text-shadow: none;
     padding: 0;
     border-radius: 100%;
@@ -35,7 +35,7 @@
 
 .notification-row .notification-background .close-button:hover {
     box-shadow: none;
-    background: @white;
+    background: @foreground;
     transition: background 0.15s ease-in-out;
     border: none;
 }
@@ -68,7 +68,7 @@
     box-shadow: none;
     background: transparent;
     border: none;
-    color: @white;
+    color: @foreground;
     transition: background 0.15s ease-in-out;
 }
 
@@ -113,7 +113,7 @@
     font-size: 16px;
     font-weight: bold;
     background: transparent;
-    color: @white;
+    color: @foreground;
     text-shadow: none;
 }
 
@@ -122,7 +122,7 @@
     font-size: 16px;
     font-weight: bold;
     background: transparent;
-    color: @white;
+    color: @foreground;
     text-shadow: none;
     margin-right: 30px;
 }
@@ -132,7 +132,7 @@
     font-size: 15px;
     font-weight: normal;
     background: transparent;
-    color: @white;
+    color: @foreground;
     text-shadow: none;
 }
 
@@ -144,7 +144,7 @@
 .notification-row .notification-background .notification .notification-default-action .notification-content .body-image {
     /* The "extra" optional bottom notification image */
     margin-top: 4px;
-    background-color: @white;
+    background-color: @foreground;
     border-radius: 12px;
     -gtk-icon-effect: none;
 }
@@ -156,8 +156,8 @@
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .inline-reply .inline-reply-entry {
     background: @black;
-    color: @white;
-    caret-color: @white;
+    color: @foreground;
+    caret-color: @foreground;
     border: 0px solid @border;
     border-radius: 12px;
 }
@@ -167,7 +167,7 @@
     background: @altblack;
     border: 0px solid @border;
     border-radius: 12px;
-    color: @white;
+    color: @foreground;
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .inline-reply .inline-reply-button:disabled {
@@ -217,7 +217,7 @@
 .notification-group .notification-group-buttons,
 .notification-group .notification-group-headers {
     margin: 0 16px;
-    color: @white;
+    color: @foreground;
 }
 
 .notification-group .notification-group-headers {
@@ -225,11 +225,11 @@
 }
 
 .notification-group .notification-group-headers .notification-group-icon {
-    color: @white;
+    color: @foreground;
 }
 
 .notification-group .notification-group-headers .notification-group-header {
-    color: @white;
+    color: @foreground;
 }
 
 .notification-group .notification-group-buttons {
@@ -258,7 +258,7 @@
 .control-center {
     /* The Control Center which contains the old notifications + widgets */
     background: @background;
-    color: @white;
+    color: @foreground;
     border-radius: 12px;
 }
 
@@ -303,14 +303,14 @@
 /*** Widgets ***/
 /* Title widget */
 .widget-title {
-    color: @white;
+    color: @foreground;
     margin: 8px;
     font-size: 1.5rem;
 }
 
 .widget-title>button {
     font-size: initial;
-    color: @white;
+    color: @foreground;
     text-shadow: none;
     background: @altblack;
     border: 0px solid @border;
@@ -324,7 +324,7 @@
 
 /* DND widget */
 .widget-dnd {
-    color: @white;
+    color: @foreground;
     margin: 8px;
     font-size: 1.1rem;
 }
@@ -487,7 +487,7 @@
 
 .widget-inhibitors>button {
     font-size: initial;
-    color: @white;
+    color: @foreground;
     text-shadow: none;
     background: @altblack;
     border: 0px solid @border;
