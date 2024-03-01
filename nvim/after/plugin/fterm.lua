@@ -187,3 +187,7 @@ vim.keymap.set('n', '<leader><Enter>', function()
         run(command)
     end
 end)
+
+vim.keymap.set('n', '<leader>lg', function()
+    run('lazygit')
+end)
