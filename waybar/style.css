@@ -35,6 +35,7 @@ window#waybar {
     border-bottom: 0px solid transparent;
     margin-right: 0px;
     margin-left: 0px;
+    padding-top: 0px;
 }
 
 #workspaces button:hover {
