@@ -1,9 +1,9 @@
 # GITSTATUS=$GITSTATUS_PROMPT
 
-PROMPT="%{$fg[blue]%}  %{$fg[cyan]%}%0~%{$reset_color%}"
+PROMPT="%{$fg[blue]%}  %{$fg[cyan]%}%0~%{$reset_color%}"
 PROMPT+=' $(git_prompt_info)$(git_prompt_status) 
 '
-PROMPT+="%(?:%{$fg_bold[blue]%}%1{󱞩%} :%{$fg_bold[red]%}%1{󱞩%} ) "
+PROMPT+="%(?:%{$fg_bold[blue]%}%1{%} :%{$fg_bold[red]%}%1{%} ) "
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%} (%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
