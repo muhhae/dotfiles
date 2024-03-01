@@ -24,7 +24,7 @@ vim.keymap.set({ "n", "v" }, "<C-S-V>", '"+p')
 vim.keymap.set({ "n", "v" }, "<C-S-X>", '"+x')
 
 vim.keymap.set('c', '<C-S-V>', '<C-R>+')
-vim.keymap.set('i', '<C-S-V>', '<ESC>"+pi')
+vim.keymap.set('i', '<C-S-V>', '<ESC>"+pli')
 
 -- This is going to get me cancelled
 vim.keymap.set({ "i", "v" }, "<C-c>", "<Esc>")
