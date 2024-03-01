@@ -1,12 +1,12 @@
 {
     "reload_style_on_change": "true",
-    "margin": "2 2 0 2",
+    "margin": "0 10 -8 10",
     "fixed-center": "true",
     "layer": "top",
     "position": "top",
     "spacing": 12,
     "modules-left": [
-        "group/arch-workspaces",
+        "hyprland/workspaces",
         "group/hardware"
     ],
     "modules-center": [
@@ -30,12 +30,6 @@
             "custom/gpu"
         ]
     },
-    "group/arch-workspaces": {
-        "orientation": "inherit",
-        "modules": [
-            "hyprland/workspaces"
-        ]
-    },
     "custom/arch-icon": {
         "format": "<span size='large'></span>",
         "on-click": "pkill rofi || rofi-launcher"
@@ -50,7 +44,7 @@
             "empty": "",
             "default": ""
         },
-        "window-rewrite-default": "",
+        "window-rewrite-default": "",
         "format-window-separator": " ",
         "window-rewrite": {
             "class<firefox>": "<span foreground='#ff9e64'></span>",

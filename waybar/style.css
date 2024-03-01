@@ -1,42 +1,49 @@
 @import url("/home/muhhae/dotfiles/colorscheme/current.css");
 
 * {
-    background: transparent;
+    /* background: transparent; */
     font-family: Symbols Nerd Font Mono, JetBrains Mono;
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 0px;
     margin-bottom: 0px;
+    padding: 0px;
+    border-radius: 0;
+}
+
+tooltip {
+    background: @background;
+    border: 1px solid @blue;
+}
+
+tooltip label {
+    color: white;
 }
 
 window#waybar {
-    border-radius: 20px;
+    border-radius: 0px;
     background-color: alpha(@background, 0.0);
-    /* background: linear-gradient(45deg, rgba(51, 204, 255, 0.4), rgba(0, 255, 153, 0.4)); */
 }
 
-#arch-workspaces {
-    padding: 2px;
-    margin-left: 10px;
-    background: transparent;
-}
 
 #workspaces button {
+    background: transparent;
+    border-radius: 0px 0px 6px 6px;
     border-top-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
     border-top: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-    margin-right: 1px;
-    margin-left: 1px;
+    border-bottom: 0px solid transparent;
+    margin-right: 10px;
+    margin-left: 3px;
 }
 
 #workspaces button:hover {
     background: transparent;
-    border-bottom: 3px solid @altforeground;
+    border-top: 3px solid @border;
 }
 
 #workspaces button.active {
-    border-bottom: 3px solid @foreground;
+    border-top: 3px solid @foreground;
 }
 
 #tray {
@@ -60,12 +67,17 @@ window#waybar {
     margin-right: 10px;
 }
 
-#custom-arch-icon {
-    color: @blue;
-    margin-left: 10px;
-    margin-right: 10px
+@keyframes blink {
+    to {
+        color: orange;
+    }
 }
 
-#custom-powermenu {
-    margin-right: 15px;
+#battery.warning:not(.charging) {
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
