@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set('n', '<leader>..', ':Neotree<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>.', ':Neotree<CR>', { noremap = true, silent = true })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -19,18 +19,17 @@ vim.keymap.set({ "n", "v" }, "p", '"+p')
 vim.keymap.set({ "n", "v" }, "P", '"+P')
 vim.keymap.set({ "n", "v" }, "x", '"+x')
 
-vim.keymap.set('n', '<C-S-C>', '"+y')    -- Copy normal mode
-vim.keymap.set('v', '<C-S-C>', '"+y')    -- Copy visual mode
-vim.keymap.set('n', '<C-S-V>', '"+p')    -- Paste normal mode
-vim.keymap.set('v', '<C-S-V>', '"+p')    -- Paste visual mode
-vim.keymap.set('c', '<C-S-V>', '<C-R>+') -- Paste command mode
-vim.keymap.set('i', '<C-S-V>', '<C-R>+') -- Paste command mode
+vim.keymap.set({ "n", "v" }, "<C-S-C>", '"+y')
+vim.keymap.set({ "n", "v" }, "<C-S-V>", '"+p')
+vim.keymap.set({ "n", "v" }, "<C-S-X>", '"+x')
+
+vim.keymap.set('c', '<C-S-V>', '<C-R>+')
+vim.keymap.set('i', '<C-S-V>', '<ESC>"+pi')
 
 -- This is going to get me cancelled
 vim.keymap.set({ "i", "v" }, "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux new<CR>")
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
