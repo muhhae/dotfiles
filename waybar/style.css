@@ -27,14 +27,14 @@ window#waybar {
 
 #workspaces button {
     background: transparent;
-    border-radius: 0px 0px 6px 6px;
+    border-radius: 0px 0px 0px 0px;
     border-top-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
     border-top: 3px solid transparent;
     border-bottom: 0px solid transparent;
-    margin-right: 3px;
-    margin-left: 3px;
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 #workspaces button:hover {
