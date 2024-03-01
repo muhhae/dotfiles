@@ -63,11 +63,14 @@ require('FTerm').setup {
 vim.keymap.set('n', '<f2>', require("FTerm").toggle)
 vim.keymap.set('t', '<f2>', require("FTerm").toggle)
 
-local function run(cmd)
+---@param cmd string
+---@param autoclose boolean
+local function run(cmd, autoclose)
     print("Running", cmd)
     require('FTerm').scratch {
         cmd = cmd,
-        border = 'rounded'
+        border = 'rounded',
+        auto_close = autoclose
     }
 end
 
@@ -97,7 +100,7 @@ local function rust_runner()
     local default_run = get_default_run()
     if bins then
         if bins[2] == nil then
-            run('cargo run --bin ' .. bins[1])
+            run('cargo run --bin ' .. bins[1], false)
             return
         end
         vim.ui.select(
@@ -111,7 +114,7 @@ local function rust_runner()
                 end,
             }, function(choice)
                 if choice == nil then return end
-                run("cargo run --bin " .. choice)
+                run("cargo run --bin " .. choice, false)
             end)
     else
         print("Error getting binaries:", err)
@@ -128,7 +131,7 @@ local function go_runner()
     end
 
     if result[2] == nil then
-        run('go run ' .. result[1])
+        run('go run ' .. result[1], false)
         return
     end
 
@@ -140,7 +143,7 @@ local function go_runner()
             end,
         }, function(choice)
             if choice == nil then return end
-            run('go run ' .. choice)
+            run('go run ' .. choice, false)
         end
     )
 end
@@ -172,7 +175,7 @@ local runners = {
 vim.keymap.set('n', '<leader><Enter>', function()
     local cmd = vim.fn.systemlist('cat .vimrunner')
     if vim.v.shell_error == 0 and cmd[1] ~= "" then
-        run(cmd[1])
+        run(cmd[1], false)
         return
     end
 
@@ -184,10 +187,20 @@ vim.keymap.set('n', '<leader><Enter>', function()
     end
     local command = runner(buf)
     if command ~= nil then
-        run(command)
+        run(command, false)
     end
 end)
 
-vim.keymap.set('n', '<leader>lg', function()
-    run('lazygit')
+local lazygit = require 'FTerm':new({
+    cmd = 'lazygit',
+    dimensions = {
+        height = 0.8, -- Height of the terminal window
+        width = 0.8,  -- Width of the terminal window
+        x = 0.5,      -- X axis of the terminal window
+        y = 0.5,      -- Y axis of the terminal window
+    }
+})
+
+vim.keymap.set('n', '<leader>gg', function()
+    lazygit:toggle()
 end)
