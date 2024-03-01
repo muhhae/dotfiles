@@ -1,6 +1,6 @@
 {
     "reload_style_on_change": "true",
-    "margin": "0 10 -3 10",
+    "margin": "0 3 -3 3",
     "fixed-center": "true",
     "layer": "top",
     "position": "top",
@@ -40,7 +40,7 @@
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
         "persistent-workspaces": {
-            "*": 5
+            "*": 8
         },
         "format": "<span size='large'>{}</span>",
         "format-icons": {
