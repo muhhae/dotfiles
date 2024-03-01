@@ -4,7 +4,7 @@
 -- vim.cmd("colorscheme catppuccin-macchiato")
 vim.cmd("colorscheme catppuccin-mocha")
 -- vim.cmd("colorscheme nordic")
--- vim.cmd [[highlight Normal guibg=none]]
+vim.cmd [[highlight Normal guibg=none]]
 
 vim.wo.fillchars = 'eob: '
 vim.cmd('highlight SignColumn guibg=transparent')
