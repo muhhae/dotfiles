@@ -8,6 +8,7 @@ config.font = wezterm.font_with_fallback {
     'Fira Code Nerd Font',
 }
 
+config.enable_wayland = false
 config.default_cursor_style = 'SteadyBar'
 config.font_size = 15
 config.enable_tab_bar = false
@@ -21,7 +22,8 @@ config.window_padding = {
 -- local gpus = wezterm.gui.enumerate_gpus()
 -- config.webgpu_preferred_adapter = gpus[1]
 
-config.front_end = "WebGpu"
--- config.webgpu_power_preference = "HighPerformance"
+-- config.front_end = "WebGpu"
+-- config.webgpu_power_preference = "LowPower"
+
 config.window_close_confirmation = 'NeverPrompt'
 return config
