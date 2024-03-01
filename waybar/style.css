@@ -33,7 +33,7 @@ window#waybar {
     border-right-color: transparent;
     border-top: 3px solid transparent;
     border-bottom: 0px solid transparent;
-    margin-right: 10px;
+    margin-right: 3px;
     margin-left: 3px;
 }
 
@@ -51,9 +51,6 @@ window#waybar {
 }
 
 #hardware {
-    padding: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
