@@ -60,8 +60,8 @@ require('FTerm').setup {
     on_stderr = nil,
 }
 
-vim.keymap.set('n', '<f2>', require("FTerm").toggle)
-vim.keymap.set('t', '<f2>', require("FTerm").toggle)
+vim.keymap.set('n', '<C-S-T>', require("FTerm").toggle)
+vim.keymap.set('t', '<C-S-T>', require("FTerm").toggle)
 
 ---@param cmd string
 ---@param autoclose boolean
@@ -201,6 +201,6 @@ local lazygit = require 'FTerm':new({
     }
 })
 
-vim.keymap.set('n', '<leader>gg', function()
+vim.keymap.set('n', '<C-S-G>', function()
     lazygit:toggle()
 end)
