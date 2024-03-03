@@ -1,6 +1,6 @@
 # GITSTATUS=$GITSTATUS_PROMPT
 
-PROMPT="%{$fg[blue]%}  %{$fg[cyan]%}%0~%{$reset_color%}"
+PROMPT="%(!.%{$fg[red]%}[root] .)%{$fg[blue]%}  %{$fg[cyan]%}%0~%{$reset_color%}"
 PROMPT+=' $(git_prompt_info)$(git_prompt_status) 
 '
 PROMPT+="%(?:%{$fg_bold[blue]%}%1{%} :%{$fg_bold[red]%}%1{%} ) "
