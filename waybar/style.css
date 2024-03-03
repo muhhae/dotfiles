@@ -3,8 +3,7 @@
 * {
     outline-style: none;
     border: none;
-    /* background: transparent; */
-    font-family: Symbols Nerd Font Mono, JetBrains Mono;
+    font-family: Symbols Nerd Font Mono, JetBrainsMono;
     font-size: 12px;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -15,9 +14,11 @@
 tooltip {
     background: @background;
     border: 1px solid @blue;
+    border-radius: 4px;
 }
 
 tooltip label {
+    padding: 4px;
     color: white;
 }
 
@@ -67,4 +68,8 @@ window#waybar {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#custom-powermenu {
+    margin-right: 8px;
 }
