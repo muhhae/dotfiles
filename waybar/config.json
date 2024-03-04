@@ -51,11 +51,11 @@
         "format-window-separator": " ",
         "window-rewrite": {
             "class<firefox>": "<span foreground='#ff9e64'></span>",
-            "class<org.wezfurlong.wezterm> title<.*nvim.*>": "<span foreground='#66ac44'></span>",
+            "class<org.wezfurlong.alacritty> title<.*nvim.*>": "<span foreground='#66ac44'></span>",
             "class<alacritty> title<.*nvim.*>": "<span foreground='#66ac44'></span>",
             "class<neovide>": "<span foreground='#66ac44'></span>",
             "class<alacritty>": "<span foreground='#81A1C1'></span>",
-            "class<org.wezfurlong.wezterm>": "<span foreground='#81A1C1'></span>",
+            "class<org.wezfurlong.alacritty>": "<span foreground='#81A1C1'></span>",
             "spotify": "<span foreground='#1ed760'></span>",
             "class<discord>": "<span foreground='#5865f2'>󰙯</span>",
             "class<ferdium>": "<span foreground='#5865f2'>󰭹</span>",
@@ -93,13 +93,13 @@
         }
     },
     "cpu": {
-        "on-click-release": "wezterm -e btop",
+        "on-click-release": "alacritty -e btop",
         "interval": 5,
         "format": "<span foreground='#e0af68'> </span> {usage}%",
         "tooltip": false
     },
     "memory": {
-        "on-click-release": "wezterm -e btop",
+        "on-click-release": "alacritty -e btop",
         "interval": 5,
         "format": "<span foreground='#ad8ee6'> </span>{used}/{total}"
     },
@@ -178,7 +178,7 @@
         "escape": true
     },
     "custom/gpu": {
-        "on-click-release": "wezterm -e nvtop",
+        "on-click-release": "alacritty -e nvtop",
         "format": "<span foreground='#1ed760'> </span>NVIDIA {}%",
         "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
         "interval": 5
