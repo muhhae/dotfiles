@@ -3,7 +3,7 @@
 PROMPT="%(!.%{$fg[red]%}[root] .)%{$fg[blue]%}  %0~%{$reset_color%}"
 PROMPT+=' $(git_prompt_info)$(git_prompt_status) 
 '
-PROMPT+="%(?:%{$fg_bold[blue]%}%1{%} :%{$fg_bold[red]%}%1{%}) "
+PROMPT+="%(?:%{$fg_bold[blue]%}%1{%} :%{$fg_bold[red]%}%1{%} ) "
 zle_highlight=( default:fg=cyan )
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%} (%{$fg[red]%}"
