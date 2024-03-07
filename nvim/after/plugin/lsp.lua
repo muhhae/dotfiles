@@ -19,7 +19,32 @@ end)
 local lspconfig = require 'lspconfig'
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'tsserver', 'rust_analyzer' },
+    ensure_installed = {
+        'tsserver',
+        'rust_analyzer',
+        'clangd',
+        'tsserver',
+        'svelte',
+        'graphql',
+        'lua_ls',
+        'gopls',
+        'arduino_language_server',
+        'kotlin_language_server',
+        'ast_grep',
+        'cssls',
+        'ltex',
+        'vimls',
+        'html',
+        'jqls',
+        'rust_analyzer',
+        'pylsp',
+        'htmx',
+        'tailwindcss',
+        'jsonls',
+        'yamlls',
+        'quick_lint_js',
+        'templ'
+    },
     handlers = {
         lsp_zero.default_setup,
         lua_ls = function()
