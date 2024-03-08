@@ -43,7 +43,8 @@ require('mason-lspconfig').setup({
         'jsonls',
         'yamlls',
         'quick_lint_js',
-        'templ'
+        'templ',
+        'astro_language_server'
     },
     handlers = {
         lsp_zero.default_setup,

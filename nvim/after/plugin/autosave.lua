@@ -4,16 +4,19 @@ require("auto-save").setup {
         message = function() -- message to print on save
             return ("AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"))
         end,
-        dim = 0.18,                     -- dim the color of `message`
-        cleaning_interval = 800,        -- (milliseconds) automatically clean MsgArea after displaying `message`. See :h MsgArea
+        dim = 0.18,                                    -- dim the color of `message`
+        cleaning_interval = 800,                       -- (milliseconds) automatically clean MsgArea after displaying `message`. See :h MsgArea
     },
-    trigger_events = { "InsertLeave" }, --"TextChanged" }, -- vim events that trigger auto-save. See :h events
+    trigger_events = { "InsertLeave", "TextChanged" }, -- vim events that trigger auto-save. See :h events
     -- function that determines whether to save the current buffer or not
     -- return true: if buffer is ok to be saved
     -- return false: if it's not ok to be saved
     condition = function(buf)
         local fn = vim.fn
         local utils = require("auto-save.utils.data")
+        if vim.bo[buf].filetype == "harpoon" then
+            return false
+        end
 
         if
             fn.getbufvar(buf, "&modifiable") == 1 and
