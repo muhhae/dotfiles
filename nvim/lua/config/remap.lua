@@ -4,20 +4,15 @@ vim.keymap.set('n', '<leader>.', ':Neotree<CR>', { noremap = true, silent = true
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set('v', 'jj', "4j")
-vim.keymap.set('v', 'kk', "4k")
-
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("x", "<leader>p", [["_dP]])
-
 vim.keymap.set({ "n", "v" }, "y", '"+y')
 vim.keymap.set({ "n", "v" }, "p", '"+p')
 vim.keymap.set({ "n", "v" }, "P", '"+P')
-vim.keymap.set({ "n", "v" }, "x", '"+x')
+vim.keymap.set({ "v" }, "x", '"+x')
 
 vim.keymap.set({ "n", "v" }, "<C-S-C>", '"+y')
 vim.keymap.set({ "n", "v" }, "<C-S-V>", '"+p')
@@ -43,7 +38,6 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
-
 vim.keymap.set("n", "<C-q>", "<C-v>")
 
 vim.keymap.set("n", "<leader>ww", "<cmd>w<CR>")
@@ -63,6 +57,3 @@ vim.keymap.set("n", "vs", "viws", { desc = "Select current word and replace" })
 
 vim.keymap.set("n", "<C-f>", [[:%s~~~gI<left><Left><Left><Left>]])
 vim.keymap.set("x", "<C-f>", [[:s~~~gI<left><Left><Left><Left>]])
-
-vim.keymap.set('n', '<C-p>', '"0p', { desc = "paste yanked text" })
-vim.keymap.set('n', '<M-p>', '""p', { desc = "paste from default reg" })
