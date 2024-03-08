@@ -1,6 +1,6 @@
 local autocmd_group = vim.api.nvim_create_augroup("Custom auto-commands", { clear = true })
 
-local custom_format = function()
+Custom_format = function()
     vim.cmd('undojoin')
     if vim.bo.filetype == 'go' then
         return
@@ -34,10 +34,10 @@ local custom_format = function()
     end
 end
 
-vim.keymap.set("n", "<leader>f", custom_format)
+vim.keymap.set("n", "<leader>f", Custom_format)
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     desc = "Auto-format Files after saving",
-    callback = custom_format,
+    callback = Custom_format,
     group = autocmd_group,
 })
 
