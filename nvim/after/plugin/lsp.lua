@@ -1,9 +1,13 @@
 local lsp_zero = require('lsp-zero')
-vim.filetype.add({ extension = { templ = "templ" } })
+vim.filetype.add {
+    extension = {
+        templ = "templ",
+        astro = "astro"
+    }
+}
 
 lsp_zero.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
-
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
     vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
@@ -36,7 +40,6 @@ require('mason-lspconfig').setup({
         'vimls',
         'html',
         'jqls',
-        'rust_analyzer',
         'pylsp',
         'htmx',
         'tailwindcss',
@@ -44,7 +47,7 @@ require('mason-lspconfig').setup({
         'yamlls',
         'quick_lint_js',
         'templ',
-        'astro_language_server'
+        'astro'
     },
     handlers = {
         lsp_zero.default_setup,
@@ -145,18 +148,3 @@ cmp.setup({
         ['<C-Space>'] = cmp.mapping.complete(),
     }),
 })
-
--- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
---     vim.lsp.diagnostic.on_publish_diagnostics, {
---         -- Enable virtual_text for errors only
---         virtual_text = {
---             severity_limit = 'Error',
---         },
---         -- Show signs
---         signs = true,
---         -- Disable underline
---         underline = false,
---         -- Enable popup
---         update_in_insert = false,
---     }
--- )
