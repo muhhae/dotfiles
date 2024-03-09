@@ -46,7 +46,7 @@ db.setup({
             }
         },
         project = {
-            enable = true,
+            enable = false,
             limit = 8,
             icon = '',
             label = '\tRecent Project',

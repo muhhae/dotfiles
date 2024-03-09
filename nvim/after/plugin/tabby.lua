@@ -6,11 +6,6 @@ require('tabby.tabline').use_preset('active_wins_at_tail')
 
 for i = 1, 9 do
     vim.keymap.set('n', '<leader>t' .. i, "<cmd>tabnext " .. i .. '<CR>')
-    -- if i == 1 then
-    --     vim.keymap.set('n', '<leader>m' .. i, "<cmd>tabmove " .. 0 .. '<CR>')
-    -- else
-    --     vim.keymap.set('n', '<leader>m' .. i, "<cmd>tabmove " .. i .. '<CR>')
-    -- end
 end
 
 vim.keymap.set('n', '<M-s>', '<cmd>+tabmove<CR>')
