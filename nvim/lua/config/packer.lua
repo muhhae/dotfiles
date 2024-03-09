@@ -1,7 +1,6 @@
 vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
-	use("lukas-reineke/lsp-format.nvim")
 	use("iamcco/markdown-preview.nvim")
 	use("nvim-pack/nvim-spectre")
 	use("rmagatti/auto-session")
@@ -13,7 +12,6 @@ return require("packer").startup(function(use)
 			"MunifTanjim/nui.nvim",
 		},
 	})
-	use("nvimtools/none-ls.nvim")
 	use("luckasRanarison/tree-sitter-hyprlang")
 	use("nordtheme/vim")
 	use("karb94/neoscroll.nvim")
@@ -35,10 +33,6 @@ return require("packer").startup(function(use)
 	})
 	use("github/copilot.vim")
 	use({ "mhartington/formatter.nvim" })
-	use({
-		"fatih/vim-go",
-		run = ":GoUpdateBinaries",
-	})
 	use({
 		"windwp/nvim-autopairs",
 		config = function()
@@ -99,7 +93,6 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	use("mbbill/undotree")
-	use("tpope/vim-fugitive")
 	use({
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v3.x",
