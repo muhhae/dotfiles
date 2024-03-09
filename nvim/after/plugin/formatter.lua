@@ -20,7 +20,10 @@ require("formatter").setup({
 	filetype = {
 		python = { require("formatter.filetypes.python").black },
 		lua = { require("formatter.filetypes.lua").stylua },
-		go = { require("formatter.filetypes.go").goimports },
+		go = {
+			require("formatter.filetypes.go").gofumpt,
+			require("formatter.filetypes.go").goimports,
+		},
 		rust = { require("formatter.filetypes.rust").rustfmt },
 		templ = {
 			function()
