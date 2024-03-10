@@ -3,6 +3,8 @@ vim.filetype.add({
 	extension = {
 		templ = "templ",
 		astro = "astro",
+		mdx = "mdx",
+		mjs = "mjs",
 	},
 })
 
@@ -117,11 +119,6 @@ require("mason-lspconfig").setup({
 			}
 
 			lspconfig.lua_ls.setup(lua_conf)
-		end,
-		tsserver = function()
-			lspconfig.tsserver.setup({
-				single_file_support = true,
-			})
 		end,
 		html = function()
 			lspconfig.html.setup({
