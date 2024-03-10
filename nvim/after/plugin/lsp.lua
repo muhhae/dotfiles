@@ -4,7 +4,6 @@ vim.filetype.add({
 		templ = "templ",
 		astro = "astro",
 		mdx = "mdx",
-		mjs = "mjs",
 	},
 })
 

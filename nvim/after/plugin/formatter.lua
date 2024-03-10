@@ -14,25 +14,6 @@ autocmd("BufWritePost", {
 	end,
 })
 
-local function prettier(...)
-	local default_args = {
-		"--tab-width 4",
-		util.escape_path(util.get_current_buffer_file_path()),
-	}
-
-	for _, v in ipairs(arg) do
-		table.insert(default_args, v)
-	end
-
-	return function()
-		return {
-			exe = "prettier",
-			args = default_args,
-			stdin = true,
-		}
-	end
-end
-
 require("formatter").setup({
 	logging = true,
 	log_level = vim.log.levels.WARN,
@@ -46,27 +27,36 @@ require("formatter").setup({
 		rust = { require("formatter.filetypes.rust").rustfmt },
 		zsh = { require("formatter.filetypes.zsh").beautysh },
 		sh = { require("formatter.filetypes.sh").shfmt },
+		markdown = { require("formatter.filetypes.markdown").prettier },
+		mdx = { require("formatter.filetypes.markdown").prettier },
 		toml = { require("formatter.filetypes.toml").taplo },
+		yaml = { require("formatter.filetypes.yaml").prettier },
 		cpp = { require("formatter.filetypes.cpp").uncrustify },
 		c = { require("formatter.filetypes.c").uncrustify },
-
-		markdown = { prettier() },
-		mdx = { prettier() },
-		css = { prettier() },
-		json = { prettier() },
-		yaml = { prettier() },
-		javascript = { prettier() },
-		javascriptreact = { prettier() },
-		typescript = { prettier() },
-		typescriptreact = { prettier() },
-		astro = { prettier("--plugin prettier-plugin-astro") },
-		mjs = { prettier() },
-
+		css = { require("formatter.filetypes.css").prettier },
+		json = { require("formatter.filetypes.json").prettier },
+		javascript = { require("formatter.filetypes.javascript").prettier },
+		javascriptreact = { require("formatter.filetypes.javascriptreact").prettier },
+		typescript = { require("formatter.filetypes.typescript").prettier },
+		typescriptreact = { require("formatter.filetypes.typescriptreact").prettier },
 		templ = {
 			function()
 				return {
 					exe = "templ fmt",
 					args = {
+						util.escape_path(util.get_current_buffer_file_path()),
+					},
+					stdin = true,
+				}
+			end,
+		},
+		astro = {
+			function()
+				return {
+					exe = "prettier",
+					args = {
+						"--plugin prettier-plugin-astro",
+						"--tab-width 4",
 						util.escape_path(util.get_current_buffer_file_path()),
 					},
 					stdin = true,
