@@ -8,7 +8,7 @@ config.font = wezterm.font_with_fallback {
     'Fira Code Nerd Font',
 }
 
-config.enable_wayland = false
+config.enable_wayland = true
 config.default_cursor_style = 'SteadyBar'
 config.font_size = 15
 config.enable_tab_bar = false

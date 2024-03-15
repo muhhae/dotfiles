@@ -1,6 +1,13 @@
 vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
+	use({
+		"akinsho/flutter-tools.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim", -- optional for vim.ui.select
+		},
+	})
 	use("iamcco/markdown-preview.nvim")
 	use("nvim-pack/nvim-spectre")
 	use("rmagatti/auto-session")

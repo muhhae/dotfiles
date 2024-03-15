@@ -1,6 +1,6 @@
 import = [
-    "~/dotfiles/alacritty/colorschemes/catppuccin-mocha.toml", 
-    "~/dotfiles/alacritty/fonts.toml"
+  "~/dotfiles/alacritty/colorschemes/catppuccin-mocha.toml",
+  "~/dotfiles/alacritty/fonts.toml",
 ]
 
 live_config_reload = true
@@ -13,7 +13,7 @@ WINIT_X11_SCALE_FACTOR = "1"
 [window]
 position = "None"
 dynamic_padding = true
-decorations = "Full" # None | Full 
+decorations = "Full"
 opacity = 0.9
 blur = false
 startup_mode = "Maximized"
@@ -34,7 +34,9 @@ history = 10000
 multiplier = 3
 
 [bell]
-command = { program = "paplay", args = ["/usr/share/sounds/freedesktop/stereo/dialog-error.oga"] }
+command = { program = "paplay", args = [
+  "/usr/share/sounds/freedesktop/stereo/dialog-error.oga",
+] }
 
 ## SELECTION ------------------------------------------------------
 [selection]
@@ -58,13 +60,13 @@ hide_when_typing = false
 
 ## HINTS ----------------------------------------------------------
 [[hints.enabled]]
-command         = "xdg-open"
-hyperlinks      = true
+command = "xdg-open"
+hyperlinks = true
 post_processing = true
-persist         = false
-mouse.enabled   = true
-binding         = { key = "U", mods = "Control|Shift" }
-regex           = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩‘]+"
+persist = false
+mouse.enabled = true
+binding = { key = "U", mods = "Control|Shift" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩‘]+"
 
 ## DEBUG ----------------------------------------------------------
 [debug]
