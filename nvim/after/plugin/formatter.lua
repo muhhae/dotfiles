@@ -18,31 +18,35 @@ require("formatter").setup({
 	logging = true,
 	log_level = vim.log.levels.WARN,
 	filetype = {
-		python = { require("formatter.filetypes.python").black },
+		dart = { require("formatter.filetypes.dart").dartformat },
+		python = { require("formatter.filetypes.python").ruff },
 		lua = { require("formatter.filetypes.lua").stylua },
 		go = {
 			require("formatter.filetypes.go").goimports,
 			require("formatter.filetypes.go").gofumpt,
+			require("formatter.filetypes.go").golines,
 		},
 		rust = { require("formatter.filetypes.rust").rustfmt },
 		zsh = { require("formatter.filetypes.zsh").beautysh },
 		sh = { require("formatter.filetypes.sh").shfmt },
-		markdown = { require("formatter.filetypes.markdown").prettier },
-		mdx = { require("formatter.filetypes.markdown").prettier },
 		toml = { require("formatter.filetypes.toml").taplo },
-		yaml = { require("formatter.filetypes.yaml").prettier },
 		cpp = { require("formatter.filetypes.cpp").uncrustify },
 		c = { require("formatter.filetypes.c").uncrustify },
-		css = { require("formatter.filetypes.css").prettier },
-		json = { require("formatter.filetypes.json").prettier },
-		javascript = { require("formatter.filetypes.javascript").prettier },
-		javascriptreact = { require("formatter.filetypes.javascriptreact").prettier },
-		typescript = { require("formatter.filetypes.typescript").prettier },
-		typescriptreact = { require("formatter.filetypes.typescriptreact").prettier },
+
+		markdown = { require("formatter.filetypes.markdown").prettierd },
+		mdx = { require("formatter.filetypes.markdown").prettierd },
+		css = { require("formatter.filetypes.css").prettierd },
+		yaml = { require("formatter.filetypes.yaml").prettierd },
+
+		json = { require("formatter.filetypes.json").biome },
+		javascript = { require("formatter.filetypes.javascript").biome },
+		javascriptreact = { require("formatter.filetypes.javascriptreact").biome },
+		typescript = { require("formatter.filetypes.typescript").biome },
+		typescriptreact = { require("formatter.filetypes.typescriptreact").biome },
 		templ = {
 			function()
 				return {
-					exe = "templ fmt",
+					exe = "templ fmt -stdout",
 					args = {
 						util.escape_path(util.get_current_buffer_file_path()),
 					},
@@ -56,7 +60,6 @@ require("formatter").setup({
 					exe = "prettier",
 					args = {
 						"--plugin prettier-plugin-astro",
-						"--tab-width 4",
 						util.escape_path(util.get_current_buffer_file_path()),
 					},
 					stdin = true,

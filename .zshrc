@@ -68,6 +68,10 @@ plugins=(
     ls
     git
     zsh-autosuggestions
+    flutter
+    golang
+    rust
+    bun
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -107,3 +111,7 @@ alias cls="clear"
 alias cd="z"
 alias pacfzf="pacman -Ss | paste -d '' - - | fzf --multi --preview 'pacman -Si {1}' | cut -d ' ' -f 1 | xargs -ro pacman -Si"
 alias nv="nvim"
+alias nvc="z ~/.config/nvim && nvim"
+
+# bun completions
+[ -s "/home/muhhae/.bun/_bun" ] && source "/home/muhhae/.bun/_bun"

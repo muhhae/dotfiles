@@ -8,6 +8,7 @@ ln -sr $DIR/nvim $HOME/.config/.
 ln -sr $DIR/swaync $HOME/.config/.
 ln -sr $DIR/waybar $HOME/.config/.
 ln -sr $DIR/wezterm $HOME/.config/.
+ln -sr $DIR/kitty $HOME/.config/.
 ln -sr $DIR/xdg-desktop-portal $HOME/.config/.
 ln -sr $DIR/wofi $HOME/.config/.
 ln -sr $DIR/.zshrc $HOME/.

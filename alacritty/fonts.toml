@@ -4,26 +4,29 @@
 
 [font]
 ## Font size in points.
-size = 12
+size = 14
 
 ## When true, Alacritty will use a custom built-in font for box drawing characters and powerline symbols.
 builtin_box_drawing = true
- 
+
 ## Normal font family.
-[font.normal] 
+[font.normal]
 family = "JetBrainsMono Nerd Font"
+style = "medium"
 
-# If the family is not specified, it will fall back to the value specified for the normal font.
-[font.bold]
-family = "JetBrainsMono Nerd Font"
-
-## If the family is not specified, it will fall back to the value specified for the normal font.
-[font.italic]
-family = "JetBrainsMono Nerd Font"
-
-## If the family is not specified, it will fall back to the value specified for the normal font.
-[font.bold_italic]
-family = "JetBrainsMono Nerd Font"
+# # If the family is not specified, it will fall back to the value specified for the normal font.
+# [font.bold]
+# family = "JetBrainsMono Nerd Font"
+# style = "bold"
+#
+# ## If the family is not specified, it will fall back to the value specified for the normal font.
+# [font.italic]
+# family = "JetBrainsMono Nerd Font"
+# style = "italic"
+#
+# ## If the family is not specified, it will fall back to the value specified for the normal font.
+# [font.bold_italic]
+# family = "JetBrainsMono Nerd Font"
 
 ## Offset is the extra space around each character.
 ## 'y' can be thought of as modifying the line spacing, and 'x' as modifying the letter spacing.
