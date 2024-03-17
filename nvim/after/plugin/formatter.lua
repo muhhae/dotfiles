@@ -30,8 +30,8 @@ require("formatter").setup({
 		zsh = { require("formatter.filetypes.zsh").beautysh },
 		sh = { require("formatter.filetypes.sh").shfmt },
 		toml = { require("formatter.filetypes.toml").taplo },
-		cpp = { require("formatter.filetypes.cpp").uncrustify },
-		c = { require("formatter.filetypes.c").uncrustify },
+		cpp = { require("formatter.filetypes.cpp").astyle },
+		c = { require("formatter.filetypes.c").astyle },
 
 		markdown = { require("formatter.filetypes.markdown").prettierd },
 		mdx = { require("formatter.filetypes.markdown").prettierd },
