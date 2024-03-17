@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set('n', '<leader>.', ':Neotree<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>.", ":Neotree<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -18,8 +18,8 @@ vim.keymap.set({ "n", "v" }, "<C-S-C>", '"+y')
 vim.keymap.set({ "n", "v" }, "<C-S-V>", '"+p')
 vim.keymap.set({ "n", "v" }, "<C-S-X>", '"+x')
 
-vim.keymap.set('c', '<C-S-V>', '<C-R>+')
-vim.keymap.set('i', '<C-S-V>', '<ESC>"+pli')
+vim.keymap.set("c", "<C-S-V>", "<C-R>+")
+vim.keymap.set("i", "<C-S-V>", '<ESC>"+pli')
 
 -- This is going to get me cancelled
 vim.keymap.set({ "i", "v" }, "<C-c>", "<Esc>")
@@ -35,15 +35,15 @@ vim.keymap.set({ "n" }, "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Le
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+	vim.cmd("so")
 end)
 
 vim.keymap.set("n", "<C-q>", "<C-v>")
 
 vim.keymap.set("n", "<leader>ww", "<cmd>w<CR>")
 vim.keymap.set("n", "<leader>wq", "<cmd>wq<CR>")
-vim.keymap.set("n", "<leader>qq", "<cmd>q<CR>")
-vim.keymap.set("n", "<leader>qa", "<cmd>qa!<CR>")
+vim.keymap.set("n", "<leader>q", "<cmd>q<CR>")
+vim.keymap.set("n", "<leader>aq", "<cmd>qa!<CR>")
 
 -- TAB
 vim.keymap.set("n", "<leader>tt", "<cmd>tabnew<CR>", { desc = "New Tab" })
