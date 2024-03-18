@@ -1,75 +1,77 @@
 @import url("/home/muhhae/dotfiles/colorscheme/current.css");
 
 * {
-    outline-style: none;
-    border: none;
-    font-family: Symbols Nerd Font Mono, JetBrainsMono;
-    font-size: 12px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
-    border-radius: 0;
+  outline-style: none;
+  border: none;
+  font-family:
+    Symbols Nerd Font Mono,
+    JetBrainsMono Nerd Font;
+  font-size: 12px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
+  border-radius: 0;
 }
 
 tooltip {
-    background: @background;
-    border: 1px solid @blue;
-    border-radius: 4px;
+  background: @background;
+  border: 1px solid @blue;
+  border-radius: 4px;
 }
 
 tooltip label {
-    padding: 4px;
-    color: white;
+  padding: 4px;
+  color: white;
 }
 
 window#waybar {
-    border-radius: 0px;
-    background-color: alpha(@background, 0.0);
+  border-radius: 0px;
+  background-color: alpha(@background, 0);
 }
 
 #workspaces button {
-    border: 0;
-    border-radius: 0;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-    margin: 0;
-    padding: 0;
+  border: 0;
+  border-radius: 0;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  margin: 0;
+  padding: 0;
 }
 
 #workspaces button:hover {
-    border-top: 3px solid @foreground;
+  border-top: 3px solid @foreground;
 }
 
 #workspaces button.active {
-    border-top: 3px solid @foreground;
+  border-top: 3px solid @foreground;
 }
 
 #tray {
-    margin-right: 0px;
+  margin-right: 0px;
 }
 
 #cpu,
 #memory,
 #disk {
-    margin-left: 0px;
-    margin-right: 10px;
+  margin-left: 0px;
+  margin-right: 10px;
 }
 
 @keyframes blink {
-    to {
-        color: orange;
-    }
+  to {
+    color: orange;
+  }
 }
 
 #battery.warning:not(.charging) {
-    color: white;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  color: white;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #custom-powermenu {
-    margin-right: 8px;
+  margin-right: 8px;
 }

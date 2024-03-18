@@ -1,216 +1,197 @@
 {
-    "reload_style_on_change": "true",
-    "margin": "0 2 0 2",
-    "fixed-center": "true",
-    "layer": "top",
-    "position": "top",
-    "spacing": 12,
-    "modules-left": [
-        "hyprland/workspaces",
-        "group/hardware"
-    ],
-    "modules-center": [
-        "cava",
-        "custom/spotify"
-    ],
-    "modules-right": [
-        "network",
-        "battery",
-        "tray",
-        "clock",
-        "custom/notification",
-        "custom/powermenu"
-    ],
-    "group/hardware": {
-        "orientation": "inherit",
-        "modules": [
-            "cpu",
-            "memory",
-            "disk",
-            "custom/gpu"
-        ]
-    },
-    "custom/arch-icon": {
-        "format": "<span size='large'></span>",
-        "on-click": "pkill rofi || rofi-launcher"
-    },
-    "hyprland/workspaces": {
-        "on-click": "activate",
-        "disable-scroll": false,
-        "on-scroll-up": "hyprctl dispatch workspace +1",
-        "on-scroll-down": "hyprctl dispatch workspace -1",
-        "persistent-workspaces": {
-            "*": 8
-        },
-        "format": "<span size='large'>{}</span>",
-        "format-icons": {
-            "empty": "",
-            "default": ""
-        },
-        "window-rewrite-default": "",
-        "format-window-separator": " ",
-        "window-rewrite": {
-            "class<firefox>": "<span foreground='#ff9e64'></span>",
-            "class<org.wezfurlong.alacritty> title<.*nvim.*>": "<span foreground='#66ac44'></span>",
-            "class<alacritty> title<.*nvim.*>": "<span foreground='#66ac44'></span>",
-            "class<neovide>": "<span foreground='#66ac44'></span>",
-            "class<alacritty>": "<span foreground='#81A1C1'></span>",
-            "class<org.wezfurlong.alacritty>": "<span foreground='#81A1C1'></span>",
-            "spotify": "<span foreground='#1ed760'></span>",
-            "class<discord>": "<span foreground='#5865f2'>󰙯</span>",
-            "class<ferdium>": "<span foreground='#5865f2'>󰭹</span>",
-            "class<rambox>": "<span foreground='#5865f2'>󰭹</span>"
-        }
-    },
-    "tray": {
-        "spacing": 10
-    },
-    "clock": {
-        "locale": "en_US.UTF-8",
-        "interval": 1,
-        "format": "{:%a, %d %b %Y | %H:%M:%S}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode": "month",
-            "mode-mon-col": 3,
-            "weeks-pos": "right",
-            "on-scroll": 1,
-            "on-click-right": "mode",
-            "format": {
-                "months": "<span color='#ffead3'><b>{}</b></span>",
-                "days": "<span color='#ecc6d9'><b>{}</b></span>",
-                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
-                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-            }
-        },
-        "actions": {
-            "on-click-right": "mode",
-            "on-click-forward": "tz_up",
-            "on-click-backward": "tz_down",
-            "on-scroll-up": "shift_up",
-            "on-scroll-down": "shift_down"
-        }
-    },
-    "cpu": {
-        "on-click-release": "alacritty -e btop",
-        "interval": 5,
-        "format": "<span foreground='#e0af68'> </span> {usage}%",
-        "tooltip": false
-    },
-    "memory": {
-        "on-click-release": "alacritty -e btop",
-        "interval": 5,
-        "format": "<span foreground='#ad8ee6'> </span>{used}/{total}"
-    },
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "<span size='large'>{icon}</span> {capacity}%",
-        "format-charging": " <span size='large'>{icon}</span> {capacity}% ",
-        "format-plugged": "  <span size='large'>{icon}</span> {capacity}%",
-        "format-icons": [
-            "<span foreground='#f7768e'></span>",
-            "<span foreground='#e0af68'></span>",
-            "<span foreground='#e0af68'></span>",
-            "<span foreground='#9ece6a'></span>",
-            "<span foreground='#9ece6a'></span>"
-        ]
-    },
-    "disk": {
-        "on-click-release": "baobab",
-        "interval": 30,
-        "format": "<span foreground='#0db9d7'>󰆼</span> {free}",
-        "path": "/"
-    },
-    "network": {
-        "on-click-release": "pkill wofi || networkmanager_dmenu",
-        "intervalfalse": 2,
-        "format-wifi": " {bandwidthUpBytes}  {bandwidthDownBytes}  <span size='large'>{icon}</span>",
-        "format-ethernet": "󰑩",
-        "format-disconnected": "󰤭",
-        "format-icons": [
-            "<span foreground='#f7768e'>󰤯</span>",
-            "<span foreground='#e0af68'>󰤟</span>",
-            "<span foreground='#e0af68'>󰤢</span>",
-            "<span foreground='#9ece6a'>󰤥</span>",
-            "<span foreground='#9ece6a'>󰤨</span>"
-        ],
-        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "{ifname} ",
-        "tooltip-format-disconnected": "Disconnected"
-    },
-    "custom/spotify": {
-        "format": "{}",
-        //"format": "<span foreground='#1ed760'> </span> {}",
-        "restart-interval": 1,
-        "on-click": "playerctl -p spotify play-pause",
-        "on-scroll-up": "playerctl -p spotify next",
-        "on-scroll-down": "playerctl -p spotify previous",
-        "exec": "$HOME/dotfiles/waybar/scroll_spotify_status.sh 2> /dev/null"
-    },
-    "custom/powermenu": {
-        "format": "<span color='#f7768e'>⏻</span>",
-        "on-click-release": "pkill wofi || wofi-powermenu.sh"
-    },
-    "custom/notification": {
-        "tooltip": false,
-        "format": "{icon}",
-        "format-icons": {
-            "notification": "<span foreground='red'><sup></sup></span>",
-            "none": "",
-            "dnd-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-none": "",
-            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "inhibited-none": "",
-            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-inhibited-none": ""
-        },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click-release": "swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
-        "escape": true
-    },
-    "custom/gpu": {
-        "on-click-release": "alacritty -e nvtop",
-        "format": "<span foreground='#1ed760'> </span>NVIDIA {}%",
-        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
-        "interval": 5
-    },
-    "cava": {
-        "framerate": 30,
-        "autosens": 1,
-        "sensitivity": 100,
-        "bars": 14,
-        "lower_cutoff_freq": 50,
-        "higher_cutoff_freq": 10000,
-        "method": "pulse",
-        "source": "auto",
-        "stereo": true,
-        "reverse": false,
-        "bar_delimiter": 0,
-        "monstercat": false,
-        "waves": false,
-        "noise_reduction": 0.77,
-        "input_delay": 2,
-        "format-icons": [
-            "▁",
-            "▂",
-            "▃",
-            "▄",
-            "▅",
-            "▆",
-            "▇",
-            "█"
-        ],
-        "actions": {
-            "on-click-right": "mode"
-        }
-    }
+	"reload_style_on_change": true,
+	"margin": "0 2 0 2",
+	"fixed-center": "true",
+	"layer": "top",
+	"position": "top",
+	"spacing": 12,
+	"modules-left": ["hyprland/workspaces", "group/hardware"],
+	"modules-center": ["cava", "custom/spotify"],
+	"modules-right": [
+		"network",
+		"pulseaudio",
+		"battery",
+		"tray",
+		"clock",
+		"custom/notification",
+		"custom/powermenu"
+	],
+	"pulseaudio": {
+		"format": "<span size='large'>{icon}</span> {volume}%",
+		"format-muted": "<span size='large'>󰝟</span>",
+		"format-icons": ["󰕿", "󰖀", "󰕾"]
+	},
+	"group/hardware": {
+		"orientation": "inherit",
+		"modules": ["cpu", "memory", "disk", "custom/gpu"]
+	},
+	"hyprland/workspaces": {
+		"on-click": "activate",
+		"disable-scroll": false,
+		"on-scroll-up": "hyprctl dispatch workspace +1",
+		"on-scroll-down": "hyprctl dispatch workspace -1",
+		"persistent-workspaces": {
+			"*": 8
+		},
+		"format": "<span size='large'>{}</span>",
+		"format-icons": {
+			"empty": "",
+			"default": ""
+		},
+		"window-rewrite-default": "",
+		"format-window-separator": " ",
+		"window-rewrite": {
+			"class<firefox>": "<span foreground='#ff9e64'></span>",
+			"class<org.wezfurlong.alacritty> title<.*nvim.*>": "<span foreground='#66ac44'></span>",
+			"class<alacritty> title<.*nvim.*>": "<span foreground='#66ac44'></span>",
+			"class<neovide>": "<span foreground='#66ac44'></span>",
+			"class<alacritty>": "<span foreground='#81A1C1'></span>",
+			"class<org.wezfurlong.alacritty>": "<span foreground='#81A1C1'></span>",
+			"spotify": "<span foreground='#1ed760'></span>",
+			"class<discord>": "<span foreground='#5865f2'>󰙯</span>",
+			"class<ferdium>": "<span foreground='#5865f2'>󰭹</span>",
+			"class<rambox>": "<span foreground='#5865f2'>󰭹</span>"
+		}
+	},
+	"tray": {
+		"spacing": 10
+	},
+	"clock": {
+		"locale": "en_US.UTF-8",
+		"interval": 1,
+		"format": "{:%a, %d %b %Y | %H:%M:%S}",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"weeks-pos": "right",
+			"on-scroll": 1,
+			"on-click-right": "mode",
+			"format": {
+				"months": "<span color='#ffead3'><b>{}</b></span>",
+				"days": "<span color='#ecc6d9'><b>{}</b></span>",
+				"weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+				"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+				"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+			}
+		},
+		"actions": {
+			"on-click-right": "mode",
+			"on-click-forward": "tz_up",
+			"on-click-backward": "tz_down",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down"
+		}
+	},
+	"cpu": {
+		"on-click-release": "alacritty -e btop",
+		"interval": 5,
+		"format": "<span foreground='#e0af68'> </span> {usage}%",
+		"tooltip": false
+	},
+	"memory": {
+		"on-click-release": "alacritty -e btop",
+		"interval": 5,
+		"format": "<span foreground='#ad8ee6'> </span>{used}/{total}"
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "<span size='large'>{icon}</span> {capacity}%",
+		"format-charging": " <span size='large'>{icon}</span> {capacity}% ",
+		"format-plugged": "  <span size='large'>{icon}</span> {capacity}%",
+		"format-icons": [
+			"<span foreground='#f7768e'></span>",
+			"<span foreground='#e0af68'></span>",
+			"<span foreground='#e0af68'></span>",
+			"<span foreground='#9ece6a'></span>",
+			"<span foreground='#9ece6a'></span>"
+		]
+	},
+	"disk": {
+		"on-click-release": "baobab",
+		"interval": 30,
+		"format": "<span foreground='#0db9d7'>󰆼</span> {free}",
+		"path": "/"
+	},
+	"network": {
+		"on-click-release": "pkill wofi || networkmanager_dmenu",
+		"intervalfalse": 2,
+		"format-wifi": " {bandwidthUpBytes}  {bandwidthDownBytes}  <span size='large'>{icon}</span>",
+		"format-ethernet": "󰑩",
+		"format-disconnected": "󰤭",
+		"format-icons": [
+			"<span foreground='#f7768e'>󰤯</span>",
+			"<span foreground='#e0af68'>󰤟</span>",
+			"<span foreground='#e0af68'>󰤢</span>",
+			"<span foreground='#9ece6a'>󰤥</span>",
+			"<span foreground='#9ece6a'>󰤨</span>"
+		],
+		"tooltip-format": "{ifname} via {gwaddr} 󰊗",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+		"tooltip-format-ethernet": "{ifname} ",
+		"tooltip-format-disconnected": "Disconnected"
+	},
+	"custom/spotify": {
+		"format": "{}",
+		"restart-interval": 1,
+		"on-click": "playerctl -p spotify play-pause",
+		"on-scroll-up": "playerctl -p spotify next",
+		"on-scroll-down": "playerctl -p spotify previous",
+		"exec": "$HOME/dotfiles/waybar/scroll_spotify_status.sh 2> /dev/null"
+	},
+	"custom/powermenu": {
+		"format": "<span color='#f7768e'>⏻</span>",
+		"on-click-release": "pkill wofi || wofi-powermenu.sh"
+	},
+	"custom/notification": {
+		"tooltip": false,
+		"format": "{icon}",
+		"format-icons": {
+			"notification": "<span foreground='red'><sup></sup></span>",
+			"none": "",
+			"dnd-notification": "<span foreground='red'><sup></sup></span>",
+			"dnd-none": "",
+			"inhibited-notification": "<span foreground='red'><sup></sup></span>",
+			"inhibited-none": "",
+			"dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+			"dnd-inhibited-none": ""
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click-release": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	},
+	"custom/gpu": {
+		"on-click-release": "alacritty -e nvtop",
+		"format": "<span foreground='#1ed760'> </span>NVIDIA {}%",
+		"exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+		"interval": 5
+	},
+	"cava": {
+		"framerate": 30,
+		"autosens": 1,
+		"sensitivity": 100,
+		"bars": 14,
+		"lower_cutoff_freq": 50,
+		"higher_cutoff_freq": 10000,
+		"method": "pulse",
+		"source": "auto",
+		"stereo": true,
+		"reverse": false,
+		"bar_delimiter": 0,
+		"monstercat": false,
+		"waves": false,
+		"noise_reduction": 0.77,
+		"input_delay": 2,
+		"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+		"actions": {
+			"on-click-right": "mode"
+		}
+	}
 }
