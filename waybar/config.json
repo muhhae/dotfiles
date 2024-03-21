@@ -9,8 +9,8 @@
 	"modules-center": ["cava", "custom/spotify"],
 	"modules-right": [
 		"network",
-		"pulseaudio",
 		"battery",
+		"pulseaudio",
 		"tray",
 		"clock",
 		"custom/notification",
@@ -19,6 +19,7 @@
 	"pulseaudio": {
 		"format": "<span size='large'>{icon}</span> {volume}%",
 		"format-muted": "<span size='large'>󰝟</span>",
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"format-icons": ["󰕿", "󰖀", "󰕾"]
 	},
 	"group/hardware": {
