@@ -111,7 +111,15 @@ alias cls="clear"
 alias cd="z"
 alias pacfzf="pacman -Ss | paste -d '' - - | fzf --multi --preview 'pacman -Si {1}' | cut -d ' ' -f 1 | xargs -ro pacman -Si"
 alias nv="nvim"
-alias nvc="z ~/.config/nvim && nvim"
+alias nvc="z ~/dotfiles/nvim && nvim"
+alias py="ipython"
+
+alias pgstrt="\
+    d=$(pwd)\
+    z personal\
+    echo $(pwd)\
+    z $d\
+    echo $(pwd)"
 
 # bun completions
 [ -s "/home/muhhae/.bun/_bun" ] && source "/home/muhhae/.bun/_bun"
