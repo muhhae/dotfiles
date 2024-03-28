@@ -123,3 +123,11 @@ alias pgstrt="\
 
 # bun completions
 [ -s "/home/muhhae/.bun/_bun" ] && source "/home/muhhae/.bun/_bun"
+
+# Turso
+export PATH="/home/muhhae/.turso:$PATH"
+
+eval "$(gptcli alias)"
+
+# Created by `pipx` on 2024-03-26 23:29:01
+export PATH="$PATH:/home/muhhae/.local/bin"

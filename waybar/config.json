@@ -18,7 +18,7 @@
 	],
 	"pulseaudio": {
 		"format": "<span size='large'>{icon}</span> {volume}%",
-		"format-muted": "<span size='large'>󰝟</span>",
+		"format-muted": "<span size='large'>󰝟</span> {volume}%",
 		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"format-icons": ["󰕿", "󰖀", "󰕾"]
 	},
