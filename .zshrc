@@ -127,6 +127,8 @@ alias pgstrt="\
 # Turso
 export PATH="/home/muhhae/.turso:$PATH"
 
+export CHROME_EXECUTABLE="firefox"
+
 eval "$(gptcli alias)"
 
 # Created by `pipx` on 2024-03-26 23:29:01

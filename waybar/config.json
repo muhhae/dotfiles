@@ -1,6 +1,6 @@
 {
 	"reload_style_on_change": true,
-	"margin": "0 2 0 2",
+	"margin": "10 10 0 10",
 	"fixed-center": "true",
 	"layer": "top",
 	"position": "top",
