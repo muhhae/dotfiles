@@ -1,16 +1,19 @@
 # My Personal Linux Config
- 
-## Screenshoot
-![Screenshoot](./screenshoot/7.png)
-![Screenshoot](./screenshoot/8.png)
-![Screenshoot](./screenshoot/9.png)
-![Screenshoot](./screenshoot/10.png)
-![Screenshoot](./screenshoot/11.png)
+
+## Screenshot
+
+![Screenshot](./screenshoot/12.png)
 
 ## Old
-![Screenshoot](./screenshoot/4.png)
-![Screenshoot](./screenshoot/5.png)
-![Screenshoot](./screenshoot/6.png)
-![Screenshoot](./screenshoot/3.png)
-![Screenshoot](./screenshoot/1.png)
-![Screenshoot](./screenshoot/2.png)
+
+![Screenshot](./screenshoot/7.png)
+![Screenshot](./screenshoot/8.png)
+![Screenshot](./screenshoot/9.png)
+![Screenshot](./screenshoot/10.png)
+![Screenshot](./screenshoot/11.png)
+![Screenshot](./screenshoot/4.png)
+![Screenshot](./screenshoot/5.png)
+![Screenshot](./screenshoot/6.png)
+![Screenshot](./screenshoot/3.png)
+![Screenshot](./screenshoot/1.png)
+![Screenshot](./screenshoot/2.png)
