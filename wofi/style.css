@@ -1,68 +1,68 @@
 @import url("/home/muhhae/dotfiles/colorscheme/current.css");
 
 * {
-    outline-style: none;
-    border: none;
-    background: transparent;
-    font-family: JetBrainsMono Nerd Font;
-    font-size: 20px;
+  outline-style: none;
+  border: none;
+  background: transparent;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 20px;
 }
 
 window {
-    /* box-shadow: 0 0 10 20 @altblack; */
-    border-radius: 10px;
-    margin: 0px;
-    border: 0px solid @altblack;
-    background-color: @black;
+  /* box-shadow: 0 0 10 20 @altblack; */
+  border-radius: 10px;
+  margin: 0px;
+  border: 2px solid @altblack;
+  background-color: @black;
 }
 
 #input {
-    border-radius: 10px;
-    padding: 10px;
-    margin: 5px;
-    border: none;
-    color: @foreground;
-    background-color: @altblack;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  color: @foreground;
+  background-color: @altblack;
 }
 
 #inner-box {
-    margin: 5px;
-    border: none;
-    background-color: @black;
+  margin: 5px;
+  border: none;
+  background-color: @black;
 }
 
 #outer-box {
-    margin: 5px;
-    border: none;
-    background-color: @black;
+  margin: 5px;
+  border: none;
+  background-color: @black;
 }
 
 #scroll {
-    margin: 0px;
-    border: none;
+  margin: 0px;
+  border: none;
 }
 
 #text {
-    margin: 5px;
-    border: none;
-    color: @foreground;
+  margin: 5px;
+  border: none;
+  color: @foreground;
 }
 
 #entry.activatable #text {
-    color: @white;
+  color: @white;
 }
 
-#entry>* {
-    padding: 5px;
-    color: #f8f8f2;
+#entry > * {
+  padding: 5px;
+  color: #f8f8f2;
 }
 
 #entry:selected {
-    border-radius: 20px;
-    background-color: @altblack;
+  border-radius: 20px;
+  background-color: @altblack;
 }
 
 #entry:selected #text {
-    font-style: italic;
-    font-weight: bold;
+  /* font-style: italic; */
+  font-weight: bold;
 }

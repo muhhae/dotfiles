@@ -13,4 +13,4 @@ content_halign=fill
 insensitive=true
 image_size=40
 gtk_dark=true
-dynamic_lines=true
+dynamic_lines=false
