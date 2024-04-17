@@ -3,13 +3,13 @@
 while true
 do
     level=`cat /sys/class/power_supply/BAT1/capacity`
-    status=`cat /sys/class/power_supply/BAT1/status`
+    status=`cat /sys/class/power_supply/ADP1/online`
 
-    if [[ $level -le 30 && $status != "Charging" ]]
+    if [[ $level -le 30 && $status != 1 ]]
     then
         notify-send \
             "Battery is fucking low"\
-            "Current battery level is ${level}% , Plug the fkin charger"\
+            "Current battery level is ${level}% , Plug the damn charger"\
             -u critical\
             -i battery-caution\
             -w

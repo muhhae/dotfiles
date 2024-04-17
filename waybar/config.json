@@ -102,8 +102,8 @@
 			"critical": 15
 		},
 		"format": "<span size='large'>{icon}</span> {capacity}%",
-		"format-charging": " <span size='large'>{icon}</span> {capacity}% ",
-		"format-plugged": "  <span size='large'>{icon}</span> {capacity}%",
+		"format-charging": "<span size='large'> {icon}</span> {capacity}% ",
+		"format-plugged": "<span size='large'> {icon}</span> {capacity}%",
 		"format-icons": [
 			"<span foreground='#f7768e'></span>",
 			"<span foreground='#e0af68'></span>",

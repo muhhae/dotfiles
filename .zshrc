@@ -5,8 +5,6 @@ export ZSH="$HOME/.oh-my-zsh"
 source $HOME/dotfiles/gitstatus/gitstatus.prompt.zsh
 ZSH_THEME="personal"
 
-# ZSH_THEME="agnoster"
-
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
