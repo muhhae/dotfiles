@@ -110,9 +110,9 @@ alias cd="z"
 alias pacfzf="pacman -Ss | paste -d '' - - | fzf --multi --preview 'pacman -Si {1}' | cut -d ' ' -f 1 | xargs -ro pacman -Si"
 alias nv="nvim"
 alias vi="nvim"
-alias vim="nvim"
 alias nvc="z ~/dotfiles/nvim && nvim"
 alias py="ipython"
+alias check_power="while true; do sleep 1 && cat /sys/class/power_supply/ADP1/online; done"
 
 alias pgstrt="\
     d=$(pwd)\
