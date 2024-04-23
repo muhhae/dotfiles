@@ -101,6 +101,7 @@
 			"warning": 30,
 			"critical": 15
 		},
+		"interval": 60,
 		"format": "<span size='large'>{icon}</span> {capacity}%",
 		"format-charging": "<span size='large'> {icon}</span> {capacity}% ",
 		"format-plugged": "<span size='large'> {icon}</span> {capacity}%",

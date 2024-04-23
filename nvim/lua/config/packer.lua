@@ -1,6 +1,7 @@
 vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
+	use("oxfist/night-owl.nvim")
 	use({
 		"akinsho/flutter-tools.nvim",
 		requires = {
