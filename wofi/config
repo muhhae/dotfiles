@@ -1,4 +1,4 @@
-allow_images = true
+allow_images=true
 width=600
 height=600
 location=center
@@ -13,4 +13,5 @@ content_halign=fill
 insensitive=true
 image_size=40
 gtk_dark=true
-dynamic_lines=false
+dynamic_lines=true
+hide_scroll=true
