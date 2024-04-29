@@ -143,7 +143,7 @@
 		"on-click": "playerctl -p spotify play-pause",
 		"on-scroll-up": "playerctl -p spotify next",
 		"on-scroll-down": "playerctl -p spotify previous",
-		"exec": "$HOME/dotfiles/waybar/scroll_spotify_status.sh 2> /dev/null"
+		"exec": "$HOME/dotfiles/waybar/get_spotify_status.sh 2> /dev/null"
 	},
 	"custom/powermenu": {
 		"format": "<span color='#f7768e'>⏻</span>",
