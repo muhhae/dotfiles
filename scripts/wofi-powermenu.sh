@@ -2,7 +2,7 @@
 
 entries="⇠ Logout\n⏾ Suspend\n Lock\n⭮ Reboot\n⏻ Shutdown"
 
-selected=$(echo -e $entries|wofi --dmenu -H 345 -W 200 --cache-file /dev/null | awk '{print tolower($2)}')
+selected=$(echo -e $entries|wofi --dmenu -W 160 -L 6 --cache-file /dev/null | awk '{print tolower($2)}')
 
 case $selected in
   logout)
@@ -14,5 +14,5 @@ case $selected in
   shutdown)
     exec systemctl poweroff -i;;
   lock)
-    exec swaylock;;
+    exec hyprlock;;
 esac
