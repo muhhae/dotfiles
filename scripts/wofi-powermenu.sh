@@ -1,8 +1,8 @@
 #!/bin/bash
 
-entries="⇠ Logout\n⏾ Suspend\n Lock\n⭮ Reboot\n⏻ Shutdown"
+entries="⇠ Logout\n⏾ Suspend\n󰒲 Hibernate\n Lock\n⭮ Reboot\n⏻ Shutdown"
 
-selected=$(echo -e $entries|wofi --dmenu -W 160 -L 6 --cache-file /dev/null | awk '{print tolower($2)}')
+selected=$(echo -e $entries|wofi --dmenu -W 160 -H 410 --cache-file /dev/null | awk '{print tolower($2)}')
 
 case $selected in
   logout)
@@ -15,4 +15,6 @@ case $selected in
     exec systemctl poweroff -i;;
   lock)
     exec hyprlock;;
+  hibernate)
+    exec systemctl hibernate;;
 esac

@@ -62,7 +62,7 @@ window#waybar {
   border-radius: 0 0 4 4;
   padding-left: 50px;
   padding-right: 50px;
-  background-color: alpha(@background, 1);
+  background-color: alpha(@background, 0.8);
 }
 
 #workspaces button:hover {
