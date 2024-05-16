@@ -73,31 +73,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
@@ -109,6 +86,7 @@ alias vi="nvim"
 alias nvc="z ~/dotfiles/nvim && nvim"
 alias py="ipython"
 alias check_power="while true; do cat /sys/class/power_supply/ADP1/online && sleep 1; done"
+alias g++="g++ -std=c++17"
 
 alias pgstrt="\
     d=$(pwd)\
@@ -127,3 +105,5 @@ export CHROME_EXECUTABLE="firefox"
 
 # Created by `pipx` on 2024-03-26 23:29:01
 export PATH="$PATH:/home/muhhae/.local/bin"
+
+source ~/.personal-alias
