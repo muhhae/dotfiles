@@ -107,6 +107,7 @@ export CHROME_EXECUTABLE="firefox"
 export PATH="$PATH:/home/muhhae/.local/bin"
 
 source ~/.personal-alias
-alias catat="cd /home/muhhae/Documents/data-kuliah/ && git add -A && git commit -m 'update' && git push; cd /home/muhhae/Documents/Catatan && git add -A && git commit -m 'update' && git push"
+alias catat="export DIR=$(pwd -P); cd /home/muhhae/Documents/data-kuliah/ && git add -A && git commit -m 'update' && git push; cd /home/muhhae/Documents/Catatan && git add -A && git commit -m 'update' && git push; cd $DIR"
+alias ino="arduino-cli"
 
 export PATH=$PATH:/home/muhhae/.spicetify
