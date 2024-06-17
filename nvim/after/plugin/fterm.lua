@@ -148,6 +148,10 @@ local function go_runner()
 	end)
 end
 
+local function ino_flash()
+	run("arduino-cli compile && arduino-cli upload", false)
+end
+
 local runners = {
 	lua = function(buf)
 		return "lua " .. buf
@@ -170,6 +174,7 @@ local runners = {
 	c = function(buf)
 		return "gcc -o tmp " .. buf .. " && ./tmp && rm ./tmp"
 	end,
+	arduino = ino_flash,
 }
 
 vim.keymap.set("n", "<leader><Enter>", function()

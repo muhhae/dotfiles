@@ -18,6 +18,7 @@ require("formatter").setup({
 	logging = true,
 	log_level = vim.log.levels.WARN,
 	filetype = {
+		java = { require("formatter.filetypes.java").google_java_format },
 		dart = { require("formatter.filetypes.dart").dartformat },
 		python = { require("formatter.filetypes.python").ruff },
 		lua = { require("formatter.filetypes.lua").stylua },
