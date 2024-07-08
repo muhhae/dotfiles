@@ -171,6 +171,9 @@ local runners = {
 	cpp = function(buf)
 		return "g++ -o tmp " .. buf .. " && ./tmp && rm ./tmp"
 	end,
+	java = function(buf)
+		return "java " .. buf
+	end,
 	c = function(buf)
 		return "gcc -o tmp " .. buf .. " && ./tmp && rm ./tmp"
 	end,
