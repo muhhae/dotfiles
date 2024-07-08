@@ -105,6 +105,7 @@ export CHROME_EXECUTABLE="firefox"
 
 # Created by `pipx` on 2024-03-26 23:29:01
 export PATH="$PATH:/home/muhhae/.local/bin"
+export PATH="$PATH:$HOME/.pub-cache/bin"
 
 source ~/.personal-alias
 alias catat="export DIR=$(pwd -P); cd /home/muhhae/Documents/data-kuliah/ && git add -A && git commit -m 'update' && git push; cd /home/muhhae/Documents/Catatan && git add -A && git commit -m 'update' && git push; cd $DIR"
