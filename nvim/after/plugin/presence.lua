@@ -10,7 +10,7 @@ presence.setup({
 	-- Log messages at or above this level (one of the following: "debug", "info", "warn", "error")
 	debounce_timeout = 10,
 	-- Number of seconds to debounce events (or calls to `:lua package.loaded.presence:update(<filename>, true)`)
-	enable_line_number = false,
+	enable_line_number = true,
 	-- Displays the current line number instead of the current project
 	blacklist = {},
 	-- A list of strings or Lua patterns that disable Rich Presence if the current file name, path, or workspace matches
