@@ -16,3 +16,4 @@ ln -sr $DIR/alacritty $HOME/.config/.
 ln -sr $DIR/networkmanager-dmenu $HOME/.config/.
 ln -sr $DIR/zsh-theme/* $HOME/.oh-my-zsh/themes/
 ln -sr $DIR/spicetify $HOME/.config/.
+ln -sr $DIR/walker $HOME/.config/.
