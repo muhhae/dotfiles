@@ -61,7 +61,7 @@ ZSH_THEME="personal"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    z
+#    z
     ls
     git
     zsh-autosuggestions
@@ -112,3 +112,6 @@ alias catat="export DIR=$(pwd -P); cd /home/muhhae/Documents/data-kuliah/ && git
 alias ino="arduino-cli"
 
 export PATH=$PATH:/home/muhhae/.spicetify
+export EDITOR=nvim
+
+eval "$(zoxide init zsh)"
