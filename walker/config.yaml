@@ -1,0 +1,99 @@
+builtins:
+  applications:
+    actions: true
+    context_aware: true
+    name: applications
+    placeholder: Applications
+    prioritize_new: true
+    refresh: true
+  clipboard:
+    image_height: 300
+    max_entries: 10
+    name: clipboard
+    placeholder: Clipboard
+    switcher_only: true
+  commands:
+    name: commands
+    placeholder: Commands
+    switcher_only: true
+  custom_commands:
+    name: custom_commands
+    placeholder: Custom Commands
+  dmenu:
+    name: dmenu
+    placeholder: Dmenu
+    switcher_only: true
+  emojis:
+    history: true
+    name: emojis
+    placeholder: Emojis
+    switcher_only: true
+    typeahead: true
+  finder:
+    concurrency: 8
+    ignore_gitignore: true
+    name: finder
+    placeholder: Finder
+    refresh: true
+    switcher_only: true
+  runner:
+    generic_entry: false
+    history: true
+    name: runner
+    placeholder: Runner
+    refresh: true
+    typeahead: true
+  ssh:
+    history: true
+    name: ssh
+    placeholder: SSH
+    refresh: true
+    switcher_only: true
+  switcher:
+    name: switcher
+    placeholder: Switcher
+    prefix: /
+  websearch:
+    engines:
+      - google
+    name: websearch
+    placeholder: Websearch
+list:
+  always_show: true
+  fixed_height: false
+  height: 600
+  margin_top: 10
+  max_entries: 50
+  scrollbar_policy: automatic
+  show_initial_entries: true
+  show_sub_single_module: false
+  single_click: true
+  width: 400
+search:
+  delay: 0
+  force_keyboard_focus: true
+  history: true
+  icons: true
+  placeholder: Search...
+ui:
+  anchors:
+    top: true
+    # bottom: true
+    # end: true
+    # start: true
+  fullscreen: true
+  icons:
+    image_size: 300
+    size: 48
+    size_single_module: 48
+  ignore_exclusive: false
+  margins:
+    top: 0
+    bottom: 10
+    end: 10
+    start: 10
+  orientation: vertical
+  vertical: end
+  horizontal: start
+  width: 400
+  height: 600
