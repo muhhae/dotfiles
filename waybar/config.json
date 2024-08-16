@@ -8,7 +8,6 @@
 	"modules-left": ["hyprland/workspaces", "group/hardware"],
 	"modules-center": ["cava", "custom/spotify"],
 	"modules-right": [
-		"network",
 		"battery",
 		"pulseaudio",
 		"tray",
