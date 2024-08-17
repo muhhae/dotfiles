@@ -105,6 +105,7 @@ export CHROME_EXECUTABLE="firefox"
 
 # Created by `pipx` on 2024-03-26 23:29:01
 export PATH="$PATH:/home/muhhae/.local/bin"
+export PATH="$PATH:/home/muhhae/.cargo/bin"
 export PATH="$PATH:$HOME/.pub-cache/bin"
 
 source ~/.personal-alias
