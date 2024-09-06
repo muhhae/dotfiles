@@ -96,23 +96,29 @@ alias pgstrt="\
     echo $(pwd)"
 
 # bun completions
-[ -s "/home/muhhae/.bun/_bun" ] && source "/home/muhhae/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # Turso
-export PATH="/home/muhhae/.turso:$PATH"
+export PATH="$HOME/.turso:$PATH"
 
 export CHROME_EXECUTABLE="firefox"
 
 # Created by `pipx` on 2024-03-26 23:29:01
-export PATH="$PATH:/home/muhhae/.local/bin"
-export PATH="$PATH:/home/muhhae/.cargo/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.pub-cache/bin"
 
-source ~/.personal-alias
-alias catat="export DIR=$(pwd -P); cd /home/muhhae/Documents/data-kuliah/ && git add -A && git commit -m 'update' && git push; cd /home/muhhae/Documents/Catatan && git add -A && git commit -m 'update' && git push; cd $DIR"
+[ -s ~/.personal-alias ] && source ~/.personal-alias
+[ -s ~/.specific-to-this-device ] && source ~/.specific-to-this-device
+
+alias catat="export DIR=$(pwd -P); cd $HOME/Documents/data-kuliah/ && git add -A && git commit -m 'update' && git push; cd $HOME/Documents/Catatan && git add -A && git commit -m 'update' && git push; cd $DIR"
 alias ino="arduino-cli"
 
-export PATH=$PATH:/home/muhhae/.spicetify
+export PATH=$PATH:$HOME/.spicetify
 export EDITOR=nvim
 
 eval "$(zoxide init zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
