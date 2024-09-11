@@ -1,7 +1,7 @@
 # GITSTATUS=$GITSTATUS_PROMPT
 PROMPT=""
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    PROMPT+="%{$fg[red]%}[SSH SESSION] [$HOST] "
+    PROMPT+="%{$fg[red]%}[SSH SESSION] [Accessing $HOST as $USER] "
 fi
 
 PROMPT+="%(!.%{$fg[red]%}[root] .)%{$fg[blue]%}  %0~%{$reset_color%}"
