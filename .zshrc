@@ -123,7 +123,3 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 alias pyenv-init="python -m venv env"
 alias pyenv="source ./env/bin/activate"
-
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    echo "IN SSH"
-fi
