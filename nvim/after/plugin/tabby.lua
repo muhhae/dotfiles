@@ -26,13 +26,13 @@ require("tabby.tabline").set(function(line)
 		line.tabs().foreach(function(tab)
 			local hl = tab.is_current() and theme.current_tab or theme.tab
 			return {
-				line.sep("", hl, theme.fill),
+				line.sep("", theme.win, theme.fill),
 				tab.is_current() and "" or "󰆣",
 				tab.number(),
 				tab.name(),
 				tab.close_btn(""),
-				line.sep("", hl, theme.fill),
-				hl = hl,
+				line.sep("", theme.win, theme.fill),
+				hl = theme.win,
 				margin = " ",
 			}
 		end),
