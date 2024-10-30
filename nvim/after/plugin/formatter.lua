@@ -40,10 +40,10 @@ require("formatter").setup({
 		yaml = { require("formatter.filetypes.yaml").prettierd },
 
 		json = { require("formatter.filetypes.json").biome },
-		javascript = { require("formatter.filetypes.javascript").biome },
-		javascriptreact = { require("formatter.filetypes.javascriptreact").biome },
-		typescript = { require("formatter.filetypes.typescript").biome },
-		typescriptreact = { require("formatter.filetypes.typescriptreact").biome },
+		javascript = { require("formatter.filetypes.javascript").prettier },
+		javascriptreact = { require("formatter.filetypes.javascriptreact").prettier },
+		typescript = { require("formatter.filetypes.typescript").prettier },
+		typescriptreact = { require("formatter.filetypes.typescriptreact").prettier },
 		templ = {
 			function()
 				return {

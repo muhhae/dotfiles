@@ -123,3 +123,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 alias pyenv-init="python -m venv env"
 alias pyenv="source ./env/bin/activate"
+
+eval "$(arduino-cli completion zsh)"
+
+export PATH=$PATH:$HOME/.platformio/penv/bin
+
+clear
