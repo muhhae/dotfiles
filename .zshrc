@@ -124,9 +124,7 @@ export NVM_DIR="$HOME/.nvm"
 alias pyenv-init="python -m venv env"
 alias pyenv="source ./env/bin/activate"
 
-# eval "$(arduino-cli completion zsh)"
+eval "$(arduino-cli completion zsh)"
 eval "$(starship init zsh)"
 
 export PATH=$PATH:$HOME/.platformio/penv/bin
-
-clear
