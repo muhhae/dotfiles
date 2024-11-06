@@ -2,7 +2,9 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# ZSH_THEME="agnoster"
 ZSH_THEME="personal"
+# ZSH_THEME="robbyrussell"
 
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -121,10 +123,16 @@ eval "$(zoxide init zsh)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-alias pyenv-init="python -m venv env"
-alias pyenv="source ./env/bin/activate"
 
 eval "$(arduino-cli completion zsh)"
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 export PATH=$PATH:$HOME/.platformio/penv/bin
+# export PATH="$HOME/.pyenv/bin:$PATH"
+# eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+
+alias myrpi="sudo nmap -sn $(ip a show wlan0 | grep -oP '(?<=inet )10\.3\.\d+\.\d+' | awk -F. '{print $1"."$2"."$3".0/24"}'
+) | grep DC:A6:32:27:2E:FC -B 2"
