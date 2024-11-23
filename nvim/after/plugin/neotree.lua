@@ -92,7 +92,13 @@ require("neo-tree").setup({
     -- A list of functions, each representing a global custom command
     -- that will be available in all sources (if not overridden in `opts[source_name].commands`)
     -- see `:h neo-tree-custom-commands-global`
-    commands = {},
+    commands = {
+        load_session = function (state)
+            local node = state.tree:get_node()
+            vim.cmd("cd " .. node.path)
+            vim.cmd("SessionRestore")
+        end
+    },
     window = {
         position = "float",
         --width = 40,
@@ -111,8 +117,9 @@ require("neo-tree").setup({
             ["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
             -- Read `# Preview Mode` for more information
             ["l"] = "focus_preview",
-            ["S"] = "open_split",
-            ["s"] = "open_vsplit",
+            -- ["S"] = "open_split",
+            -- ["s"] = "open_vsplit",
+            ["s"] = "load_session",
             -- ["S"] = "split_with_window_picker",
             -- ["s"] = "vsplit_with_window_picker",
             ["t"] = "open_tabnew",
@@ -156,6 +163,7 @@ require("neo-tree").setup({
     },
     nesting_rules = {},
     filesystem = {
+        bind_to_cwd = true,
         filtered_items = {
             visible = true, -- when true, they will just be displayed differently than normal items
             hide_dotfiles = false,
@@ -185,7 +193,7 @@ require("neo-tree").setup({
             leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
         },
         group_empty_dirs = false,    -- when true, empty folders will be grouped together
-        hijack_netrw_behavior = "open_default",
+        hijack_netrw_behavior = "disabled",
         --"open_default" -- netrw disabled, opening a directory opens neo-tree
         -- in whatever position is specified in window.position
         -- "open_current",  -- netrw disabled, opening a directory opens within the
