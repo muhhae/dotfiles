@@ -9,3 +9,4 @@ end
 
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
+vim.opt.termguicolors = true

@@ -6,7 +6,7 @@ require("FTerm").setup({
 	---Command to run inside the terminal
 	---NOTE: if given string[], it will skip the shell and directly executes the command
 	---@type fun():(string|string[])|string|string[]
-	cmd = os.getenv("SHELL"),
+	-- cmd = os.getenv("SHELL"),
 
 	---Neovim's native window border. See `:h nvim_open_win` for more configuration options.
 	border = "rounded",
@@ -22,7 +22,7 @@ require("FTerm").setup({
 
 	---Transparency of the floating window. See `:h winblend`
 	---@type integer
-	blend = 0,
+	blend = 50,
 
 	---Object containing the terminal window dimensions.
 	---The value for each field should be between `0` and `1`
@@ -201,6 +201,8 @@ end)
 
 local lazygit = require("FTerm"):new({
 	cmd = "lazygit",
+	border = "rounded",
+	blend = 50,
 	dimensions = {
 		height = 0.8, -- Height of the terminal window
 		width = 0.8, -- Width of the terminal window
@@ -211,4 +213,61 @@ local lazygit = require("FTerm"):new({
 
 vim.keymap.set({ "n", "t" }, "<A-g>", function()
 	lazygit:toggle()
+end)
+
+local term_1 = require("FTerm"):new({
+	border = "rounded",
+	blend = 50,
+	dimensions = {
+		height = 0.8, -- Height of the terminal window
+		width = 0.8, -- Width of the terminal window
+		x = 0.5, -- X axis of the terminal window
+		y = 0.5, -- Y axis of the terminal window
+	},
+})
+
+local term_2 = require("FTerm"):new({
+	border = "rounded",
+	blend = 50,
+	dimensions = {
+		height = 0.8, -- Height of the terminal window
+		width = 0.8, -- Width of the terminal window
+		x = 0.5, -- X axis of the terminal window
+		y = 0.5, -- Y axis of the terminal window
+	},
+})
+
+local term_3 = require("FTerm"):new({
+	border = "rounded",
+	blend = 50,
+	dimensions = {
+		height = 0.8, -- Height of the terminal window
+		width = 0.8, -- Width of the terminal window
+		x = 0.5, -- X axis of the terminal window
+		y = 0.5, -- Y axis of the terminal window
+	},
+})
+
+local term_4 = require("FTerm"):new({
+	border = "rounded",
+	blend = 50,
+	dimensions = {
+		height = 0.8, -- Height of the terminal window
+		width = 0.8, -- Width of the terminal window
+		x = 0.5, -- X axis of the terminal window
+		y = 0.5, -- Y axis of the terminal window
+	},
+})
+
+vim.keymap.set({ "n", "t" }, "<A-1>", function()
+	term_1:toggle()
+end)
+vim.keymap.set({ "n", "t" }, "<A-2>", function()
+	term_2:toggle()
+end)
+vim.keymap.set({ "n", "t" }, "<A-3>", function()
+	term_3:toggle()
+end)
+vim.keymap.set({ "n", "t" }, "<A-4>", function()
+	term_4:toggle()
 end)
