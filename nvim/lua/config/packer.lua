@@ -1,8 +1,12 @@
 vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
+	use("sainnhe/everforest")
+	use("nyoom-engineering/oxocarbon.nvim")
+	use("rebelot/kanagawa.nvim")
+	use("morhetz/gruvbox")
 	use("oxfist/night-owl.nvim")
-    use("lervag/vimtex")
+	use("lervag/vimtex")
 	use({
 		"akinsho/flutter-tools.nvim",
 		requires = {
@@ -39,6 +43,7 @@ return require("packer").startup(function(use)
 				vim.notify("CopilotChat - Updated remote plugins. Please restart Neovim.")
 			end, 3000)
 		end,
+		branch = "main",
 	})
 	use("github/copilot.vim")
 	use({ "mhartington/formatter.nvim" })
@@ -85,8 +90,6 @@ return require("packer").startup(function(use)
 	use("folke/tokyonight.nvim")
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.5",
-		-- or                            , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	use({
@@ -104,7 +107,6 @@ return require("packer").startup(function(use)
 	use("mbbill/undotree")
 	use({
 		"VonHeikemen/lsp-zero.nvim",
-		branch = "v3.x",
 		requires = {
 			{ "neovim/nvim-lspconfig" },
 			{ "hrsh7th/nvim-cmp" },
@@ -125,7 +127,6 @@ return require("packer").startup(function(use)
 	use("rafamadriz/friendly-snippets")
 	use({
 		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
 		requires = {
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",

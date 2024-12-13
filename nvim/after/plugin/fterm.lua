@@ -1,3 +1,8 @@
+local winblend = 0
+if vim.g.neovide == true then
+	winblend = 50
+end
+
 require("FTerm").setup({
 	---Filetype of the terminal buffer
 	---@type string
@@ -22,7 +27,7 @@ require("FTerm").setup({
 
 	---Transparency of the floating window. See `:h winblend`
 	---@type integer
-	blend = 50,
+	winblend = winblend,
 
 	---Object containing the terminal window dimensions.
 	---The value for each field should be between `0` and `1`
@@ -69,6 +74,7 @@ local function run(cmd, autoclose)
 	require("FTerm").scratch({
 		cmd = cmd,
 		border = "rounded",
+		winblend = winblend,
 		auto_close = autoclose,
 	})
 end
@@ -202,7 +208,7 @@ end)
 local lazygit = require("FTerm"):new({
 	cmd = "lazygit",
 	border = "rounded",
-	blend = 50,
+	winblend = winblend,
 	dimensions = {
 		height = 0.8, -- Height of the terminal window
 		width = 0.8, -- Width of the terminal window
@@ -215,9 +221,24 @@ vim.keymap.set({ "n", "t" }, "<A-g>", function()
 	lazygit:toggle()
 end)
 
+local function deepCopyWithMetatable(orig)
+	if type(orig) ~= "table" then
+		return orig -- Return the value directly if it's not a table
+	end
+
+	local copy = {}
+	for key, value in pairs(orig) do
+		copy[key] = deepCopyWithMetatable(value) -- Recursively copy nested tables
+	end
+
+	-- Preserve the metatable
+	setmetatable(copy, getmetatable(orig))
+	return copy
+end
+
 local term_1 = require("FTerm"):new({
 	border = "rounded",
-	blend = 50,
+	winblend = winblend,
 	dimensions = {
 		height = 0.8, -- Height of the terminal window
 		width = 0.8, -- Width of the terminal window
@@ -226,38 +247,10 @@ local term_1 = require("FTerm"):new({
 	},
 })
 
-local term_2 = require("FTerm"):new({
-	border = "rounded",
-	blend = 50,
-	dimensions = {
-		height = 0.8, -- Height of the terminal window
-		width = 0.8, -- Width of the terminal window
-		x = 0.5, -- X axis of the terminal window
-		y = 0.5, -- Y axis of the terminal window
-	},
-})
-
-local term_3 = require("FTerm"):new({
-	border = "rounded",
-	blend = 50,
-	dimensions = {
-		height = 0.8, -- Height of the terminal window
-		width = 0.8, -- Width of the terminal window
-		x = 0.5, -- X axis of the terminal window
-		y = 0.5, -- Y axis of the terminal window
-	},
-})
-
-local term_4 = require("FTerm"):new({
-	border = "rounded",
-	blend = 50,
-	dimensions = {
-		height = 0.8, -- Height of the terminal window
-		width = 0.8, -- Width of the terminal window
-		x = 0.5, -- X axis of the terminal window
-		y = 0.5, -- Y axis of the terminal window
-	},
-})
+local term_2 = deepCopyWithMetatable(term_1)
+local term_3 = deepCopyWithMetatable(term_1)
+local term_4 = deepCopyWithMetatable(term_1)
+local term_5 = deepCopyWithMetatable(term_1)
 
 vim.keymap.set({ "n", "t" }, "<A-1>", function()
 	term_1:toggle()
@@ -270,4 +263,7 @@ vim.keymap.set({ "n", "t" }, "<A-3>", function()
 end)
 vim.keymap.set({ "n", "t" }, "<A-4>", function()
 	term_4:toggle()
+end)
+vim.keymap.set({ "n", "t" }, "<A-5>", function()
+	term_5:toggle()
 end)

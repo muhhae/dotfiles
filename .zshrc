@@ -102,7 +102,8 @@ alias pgstrt="\
 # Turso
 export PATH="$HOME/.turso:$PATH"
 
-export CHROME_EXECUTABLE="firefox"
+# export CHROME_EXECUTABLE="firefox"
+export CHROME_EXECUTABLE="google-chrome-canary"
 
 # Created by `pipx` on 2024-03-26 23:29:01
 export PATH="$PATH:$HOME/.local/bin"
@@ -142,5 +143,10 @@ alias itsprox="export https_proxy=10.3.142.199:9000 && export http_proxy=10.3.14
 #
 alias zshconf="nvim ~/.zshrc && source ~/.zshrc"
 alias nvd="neovide & disown"
+export PATH=$PATH:/opt/cuda/bin:/home/muhhae/Android/Sdk/platform-tools
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+export GRADLE_OPTS="-Dorg.gradle.java.home=$JAVA_HOME"
+export PATH=$HOME/Android/Sdk/cmdline-tools/latest/bin:$JAVA_HOME/bin:$PATH
 
-echo "Loaded .zshrc"
+source ~/.config/zshrc.d/dots-hyprland.zsh
+source ~/.config/zshrc.d/shortcuts.zsh

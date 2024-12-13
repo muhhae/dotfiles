@@ -20,6 +20,7 @@ require("formatter").setup({
 	filetype = {
 		java = { require("formatter.filetypes.java").google_java_format },
 		dart = { require("formatter.filetypes.dart").dartformat },
+		latex = { require("formatter.filetypes.latex").latexformat },
 		python = { require("formatter.filetypes.python").ruff },
 		lua = { require("formatter.filetypes.lua").stylua },
 		go = {

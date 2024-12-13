@@ -4,6 +4,9 @@
 //   options listed in this file will override the default ones in the above file
 
 const userConfigOptions = {
-}
+  time: {
+    format: "%H:%M:%S",
+  },
+};
 
 export default userConfigOptions;
