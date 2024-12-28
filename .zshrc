@@ -66,7 +66,6 @@ plugins=(
     ls
     git
     zsh-autosuggestions
-    flutter
     golang
     rust
     bun
@@ -138,7 +137,6 @@ export PATH=$PATH:$HOME/.platformio/penv/bin
 alias myrpi="sudo nmap -sn $(ip a show wlan0 | grep -oP '(?<=inet )10\.3\.\d+\.\d+' | awk -F. '{print $1"."$2"."$3".0/24"}'
 ) | grep DC:A6:32:27:2E:FC -B 2"
 
-alias itsprox="export https_proxy=10.3.142.199:9000 && export http_proxy=10.3.142.199:9000"
 # source ~/.config/zshrc.d/dots-hyprland.zsh
 #
 alias zshconf="nvim ~/.zshrc && source ~/.zshrc"
@@ -150,3 +148,6 @@ export PATH=$HOME/Android/Sdk/cmdline-tools/latest/bin:$JAVA_HOME/bin:$PATH
 
 source ~/.config/zshrc.d/dots-hyprland.zsh
 source ~/.config/zshrc.d/shortcuts.zsh
+
+alias reboot-win="sudo bootctl set-oneshot auto-windows && sudo bootctl set-timeout-oneshot 1 && reboot"
+alias reboot-arch="sudo bootctl set-oneshot arch && sudo bootctl set-timeout-oneshot 1 && reboot"
