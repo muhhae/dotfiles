@@ -5,6 +5,7 @@ vim.opt.background = "dark"
 -- vim.cmd.colorscheme("tokyonight-storm")
 -- vim.cmd.colorscheme("catppuccin-macchiato")
 -- vim.cmd.colorscheme("catppuccin-mocha")
+-- vim.cmd.colorscheme("catppuccin-latte")
 -- vim.cmd.colorscheme("nord")
 -- vim.cmd.colorscheme("night-owl")
 -- vim.cmd.colorscheme("gruvbox")
@@ -17,7 +18,7 @@ vim.cmd.colorscheme("everforest")
 -- 	vim.cmd([[highlight Normal guibg=none]])
 -- end
 --
-vim.cmd([[highlight Normal guibg=none]])
+-- vim.cmd([[highlight Normal guibg=none]])
 
 vim.wo.fillchars = "eob: "
 vim.cmd("highlight SignColumn guibg=transparent")
