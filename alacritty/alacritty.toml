@@ -7,7 +7,7 @@ WINIT_X11_SCALE_FACTOR = "1"
 position = "None"
 dynamic_padding = true
 decorations = "Full"
-opacity = 1
+opacity = 0.8
 blur = true
 startup_mode = "Maximized"
 dynamic_title = true
@@ -76,6 +76,6 @@ prefer_egl = false
 live_config_reload = true
 ipc_socket = true
 import = [
-  "~/dotfiles/alacritty/colorschemes/catppuccin-mocha.toml",
+  "~/dotfiles/alacritty/colorschemes/Oceanic_next.toml",
   "~/dotfiles/alacritty/fonts.toml",
 ]

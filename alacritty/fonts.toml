@@ -4,14 +4,13 @@
 
 [font]
 ## Font size in points.
-size = 14
+size = 12
 
 ## When true, Alacritty will use a custom built-in font for box drawing characters and powerline symbols.
 builtin_box_drawing = true
-
 ## Normal font family.
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "IosevkaTerm Nerd Font"
 style = "medium"
 
 # # If the family is not specified, it will fall back to the value specified for the normal font.
