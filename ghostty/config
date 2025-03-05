@@ -1,4 +1,4 @@
-theme = catppuccin-mocha
+theme = tokyonight
 font-family = IosevkaTerm Nerd Font
 background-opacity = 0.8
 working-directory = inherit
@@ -7,4 +7,4 @@ window-padding-y = 8
 window-padding-balance = false
 window-decoration = false
 confirm-close-surface = false
-background-blur-radius = 50
+background-blur-radius = 100
