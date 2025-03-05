@@ -146,8 +146,10 @@ export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export GRADLE_OPTS="-Dorg.gradle.java.home=$JAVA_HOME"
 export PATH=$HOME/Android/Sdk/cmdline-tools/latest/bin:$JAVA_HOME/bin:$PATH
 
-source ~/.config/zshrc.d/dots-hyprland.zsh
+# source ~/.config/zshrc.d/dots-hyprland.zsh
 source ~/.config/zshrc.d/shortcuts.zsh
 
 alias reboot-win="sudo bootctl set-oneshot auto-windows && sudo bootctl set-timeout-oneshot 1 && reboot"
 alias reboot-arch="sudo bootctl set-oneshot arch && sudo bootctl set-timeout-oneshot 1 && reboot"
+alias autotex="latexmk -pdf -pvc -interaction=nonstopmode -f"
+alias lg="lazygit"

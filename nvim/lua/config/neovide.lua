@@ -5,7 +5,7 @@ vim.g.neovide_padding_bottom = 8
 vim.g.neovide_padding_right = 8
 vim.g.neovide_padding_left = 8
 
-vim.g.neovide_transparency = 0.6
+vim.g.neovide_transparency = 0.9
 vim.g.neovide_scroll_animation_length = 0.05
 vim.g.neovide_cursor_animation_length = 0.01
 vim.g.neovide_cursor_vfx_mode = "wireframe"

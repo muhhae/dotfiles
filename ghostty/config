@@ -1,6 +1,6 @@
-theme = Everforest Dark - Hard
+theme = catppuccin-mocha
 font-family = IosevkaTerm Nerd Font
-background-opacity = 0.7
+background-opacity = 0.8
 working-directory = inherit
 window-padding-x = 8
 window-padding-y = 8

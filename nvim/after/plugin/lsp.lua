@@ -158,3 +158,12 @@ cmp.setup({
 		["<C-Space>"] = cmp.mapping.complete(),
 	}),
 })
+
+require("lspconfig").clangd.setup({
+	cmd = {
+		"clangd",
+		"--compile-commands-dir=/usr/include/glib-2.0",
+		"--compile-commands-dir=/usr/lib/glib-2.0/include",
+	},
+	filetypes = { "c", "cpp" },
+})
