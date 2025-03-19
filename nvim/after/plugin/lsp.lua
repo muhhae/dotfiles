@@ -46,81 +46,32 @@ lspconfig.arduino_language_server.setup({})
 
 require("mason").setup({})
 require("mason-lspconfig").setup({
+	automatic_installation = true,
 	ensure_installed = {
-		"tsserver",
-		"rust_analyzer",
-		"clangd",
-		"tsserver",
-		"svelte",
-		"graphql",
-		"lua_ls",
-		"gopls",
 		"arduino_language_server",
-		"kotlin_language_server",
-		"cssls",
-		"ltex",
-		"vimls",
-		"html",
-		"jqls",
-		"pylsp",
-		"htmx",
-		"tailwindcss",
-		"jsonls",
-		"yamlls",
-		"templ",
+		"ast_grep",
 		"astro",
+		"clangd",
+		"cssls",
+		"gopls",
+		"harper_ls",
+		"html",
+		"htmx",
+		"jqls",
+		"jsonls",
+		"ltex",
+		"lua_ls",
+		"pylsp",
+		"ruff",
+		"rust_analyzer",
+		"tailwindcss",
+		"templ",
+		"texlab",
+		"ts_ls",
+		"yamlls",
 	},
 	handlers = {
 		lsp_zero.default_setup,
-		lua_ls = function()
-			local runtime_path = vim.split(package.path, ";")
-			table.insert(runtime_path, "lua/?/init.lua")
-			table.insert(runtime_path, "lua/?.lua")
-
-			local plugin_path = {
-				"/home/muhhae/.local/share/nvim/site/pack/packer/start",
-				"/home/muhhae/.local/share/nvim/site/pack/packer/opt",
-			}
-
-			local vim_runtime = vim.fn.expand("$VIMRUNTIME/lua")
-			local vim_config = vim.fn.stdpath("config") .. "/lua"
-			print(vim.fn.stdpath("data"))
-
-			local lib = {
-				"/home/muhhae/.local/share/nvim/site/pack/packer/start",
-				"/home/muhhae/.local/share/nvim/site/pack/packer/opt",
-			}
-			for _, path in ipairs(plugin_path) do
-				table.insert(lib, path .. "/?/lua/?")
-				table.insert(lib, path .. "/?.nvim/lua/?")
-				table.insert(lib, path .. "/?-nvim/lua/?")
-			end
-
-			table.insert(lib, vim_runtime)
-			table.insert(lib, vim_config)
-
-			local lua_conf = {
-				settings = {
-					Lua = {
-						telemetry = { enable = false },
-						runtime = {
-							version = "LuaJIT",
-							path = runtime_path,
-							pathStrict = true,
-						},
-						diagnostics = {
-							globals = { "vim" },
-						},
-						workspace = {
-							checkThirdParty = true,
-							library = lib,
-						},
-					},
-				},
-			}
-
-			lspconfig.lua_ls.setup(lua_conf)
-		end,
 		html = function()
 			lspconfig.html.setup({
 				filetypes = { "html", "templ" },
@@ -159,11 +110,9 @@ cmp.setup({
 	}),
 })
 
-require("lspconfig").clangd.setup({
-	cmd = {
-		"clangd",
-		"--compile-commands-dir=/usr/include/glib-2.0",
-		"--compile-commands-dir=/usr/lib/glib-2.0/include",
-	},
-	filetypes = { "c", "cpp" },
-})
+-- require("lspconfig").clangd.setup({
+-- 	cmd = {
+-- 		"clangd",
+-- 	},
+-- 	filetypes = { "c", "cpp" },
+-- })

@@ -2,7 +2,7 @@ require("auto-session").setup({
 	auto_session_suppress_dirs = { "~/", "/" },
 	cwd_change_handling = false,
 	pre_cwd_changed_cmds = {
-		-- "tabdo NERDTreeClose" -- Close NERDTree before saving session
+		"tabdo Neotree close", -- Close Neotree before saving session
 	},
 	bypass_save_filetypes = {
 		"alpha",

@@ -175,13 +175,13 @@ local runners = {
 	templ = go_runner,
 	rust = rust_runner,
 	cpp = function(buf)
-		return "g++ -o tmp " .. buf .. " && ./tmp && rm ./tmp"
+		return "clang -Wall -Wextra -o tmp " .. buf .. " && ./tmp 2>&1; ret=$?; rm ./tmp; exit $ret"
 	end,
 	java = function(buf)
 		return "java " .. buf
 	end,
 	c = function(buf)
-		return "gcc -o tmp " .. buf .. " && ./tmp && rm ./tmp"
+		return "clang -Wall -Wextra -o tmp " .. buf .. " && ./tmp 2>&1; ret=$?; rm ./tmp; exit $ret"
 	end,
 	arduino = ino_flash,
 }

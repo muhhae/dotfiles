@@ -5,12 +5,20 @@ local util = require("formatter.util")
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
+AutoFormatEnabled = true
+
+function ToggleAutoFormat()
+	AutoFormatEnabled = not AutoFormatEnabled
+end
+
 augroup("__formatter__", { clear = true })
 autocmd("BufWritePost", {
 	group = "__formatter__",
 	desc = "Auto-format Files after saving",
 	callback = function()
-		vim.cmd("FormatWrite")
+		if AutoFormatEnabled then
+			vim.cmd("FormatWrite")
+		end
 	end,
 })
 
@@ -32,8 +40,8 @@ require("formatter").setup({
 		zsh = { require("formatter.filetypes.zsh").beautysh },
 		sh = { require("formatter.filetypes.sh").shfmt },
 		toml = { require("formatter.filetypes.toml").taplo },
-		cpp = { require("formatter.filetypes.cpp").astyle },
-		c = { require("formatter.filetypes.c").astyle },
+		cpp = { require("formatter.filetypes.cpp").clangformat },
+		c = { require("formatter.filetypes.c").clangformat },
 
 		markdown = { require("formatter.filetypes.markdown").prettierd },
 		mdx = { require("formatter.filetypes.markdown").prettierd },
@@ -56,18 +64,7 @@ require("formatter").setup({
 				}
 			end,
 		},
-		astro = {
-			function()
-				return {
-					exe = "prettier",
-					args = {
-						"--plugin prettier-plugin-astro",
-						util.escape_path(util.get_current_buffer_file_path()),
-					},
-					stdin = true,
-				}
-			end,
-		},
+		astro = { require("formatter.filetypes.javascript").prettier },
 		["*"] = {
 			require("formatter.filetypes.any").remove_trailing_whitespace,
 		},

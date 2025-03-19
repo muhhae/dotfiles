@@ -1,4 +1,6 @@
-theme = tokyonight
+# theme = catppuccin-mocha
+# theme = catppuccin-frappe
+theme = Blazer
 font-family = IosevkaTerm Nerd Font
 background-opacity = 0.8
 working-directory = inherit

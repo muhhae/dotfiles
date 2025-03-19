@@ -146,10 +146,25 @@ export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export GRADLE_OPTS="-Dorg.gradle.java.home=$JAVA_HOME"
 export PATH=$HOME/Android/Sdk/cmdline-tools/latest/bin:$JAVA_HOME/bin:$PATH
 
-# source ~/.config/zshrc.d/dots-hyprland.zsh
+source ~/.config/zshrc.d/dots-hyprland.zsh
 source ~/.config/zshrc.d/shortcuts.zsh
 
 alias reboot-win="sudo bootctl set-oneshot auto-windows && sudo bootctl set-timeout-oneshot 1 && reboot"
 alias reboot-arch="sudo bootctl set-oneshot arch && sudo bootctl set-timeout-oneshot 1 && reboot"
 alias autotex="latexmk -pdf -pvc -interaction=nonstopmode -f"
 alias lg="lazygit"
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+# add to ~/.zshrc
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+alias lz=lazygit
