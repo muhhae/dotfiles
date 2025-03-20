@@ -2,7 +2,7 @@
 vim.opt.background = "dark"
 --
 -- vim.cmd.colorscheme("tokyonight-moon")
-vim.cmd.colorscheme("tokyonight")
+-- vim.cmd.colorscheme("tokyonight")
 -- vim.cmd.colorscheme("catppuccin-macchiato")
 -- vim.cmd.colorscheme("catppuccin-mocha")
 -- vim.cmd.colorscheme("catppuccin-latte")

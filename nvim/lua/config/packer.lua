@@ -47,6 +47,7 @@ return require("packer").startup(function(use)
 	})
 	use("github/copilot.vim")
 	use({ "mhartington/formatter.nvim" })
+	use({ "stevearc/conform.nvim" })
 	use({
 		"windwp/nvim-autopairs",
 		config = function()
@@ -59,8 +60,11 @@ return require("packer").startup(function(use)
 			require("trouble").setup()
 		end,
 	})
+	-- use({
+	-- 	"Pocco81/auto-save.nvim",
+	-- })
 	use({
-		"Pocco81/auto-save.nvim",
+		"okuuva/auto-save.nvim",
 	})
 	use({
 		"numToStr/Comment.nvim",
