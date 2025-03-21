@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	group = autocmd_group,
 })
 
-vim.api.nvim_create_autocmd("VimEnter", {
+vim.api.nvim_create_autocmd({ "VimEnter", "DirChanged" }, {
 	callback = function()
 		local path = vim.fn.getcwd() .. "/.nvim/init.lua"
 		if vim.loop.fs_stat(path) then

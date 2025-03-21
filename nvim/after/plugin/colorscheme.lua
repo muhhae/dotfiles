@@ -14,11 +14,11 @@ vim.cmd.colorscheme("night-owl")
 -- vim.cmd.colorscheme("oxocarbon")
 -- vim.cmd.colorscheme("nordic")
 --
--- if vim.g.neovide ~= true then
--- 	vim.cmd([[highlight Normal guibg=none]])
--- end
---
-vim.cmd([[highlight Normal guibg=none]])
+if vim.g.neovide ~= true then
+	vim.cmd([[highlight Normal guibg=none]])
+end
+
+-- vim.cmd([[highlight Normal guibg=none]])
 
 vim.wo.fillchars = "eob: "
 vim.cmd("highlight SignColumn guibg=transparent")

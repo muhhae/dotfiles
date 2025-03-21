@@ -30,5 +30,11 @@
         "/home/muhhae/.local/share/nvim/site/pack/packer/opt/?-nvim/lua/?/init.lua",
         "${3rd}/luassert/library",
         "${3rd}/luv/library"
+    ],
+    "diagnostics.globals": [
+        "vim"
+    ],
+    "diagnostics.disable": [
+        "missing-fields"
     ]
 }

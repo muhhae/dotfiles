@@ -140,7 +140,7 @@ alias myrpi="sudo nmap -sn $(ip a show wlan0 | grep -oP '(?<=inet )10\.3\.\d+\.\
 # source ~/.config/zshrc.d/dots-hyprland.zsh
 #
 alias zshconf="nvim ~/.zshrc && source ~/.zshrc"
-alias nvd="neovide & disown"
+alias nvd="neovide & disown && exit"
 export PATH=$PATH:/opt/cuda/bin:/home/muhhae/Android/Sdk/platform-tools
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export GRADLE_OPTS="-Dorg.gradle.java.home=$JAVA_HOME"
@@ -168,3 +168,5 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 alias lz=lazygit
+export PATH="$PATH:$HOME/personal/research-note"
+alias so="source $HOME/.zshrc"

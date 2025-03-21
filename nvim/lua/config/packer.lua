@@ -28,7 +28,10 @@ return require("packer").startup(function(use)
 	use("luckasRanarison/tree-sitter-hyprlang")
 	use("nordtheme/vim")
 	use("karb94/neoscroll.nvim")
-	use("andweeb/presence.nvim")
+	use({
+		"vyfor/cord.nvim",
+		run = ":Cord update",
+	})
 	use("nvimdev/dashboard-nvim")
 	use("nanozuki/tabby.nvim")
 	use("ThePrimeagen/vim-be-good")
