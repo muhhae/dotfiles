@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Check if package name is provided
+if [ -z "$1" ]; then
+    echo "No package name provided. Usage: yaypac <package_name>"
+    exit 1
+fi
+
+# Try to install with pacman
+pacman_err="$(sudo pacman -S --noconfirm $1 > /dev/null 2>&1)"
+echo "pacman_err $pacman_err \n\n"
+
+# Check if installation was successful
+if pacman -Q $1 > /dev/null ; then
+    echo "Package installed successfully with pacman"
+else
+    # Try to install with yay
+    yay_err="$(yay -S --noconfirm $1 > /dev/null 2>&1)"
+    echo "yay_err $yay_err \n\n"
+
+    # Check if installation was successful
+    if pacman -Q $1 > /dev/null ; then
+        echo "Package $1 installed successfully with yay"
+    else
+        echo "Package not found in both pacman and yay. Aborting."
+        exit 1
+    fi
+fi

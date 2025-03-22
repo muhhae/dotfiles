@@ -1,0 +1,172 @@
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# ZSH_THEME="agnoster"
+ZSH_THEME="personal"
+# ZSH_THEME="robbyrussell"
+
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+    ls
+    git
+    zsh-autosuggestions
+    golang
+    rust
+    bun
+)
+
+source $ZSH/oh-my-zsh.sh
+
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
+
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
+
+alias cls="clear"
+alias pacfzf="pacman -Ss | paste -d '' - - | fzf --multi --preview 'pacman -Si {1}' | cut -d ' ' -f 1 | xargs -ro pacman -Si"
+alias nv="nvim"
+alias vi="nvim"
+alias nvc="z ~/dotfiles/nvim && nvim"
+alias py="ipython"
+alias check_power="while true; do cat /sys/class/power_supply/ADP1/online && sleep 1; done"
+alias g++="g++ -std=c++17"
+
+alias pgstrt="\
+    d=$(pwd)\
+    z personal\
+    echo $(pwd)\
+    z $d\
+    echo $(pwd)"
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# Turso
+export PATH="$HOME/.turso:$PATH"
+
+# export CHROME_EXECUTABLE="firefox"
+export CHROME_EXECUTABLE="google-chrome-canary"
+
+# Created by `pipx` on 2024-03-26 23:29:01
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.pub-cache/bin"
+
+[ -s ~/.personal-alias ] && source ~/.personal-alias
+[ -s ~/.specific-to-this-device ] && source ~/.specific-to-this-device
+
+alias catat="export DIR=$(pwd -P); cd $HOME/Documents/data-kuliah/ && git add -A && git commit -m 'update' && git push; cd $HOME/Documents/Catatan && git add -A && git commit -m 'update' && git push; cd $DIR"
+alias ino="arduino-cli"
+
+export PATH=$PATH:$HOME/.spicetify
+export EDITOR=nvim
+
+eval "$(zoxide init zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# eval "$(arduino-cli completion zsh)"
+# eval "$(starship init zsh)"
+
+export PATH=$PATH:$HOME/.platformio/penv/bin
+# export PATH="$HOME/.pyenv/bin:$PATH"
+# eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+
+alias myrpi="sudo nmap -sn $(ip a show wlan0 | grep -oP '(?<=inet )10\.3\.\d+\.\d+' | awk -F. '{print $1"."$2"."$3".0/24"}'
+) | grep DC:A6:32:27:2E:FC -B 2"
+
+# source ~/.config/zshrc.d/dots-hyprland.zsh
+#
+alias zshconf="nvim ~/.zshrc && source ~/.zshrc"
+alias nvd="neovide & disown && exit"
+export PATH=$PATH:/opt/cuda/bin:/home/muhhae/Android/Sdk/platform-tools
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+export GRADLE_OPTS="-Dorg.gradle.java.home=$JAVA_HOME"
+export PATH=$HOME/Android/Sdk/cmdline-tools/latest/bin:$JAVA_HOME/bin:$PATH
+
+source ~/.config/zshrc.d/dots-hyprland.zsh
+source ~/.config/zshrc.d/shortcuts.zsh
+
+alias reboot-win="sudo bootctl set-oneshot auto-windows && sudo bootctl set-timeout-oneshot 1 && reboot"
+alias reboot-arch="sudo bootctl set-oneshot arch && sudo bootctl set-timeout-oneshot 1 && reboot"
+alias autotex="latexmk -pdf -pvc -interaction=nonstopmode -f"
+alias lg="lazygit"
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+# add to ~/.zshrc
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+alias lz=lazygit
+export PATH="$PATH:$HOME/personal/research-note"
+alias so="source $HOME/.zshrc"
