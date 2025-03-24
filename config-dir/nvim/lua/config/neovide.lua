@@ -57,6 +57,7 @@ vim.keymap.set("n", "<C-+>", function()
 		tmp = { neovide_transparency = vim.g.neovide_transparency }
 	end
 	SaveVariable(tmp)
+	print("Transparency :" .. tmp.neovide_transparency)
 end)
 vim.keymap.set("n", "<C-_>", function()
 	local current = vim.g.neovide_transparency
@@ -71,4 +72,5 @@ vim.keymap.set("n", "<C-_>", function()
 		tmp = { neovide_transparency = vim.g.neovide_transparency }
 	end
 	SaveVariable(tmp)
+	print("Transparency :" .. tmp.neovide_transparency)
 end)

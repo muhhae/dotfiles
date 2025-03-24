@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>.", ":Neotree<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "\\", ":Neotree toggle<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "|", ":w<CR>:SessionSave<CR>:Dashboard<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
