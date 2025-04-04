@@ -1,12 +1,17 @@
 return {
 	"theprimeagen/harpoon",
 	branch = "harpoon2",
-	dependencies = { "nvim-lua/plenary.nvim" },
+	commit = "e76cb03",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+	},
 	config = function()
 		local harpoon = require("harpoon")
 		harpoon:setup()
+		local harpoon_extensions = require("harpoon.extensions")
+		harpoon:extend(harpoon_extensions.builtins.highlight_current_file)
 		vim.keymap.set("n", "<leader>a", function()
-			harpoon:list():append()
+			harpoon:list():add()
 		end)
 		vim.keymap.set("n", "<leader>e", function()
 			harpoon.ui:toggle_quick_menu(harpoon:list())

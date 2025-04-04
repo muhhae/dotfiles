@@ -1,8 +1,6 @@
 return {
 	"nanozuki/tabby.nvim",
-	config = function()
-		local tabby = require("tabby")
-		tabby.setup()
+	init = function()
 		require("tabby.tabline").use_preset("active_wins_at_tail")
 
 		for i = 1, 9 do

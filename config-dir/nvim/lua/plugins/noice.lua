@@ -81,7 +81,6 @@ return {
 					pattern = "^:Telescope ",
 					icon = "󰭎",
 				},
-				-- copilot_chat_explain = { pattern = "^:CopilotChatExplain", icon = "CE" }
 			},
 		},
 		messages = {

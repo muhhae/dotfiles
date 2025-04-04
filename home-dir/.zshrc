@@ -89,3 +89,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 alias lz=lazygit
 export PATH="$PATH:$HOME/personal/research-note"
 alias so="source $HOME/.zshrc"
+alias pm="pm.sh"
+alias lazyvim="NVIM_APPNAME=lazyvim nvim"

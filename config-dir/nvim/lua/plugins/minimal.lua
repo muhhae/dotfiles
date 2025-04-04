@@ -19,7 +19,6 @@ return {
 	"lervag/vimtex",
 	"iamcco/markdown-preview.nvim",
 	"nvim-pack/nvim-spectre",
-	"lewis6991/gitsigns.nvim",
 	{
 		"MaximilianLloyd/ascii.nvim",
 		dependencies = {
@@ -49,19 +48,7 @@ return {
 			vim.o.timeoutlen = 300
 		end,
 	},
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-	},
-	"wbthomason/packer.nvim",
-	"folke/tokyonight.nvim",
-	{
-		"nvim-telescope/telescope.nvim",
-		dependencies = { { "nvim-lua/plenary.nvim" } },
-	},
 	"hrsh7th/cmp-buffer",
 	"hrsh7th/cmp-path",
-	"saadparwaiz1/cmp_luasnip",
-	"hrsh7th/cmp-nvim-lua",
 	"rafamadriz/friendly-snippets",
 }

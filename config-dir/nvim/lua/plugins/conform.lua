@@ -22,7 +22,10 @@ return {
 	opts = {
 		-- Map of filetype to formatters
 		formatters_by_ft = {
+			bash = { "shfmt" },
 			lua = { "stylua" },
+			latex = { "tex-fmt" },
+			tex = { "tex-fmt" },
 			-- Conform will run multiple formatters sequentially
 			go = { "goimports", "goimports-reviser", "gofumpt", "golines" },
 			-- You can also customize some of the format options for the filetype

@@ -4,7 +4,6 @@ package.cpath = package.cpath
 	.. ";/usr/local/lib/lua/5.4/?.so;/usr/lib/lua/5.4/?.so;/usr/local/lib/lua/5.4/loadall.so;/usr/lib/lua/5.4/loadall.so;./?.so;/home/muhhae/.luarocks/lib/lua/5.4/?.so"
 
 require("config.remap")
--- require("config.packer")
 require("config.lazy")
 require("config.set")
 require("config.autocmd")
@@ -30,8 +29,13 @@ vim.opt.background = "dark"
 -- vim.cmd.colorscheme("gruvbox")
 -- vim.cmd.colorscheme("kanagawa")
 -- vim.cmd.colorscheme("everforest")
-vim.cmd.colorscheme("oxocarbon")
+-- vim.cmd.colorscheme("oxocarbon")
 -- vim.cmd.colorscheme("nordic")
+
+vim.cmd.colorscheme("decay-dark")
+-- vim.cmd.colorscheme("decay-light")
+-- vim.cmd.colorscheme("decay-default")
+-- vim.cmd.colorscheme("decayce")
 
 -- if vim.g.neovide ~= true then
 -- 	vim.cmd([[highlight Normal guibg=none]])

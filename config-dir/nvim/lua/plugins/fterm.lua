@@ -178,7 +178,7 @@ return {
 			templ = go_runner,
 			rust = rust_runner,
 			cpp = function(buf)
-				return "clang -Wall -Wextra -o tmp " .. buf .. " && ./tmp 2>&1; ret=$?; rm ./tmp; exit $ret"
+				return "clang++ -Wall -Wextra -o tmp " .. buf .. " && ./tmp 2>&1; ret=$?; rm ./tmp; exit $ret"
 			end,
 			java = function(buf)
 				return "java " .. buf
