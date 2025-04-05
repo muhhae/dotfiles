@@ -58,6 +58,7 @@ return {
 			},
 		},
 		window = {
+			border = "shadow",
 			position = "float",
 			--width = 40,
 			mapping_options = {

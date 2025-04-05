@@ -220,10 +220,15 @@ return {
 			},
 		})
 
-		vim.keymap.set({ "n", "t" }, "<A-g>", function()
-			lazygit:toggle()
-			-- require("snacks").lazygit()
-		end)
+		if vim.g.neovide == true then
+			vim.keymap.set({ "n", "t" }, "<A-g>", function()
+				require("snacks").lazygit()
+			end)
+		else
+			vim.keymap.set({ "n", "t" }, "<A-g>", function()
+				lazygit:toggle()
+			end)
+		end
 
 		local function deepCopyWithMetatable(orig)
 			if type(orig) ~= "table" then
