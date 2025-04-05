@@ -1,8 +1,3 @@
-package.path = package.path
-	.. ";/usr/share/lua/5.4/?.lua;/usr/local/share/lua/5.4/?.lua;/usr/local/share/lua/5.4/?/init.lua;/usr/share/lua/5.4/?/init.lua;/usr/local/lib/lua/5.4/?.lua;/usr/local/lib/lua/5.4/?/init.lua;/usr/lib/lua/5.4/?.lua;/usr/lib/lua/5.4/?/init.lua;./?.lua;./?/init.lua;/home/muhhae/.luarocks/share/lua/5.4/?.lua;/home/muhhae/.luarocks/share/lua/5.4/?/init.lua"
-package.cpath = package.cpath
-	.. ";/usr/local/lib/lua/5.4/?.so;/usr/lib/lua/5.4/?.so;/usr/local/lib/lua/5.4/loadall.so;/usr/lib/lua/5.4/loadall.so;./?.so;/home/muhhae/.luarocks/lib/lua/5.4/?.so"
-
 require("config.remap")
 require("config.lazy")
 require("config.set")
@@ -19,24 +14,6 @@ vim.opt.termguicolors = true
 -- vim.opt.background = "light"
 vim.opt.background = "dark"
 
--- vim.cmd.colorscheme("tokyonight-moon")
--- vim.cmd.colorscheme("tokyonight")
--- vim.cmd.colorscheme("catppuccin-macchiato")
--- vim.cmd.colorscheme("catppuccin-mocha")
--- vim.cmd.colorscheme("catppuccin-latte")
--- vim.cmd.colorscheme("nord")
--- vim.cmd.colorscheme("night-owl")
--- vim.cmd.colorscheme("gruvbox")
--- vim.cmd.colorscheme("kanagawa")
--- vim.cmd.colorscheme("everforest")
--- vim.cmd.colorscheme("oxocarbon")
--- vim.cmd.colorscheme("nordic")
-
-vim.cmd.colorscheme("decay-dark")
--- vim.cmd.colorscheme("decay-light")
--- vim.cmd.colorscheme("decay-default")
--- vim.cmd.colorscheme("decayce")
-
 -- if vim.g.neovide ~= true then
 -- 	vim.cmd([[highlight Normal guibg=none]])
 -- end
@@ -45,3 +22,6 @@ vim.cmd.colorscheme("decay-dark")
 
 vim.wo.fillchars = "eob: "
 vim.cmd("highlight SignColumn guibg=transparent")
+
+vim.opt.cursorline = true -- Highlight the line the cursor is on
+vim.opt.cursorlineopt = "number" -- Only highlight the line number, not the whole line

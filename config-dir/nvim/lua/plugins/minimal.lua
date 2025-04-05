@@ -17,7 +17,6 @@ return {
 		},
 	},
 	"lervag/vimtex",
-	"iamcco/markdown-preview.nvim",
 	"nvim-pack/nvim-spectre",
 	{
 		"MaximilianLloyd/ascii.nvim",
@@ -26,20 +25,21 @@ return {
 		},
 	},
 	"luckasRanarison/tree-sitter-hyprlang",
-	"nordtheme/vim",
 	"karb94/neoscroll.nvim",
 	"nanozuki/tabby.nvim",
 	"ThePrimeagen/vim-be-good",
-	"wakatime/vim-wakatime",
-	"mhartington/formatter.nvim",
 	{
 		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup({})
-		end,
+		event = "InsertEnter",
+		config = true,
 	},
 	"folke/trouble.nvim",
-	"numToStr/Comment.nvim",
+	{
+		"folke/ts-comments.nvim",
+		opts = {},
+		event = "VeryLazy",
+		enabled = vim.fn.has("nvim-0.10.0") == 1,
+	},
 	"stevearc/dressing.nvim",
 	{
 		"folke/which-key.nvim",
@@ -48,7 +48,4 @@ return {
 			vim.o.timeoutlen = 300
 		end,
 	},
-	"hrsh7th/cmp-buffer",
-	"hrsh7th/cmp-path",
-	"rafamadriz/friendly-snippets",
 }

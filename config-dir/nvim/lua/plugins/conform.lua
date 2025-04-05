@@ -22,6 +22,8 @@ return {
 	opts = {
 		-- Map of filetype to formatters
 		formatters_by_ft = {
+			c = { "clang-format" },
+			cpp = { "clang-format" },
 			bash = { "shfmt" },
 			lua = { "stylua" },
 			latex = { "tex-fmt" },

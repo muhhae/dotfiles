@@ -16,6 +16,9 @@ return {
 			"alpha",
 			"dashboard",
 			"neotree",
+			"neo-tree",
+			"neo-tree-popup",
+			"filesystem",
 			"harpoon",
 		},
 		auto_restore = true, -- Enables/disables auto restoring session on start

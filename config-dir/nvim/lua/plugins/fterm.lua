@@ -222,6 +222,7 @@ return {
 
 		vim.keymap.set({ "n", "t" }, "<A-g>", function()
 			lazygit:toggle()
+			-- require("snacks").lazygit()
 		end)
 
 		local function deepCopyWithMetatable(orig)
