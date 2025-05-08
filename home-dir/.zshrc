@@ -1,6 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="personal"
+# ZSH_THEME="personal"
 plugins=(
     ls
     git
@@ -9,7 +9,7 @@ plugins=(
     rust
     bun
 )
-source $ZSH/oh-my-zsh.sh
+
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 
@@ -18,10 +18,17 @@ export PATH=$PATH:$HOME/go/bin
 
 alias cls="clear"
 alias pacfzf="pacman -Ss | paste -d '' - - | fzf --multi --preview 'pacman -Si {1}' | cut -d ' ' -f 1 | xargs -ro pacman -Si"
-alias nv="nvim"
+nv() {
+    kitty @ set-spacing padding=0;
+    nvim "$@";
+    kitty @ set-spacing padding=default
+}
+pt() {
+    kitty @ set-spacing padding=0;presenterm "$@";kitty @ set-spacing padding=default
+}
 alias vi="nvim"
 alias nvc="z ~/dotfiles/nvim && nvim"
-alias py="ipython"
+alias py="python3"
 alias check_power="while true; do cat /sys/class/power_supply/ADP1/online && sleep 1; done"
 alias g++="g++ -std=c++17"
 alias pgstrt="\
@@ -63,7 +70,12 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=$PATH:$HOME/.platformio/penv/bin
 
 alias zshconf="nvim ~/.zshrc && source ~/.zshrc"
-alias nvd="neovide & disown && exit"
+
+nvd() {
+    (neovide $1 && kitty --directory "$pwd") & disown
+    exit
+}
+
 export PATH=$PATH:/opt/cuda/bin:/home/muhhae/Android/Sdk/platform-tools
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export GRADLE_OPTS="-Dorg.gradle.java.home=$JAVA_HOME"
@@ -92,3 +104,16 @@ alias so="source $HOME/.zshrc"
 alias pm="pm.sh"
 alias lazyvim="NVIM_APPNAME=lazyvim nvim"
 alias nvchad="NVIM_APPNAME=NvChad nvim"
+alias fix-lock="hyprctl --instance 0 'keyword misc:allow_session_lock_restore 1' && hyprctl --instance 0 'dispatch exec hyprlock' && chvt 1"
+
+[ -f .fzf.zsh ] && source .fzf.zsh
+alias zz="z -"
+export _ZO_ECHO=0
+
+calc() {
+    set -f
+    python -c "print($*)"
+    set +f
+}
+alias plasma="dbus-run-session startplasma-wayland -- --display=:1"
+# alias pssh="pssh

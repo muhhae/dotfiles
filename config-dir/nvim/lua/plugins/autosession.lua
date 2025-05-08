@@ -12,6 +12,15 @@ return {
 	opts = {
 		auto_session_suppress_dirs = { "~/", "/" },
 		cwd_change_handling = true,
+		pre_cwd_changed_cmds = {
+			"tabdo Neotree close", -- Close NERDTree before saving session
+		},
+
+		post_cwd_changed_cmds = {
+			function()
+				require("lualine").refresh() -- example refreshing the lualine status line _after_ the cwd changes
+			end,
+		},
 		bypass_save_filetypes = {
 			"alpha",
 			"dashboard",

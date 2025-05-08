@@ -75,8 +75,8 @@ return {
 			project = {
 				enable = true,
 				limit = 8,
-				icon = "",
-				label = "\tRecent Project",
+				icon = "",
+				label = "  Recent Project",
 				action = "LoadSession ",
 			},
 			mru = { enable = false },

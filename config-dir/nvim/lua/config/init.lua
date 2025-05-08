@@ -1,3 +1,5 @@
+vim.cmd("rshada")
+
 require("config.remap")
 require("config.lazy")
 require("config.set")
@@ -10,15 +12,7 @@ end
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.opt.termguicolors = true
-
--- vim.opt.background = "light"
-vim.opt.background = "dark"
-
--- if vim.g.neovide ~= true then
--- 	vim.cmd([[highlight Normal guibg=none]])
--- end
-
--- vim.cmd([[highlight Normal guibg=none]])
+-- vim.api.nvim_set_hl(0, "TermCursor", { reverse = true })
 
 vim.wo.fillchars = "eob: "
 vim.cmd("highlight SignColumn guibg=transparent")

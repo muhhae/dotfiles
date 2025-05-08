@@ -1,2 +1,6 @@
 [manager]
-ratio          = [ 1, 4, 4 ]
+ratio          = [ 1, 4, 8 ]
+[preview]
+wrap = "yes"
+max_width = 1000
+max_height = 1000

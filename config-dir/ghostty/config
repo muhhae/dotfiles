@@ -1,6 +1,7 @@
 # theme = catppuccin-mocha
 # theme = catppuccin-frappe
-theme = Blazer
+theme = Oxocarbon
+# theme = IR_Black
 font-family = IosevkaTerm Nerd Font
 background-opacity = 0.8
 working-directory = inherit
@@ -9,4 +10,4 @@ window-padding-y = 8
 window-padding-balance = false
 window-decoration = false
 confirm-close-surface = false
-background-blur-radius = 100
+# background-blur-radius = 100
