@@ -48,6 +48,10 @@ if not vim.g.COLORSCHEMEI or vim.g.COLORSCHEMEI <= 0 then
 	vim.g.COLORSCHEMEI = 1
 end
 
+if not vim.g.TRANSPARENT then
+	vim.g.TRANSPARENT = false
+end
+
 local colorscheme_mod = {}
 
 for _, v in ipairs(colorscheme) do
@@ -78,8 +82,34 @@ colorscheme_mod[vim.g.COLORSCHEMEI] = {
 
 		vim.cmd("highlight clear")
 		vim.cmd("colorscheme " .. colorscheme[vim.g.COLORSCHEMEI][2])
+		if vim.g.TRANSPARENT == true then
+			-- Make both active and inactive windows transparent
+			vim.cmd([[
+                highlight Normal guibg=NONE ctermbg=NONE
+                highlight NormalNC guibg=NONE ctermbg=NONE
+            ]])
+		end
 	end,
 	keys = {
+		{
+			"<leader>ct",
+			function()
+				vim.cmd("highlight clear")
+				vim.cmd("colorscheme " .. colorscheme[vim.g.COLORSCHEMEI][2])
+				vim.g.TRANSPARENT = not vim.g.TRANSPARENT
+				-- print("Transparent :" .. string(vim.g.TRANSPARENT))
+				if vim.g.TRANSPARENT == true then
+					print("Transparent")
+					vim.cmd([[
+                        highlight Normal guibg=NONE ctermbg=NONE
+                        highlight NormalNC guibg=NONE ctermbg=NONE
+                    ]])
+				else
+					print("Not Transparent")
+				end
+			end,
+			desc = "Toggle Transparent",
+		},
 		{
 			"<leader>cc",
 			function()
@@ -139,6 +169,12 @@ colorscheme_mod[vim.g.COLORSCHEMEI] = {
 								vim.cmd("highlight clear")
 								vim.opt.background = vim.g.COLORMODE
 								vim.cmd("colorscheme " .. entry.value[2])
+								if vim.g.TRANSPARENT == true then
+									vim.cmd([[
+                                        highlight Normal guibg=NONE ctermbg=NONE
+                                        highlight NormalNC guibg=NONE ctermbg=NONE
+                                    ]])
+								end
 							end
 						end,
 					}),
@@ -164,6 +200,12 @@ colorscheme_mod[vim.g.COLORSCHEMEI] = {
 			vim.cmd("highlight clear")
 			vim.opt.background = vim.g.COLORMODE
 			vim.cmd("colorscheme " .. colorscheme[vim.g.COLORSCHEMEI][2])
+			if vim.g.TRANSPARENT == true then
+				vim.cmd([[
+                    highlight Normal guibg=NONE ctermbg=NONE
+                    highlight NormalNC guibg=NONE ctermbg=NONE
+                ]])
+			end
 		end, {})
 	end,
 }
