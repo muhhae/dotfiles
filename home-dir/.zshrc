@@ -1,14 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # ZSH_THEME="personal"
-plugins=(
-    ls
-    git
-    zsh-autosuggestions
-    golang
-    rust
-    bun
-)
 
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
@@ -17,11 +9,14 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 
 alias cls="clear"
-alias pacfzf="pacman -Ss | paste -d '' - - | fzf --multi --preview 'pacman -Si {1}' | cut -d ' ' -f 1 | xargs -ro pacman -Si"
 nv() {
-    kitty @ set-spacing padding=0;
-    nvim "$@";
-    kitty @ set-spacing padding=default
+    if [[ "$TERM" = "xterm-kitty" ]]; then
+        kitty @ set-spacing padding=0;
+        nvim "$@";
+        kitty @ set-spacing padding=default
+    else
+        nvim "$@";
+    fi
 }
 pt() {
     kitty @ set-spacing padding=0;presenterm "$@";kitty @ set-spacing padding=default
@@ -69,20 +64,14 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH=$PATH:$HOME/.platformio/penv/bin
 
-alias zshconf="nvim ~/.zshrc && source ~/.zshrc"
-
 nvd() {
     (neovide $1 && kitty --directory "$pwd") & disown
     exit
 }
 
-export PATH=$PATH:/opt/cuda/bin:/home/muhhae/Android/Sdk/platform-tools
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
-export GRADLE_OPTS="-Dorg.gradle.java.home=$JAVA_HOME"
-export PATH=$HOME/Android/Sdk/cmdline-tools/latest/bin:$JAVA_HOME/bin:$PATH
+export PATH=$PATH:/opt/cuda/bin
 
 alias reboot-win="sudo bootctl set-oneshot auto-windows && sudo bootctl set-timeout-oneshot 1 && reboot"
-alias reboot-arch="sudo bootctl set-oneshot arch && sudo bootctl set-timeout-oneshot 1 && reboot"
 alias autotex="latexmk -pdf -pvc -interaction=nonstopmode -f"
 alias lg="lazygit"
 
@@ -99,14 +88,14 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 alias lz=lazygit
-export PATH="$PATH:$HOME/personal/research-note"
+export PATH="$PATH:$HOME/personal/research-note:$HOME/dotfiles/scripts"
 alias so="source $HOME/.zshrc"
 alias pm="pm.sh"
 alias lazyvim="NVIM_APPNAME=lazyvim nvim"
 alias nvchad="NVIM_APPNAME=NvChad nvim"
 alias fix-lock="hyprctl --instance 0 'keyword misc:allow_session_lock_restore 1' && hyprctl --instance 0 'dispatch exec hyprlock' && chvt 1"
 
-[ -f .fzf.zsh ] && source .fzf.zsh
+
 alias zz="z -"
 export _ZO_ECHO=0
 
@@ -116,4 +105,20 @@ calc() {
     set +f
 }
 alias plasma="dbus-run-session startplasma-wayland -- --display=:1"
-# alias pssh="pssh
+eval "$(fzf --zsh)"
+
+autoload -Uz add-zsh-hook
+
+load_fzf_keybindings() {
+  if [[ $- == *i* ]] && [ -f ~/.fzf.zsh ]; then
+    source ~/.fzf.zsh
+    # Optional: rebind Ctrl-R in case zle wasn't ready
+    bindkey '^R' fzf-history-widget
+  fi
+}
+
+add-zsh-hook -Uz precmd load_fzf_keybindings
+setopt EXTENDED_HISTORY
+
+HISTSIZE=1000000
+SAVEHIST=1000000
