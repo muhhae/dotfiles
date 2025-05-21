@@ -24,7 +24,8 @@ return {
 		formatters_by_ft = {
 			c = { "clang-format" },
 			cpp = { "clang-format" },
-			bash = { "shfmt" },
+			bash = { "beautysh" },
+			sh = { "beautysh" },
 			lua = { "stylua" },
 			latex = { "tex-fmt" },
 			tex = { "tex-fmt" },

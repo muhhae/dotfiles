@@ -1,4 +1,5 @@
 return {
+	{ "rktjmp/lush.nvim" },
 	{
 		"folke/which-key.nvim",
 		init = function()

@@ -38,6 +38,55 @@ local colorscheme = {
 
 	-- nord
 	{ "nordtheme/vim", "nord" },
+
+	-- flexoki
+	{ "kepano/flexoki-neovim", "flexoki-dark" },
+	{ "kepano/flexoki-neovim", "flexoki-light" },
+
+	-- tender
+	{ "jacoborus/tender.vim", "tender" },
+
+	-- moonfly
+	{ "bluz71/vim-moonfly-colors", "moonfly" },
+
+	-- nightfly
+	{ "bluz71/vim-nightfly-colors", "nightfly" },
+
+	-- cyberdream
+	{ "scottmckendry/cyberdream.nvim", "cyberdream" },
+
+	-- onedark
+	{ "olimorris/onedarkpro.nvim", "onedark" },
+	{ "olimorris/onedarkpro.nvim", "onelight" },
+	{ "olimorris/onedarkpro.nvim", "onedark_vivid" },
+	{ "olimorris/onedarkpro.nvim", "onedark_dark" },
+	{ "olimorris/onedarkpro.nvim", "vaporwave" },
+
+	-- zenbones
+	{ "zenbones-theme/zenbones.nvim", "zenbones" },
+	{ "zenbones-theme/zenbones.nvim", "neobones" },
+	{ "zenbones-theme/zenbones.nvim", "vimbones" },
+	{ "zenbones-theme/zenbones.nvim", "rosebones" },
+	{ "zenbones-theme/zenbones.nvim", "forestbones" },
+	{ "zenbones-theme/zenbones.nvim", "nordbones" },
+	{ "zenbones-theme/zenbones.nvim", "tokyobones" },
+	{ "zenbones-theme/zenbones.nvim", "seoulbones" },
+	{ "zenbones-theme/zenbones.nvim", "duckbones" },
+	{ "zenbones-theme/zenbones.nvim", "zenburned" },
+	{ "zenbones-theme/zenbones.nvim", "kanagawabones" },
+	{ "zenbones-theme/zenbones.nvim", "randombones" },
+
+	-- melange
+	{ "savq/melange-nvim", "melange" },
+
+	-- ayu
+	{ "Shatur/neovim-ayu", "ayu" },
+
+	-- vague
+	{ "vague2k/vague.nvim", "vague" },
+
+	-- poimandres
+	{ "olivercederborg/poimandres.nvim", "poimandres" },
 }
 
 if not vim.g.COLORMODE then
@@ -67,6 +116,23 @@ for _, v in ipairs(colorscheme) do
 	end
 end
 
+local function MakeTransparent()
+	vim.cmd([[
+    highlight Normal guibg=NONE ctermbg=NONE
+    highlight NormalNC guibg=NONE ctermbg=NONE
+    highlight LineNr guibg=NONE ctermbg=NONE
+    highlight CursorLineNr guibg=NONE ctermbg=NONE
+    highlight SignColumn guibg=NONE ctermbg=NONE
+    highlight DiagnosticSignError guibg=NONE ctermbg=NONE
+    highlight DiagnosticSignWarn  guibg=NONE ctermbg=NONE
+    highlight DiagnosticSignInfo  guibg=NONE ctermbg=NONE
+    highlight DiagnosticSignHint  guibg=NONE ctermbg=NONE
+    highlight GitSignsAdd    guibg=NONE ctermbg=NONE
+    highlight GitSignsChange guibg=NONE ctermbg=NONE
+    highlight GitSignsDelete guibg=NONE ctermbg=NONE
+]])
+end
+
 colorscheme_mod[vim.g.COLORSCHEMEI] = {
 	colorscheme_mod[vim.g.COLORSCHEMEI],
 	lazy = false,
@@ -84,10 +150,7 @@ colorscheme_mod[vim.g.COLORSCHEMEI] = {
 		vim.cmd("colorscheme " .. colorscheme[vim.g.COLORSCHEMEI][2])
 		if vim.g.TRANSPARENT == true then
 			-- Make both active and inactive windows transparent
-			vim.cmd([[
-                highlight Normal guibg=NONE ctermbg=NONE
-                highlight NormalNC guibg=NONE ctermbg=NONE
-            ]])
+			MakeTransparent()
 		end
 	end,
 	keys = {
@@ -100,10 +163,7 @@ colorscheme_mod[vim.g.COLORSCHEMEI] = {
 				-- print("Transparent :" .. string(vim.g.TRANSPARENT))
 				if vim.g.TRANSPARENT == true then
 					print("Transparent")
-					vim.cmd([[
-                        highlight Normal guibg=NONE ctermbg=NONE
-                        highlight NormalNC guibg=NONE ctermbg=NONE
-                    ]])
+					MakeTransparent()
 				else
 					print("Not Transparent")
 				end
@@ -170,10 +230,7 @@ colorscheme_mod[vim.g.COLORSCHEMEI] = {
 								vim.opt.background = vim.g.COLORMODE
 								vim.cmd("colorscheme " .. entry.value[2])
 								if vim.g.TRANSPARENT == true then
-									vim.cmd([[
-                                        highlight Normal guibg=NONE ctermbg=NONE
-                                        highlight NormalNC guibg=NONE ctermbg=NONE
-                                    ]])
+									MakeTransparent()
 								end
 							end
 						end,
@@ -201,10 +258,7 @@ colorscheme_mod[vim.g.COLORSCHEMEI] = {
 			vim.opt.background = vim.g.COLORMODE
 			vim.cmd("colorscheme " .. colorscheme[vim.g.COLORSCHEMEI][2])
 			if vim.g.TRANSPARENT == true then
-				vim.cmd([[
-                    highlight Normal guibg=NONE ctermbg=NONE
-                    highlight NormalNC guibg=NONE ctermbg=NONE
-                ]])
+				MakeTransparent()
 			end
 		end, {})
 	end,
