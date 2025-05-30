@@ -23,8 +23,8 @@ return {
 			return vim.api.nvim_get_hl(0, { name = name, link = false }) or {}
 		end
 
-		local section_separators = { left = "", right = "" }
-		-- local section_separators = { left = "", right = "" }
+		-- local section_separators = { left = "", right = "" }
+		local section_separators = { left = "", right = "" }
 		-- section_separators = { left = "", right = "" },
 		-- component_separators = { left = "", right = "" },
 		require("tabby.tabline").set(function(line)

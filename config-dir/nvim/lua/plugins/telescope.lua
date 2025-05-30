@@ -4,9 +4,9 @@ return {
 	lazy = false,
 	keys = {
 		{
-			"<leader>vcs",
+			"<leader>vs",
 			function()
-				vim.cmd("Telescope lsp_document_symbols")
+				vim.cmd("Telescope aerial")
 			end,
 			desc = "Show documents symbols",
 		},
