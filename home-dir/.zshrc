@@ -123,5 +123,4 @@ setopt EXTENDED_HISTORY
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-alias cmd="nvim ~/cmd"
-
+alias cmd="cmd.sh"
