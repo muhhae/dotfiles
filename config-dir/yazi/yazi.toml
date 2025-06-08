@@ -1,6 +1,15 @@
-[manager]
+[mgr]
 ratio          = [ 1, 4, 8 ]
 [preview]
 wrap = "yes"
 max_width = 1000
 max_height = 1000
+[opener]
+edit = [
+    { run = 'nvim "$@"', block = true },
+]
+
+[open]
+rules = [
+    { mime = "text/*", use = "edit" },
+]
