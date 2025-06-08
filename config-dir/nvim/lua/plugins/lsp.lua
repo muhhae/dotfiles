@@ -68,7 +68,6 @@ return {
 				"clangd",
 				"cssls",
 				"gopls",
-				"harper_ls",
 				"html",
 				"htmx",
 				"jqls",

@@ -10,7 +10,12 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
-		"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		{
+			"3rd/image.nvim",
+			config = function()
+				require("image").setup()
+			end,
+		}, -- Optional image support in preview window: See `# Preview Mode` for more information
 		{
 			"s1n7ax/nvim-window-picker",
 			config = function()
