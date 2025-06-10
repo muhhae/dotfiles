@@ -3,3 +3,4 @@ nvim/plugin/packer_compiled.lua
 nvim/plugin/packer_compiled.lua
 config-dir/kitty/theme.conf
 config-dir/hypr/themes
+config-dir/tmux/plugins
