@@ -6,7 +6,7 @@ APP="ghostty"
 
 INFO=$(hyprctl clients -j | jq -r '
         [
-            .[] | select(.initialTitle == "'"$APP_INITIAL_TITLE"'")
+            .[] | select(.initialClass == "'"$APP_INITIAL_CLASS"'")
         ] | first
 ')
 WORKSPACE=$(echo "$INFO" | jq -r '.workspace | .name')
