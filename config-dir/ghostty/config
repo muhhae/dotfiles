@@ -1,10 +1,11 @@
-theme = catppuccin-mocha
+theme = carbonfox
+# theme = catppuccin-mocha
 # theme = catppuccin-frappe
 # theme = Oxocarbon
 # theme = IR_Black
 background = 000000
 font-family = IosevkaTerm Nerd Font
-background-opacity = 0.6
+background-opacity = 0.7
 working-directory = inherit
 window-padding-x = 8
 window-padding-y = 8
