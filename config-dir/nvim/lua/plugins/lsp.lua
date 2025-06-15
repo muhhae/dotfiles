@@ -1,67 +1,81 @@
-local lsp_zero = require("lsp-zero")
-vim.filetype.add({
-	extension = {
-		templ = "templ",
-		astro = "astro",
-		mdx = "mdx",
-	},
-})
+-- return {
+-- 	{
+-- 		"williamboman/mason.nvim",
+-- 		config = function()
+-- 			require("mason").setup()
+-- 		end,
+-- 		priority = 1000,
+-- 		lazy = false,
+-- 	},
+-- 	{
+-- 		"williamboman/mason-lspconfig.nvim",
+-- 		init = function()
+-- 			vim.filetype.add({
+-- 				extension = {
+-- 					templ = "templ",
+-- 					astro = "astro",
+-- 					mdx = "mdx",
+-- 				},
+-- 			})
+-- 		end,
+-- 		opts = {
+-- 			automatic_installation = true,
+-- 			ensure_installed = {
+-- 				"arduino_language_server",
+-- 				"ast_grep",
+-- 				"astro",
+-- 				"clangd",
+-- 				"cssls",
+-- 				"gopls",
+-- 				"html",
+-- 				"htmx",
+-- 				"jqls",
+-- 				"jsonls",
+-- 				"ltex",
+-- 				"lua_ls",
+-- 				"pylsp",
+-- 				"ruff",
+-- 				"rust_analyzer",
+-- 				"tailwindcss",
+-- 				"templ",
+-- 				"texlab",
+-- 				"ts_ls",
+-- 				"yamlls",
+-- 			},
+-- 			handlers = {
+-- 				html = function()
+-- 					require("lspconfig").html.setup({
+-- 						filetypes = { "html", "templ" },
+-- 					})
+-- 				end,
+-- 				htmx = function()
+-- 					require("lspconfig").htmx.setup({
+-- 						filetypes = { "html", "templ" },
+-- 					})
+-- 				end,
+-- 				tailwindcss = function()
+-- 					require("lspconfig").tailwindcss.setup({
+-- 						filetypes = { "templ", "astro", "javascript", "typescript", "react" },
+-- 						init_options = { userLanguages = { templ = "html" } },
+-- 					})
+-- 				end,
+-- 			},
+-- 		},
+-- 	},
+-- }
 
-lsp_zero.on_attach(function(client, bufnr)
-	local opts = { buffer = bufnr, remap = false }
-	vim.keymap.set("n", "gd", function()
-		vim.lsp.buf.definition()
-	end, opts)
-	vim.keymap.set("n", "K", function()
-		vim.lsp.buf.hover()
-	end, opts)
-	vim.keymap.set("n", "<leader>vws", function()
-		vim.lsp.buf.workspace_symbol()
-	end, opts)
-	vim.keymap.set("n", "<leader>vd", function()
-		vim.diagnostic.open_float()
-	end, opts)
-	vim.keymap.set("n", "[d", function()
-		vim.diagnostic.goto_next()
-	end, opts)
-	vim.keymap.set("n", "]d", function()
-		vim.diagnostic.goto_prev()
-	end, opts)
-	vim.keymap.set("n", "<leader>vca", function()
-		vim.lsp.buf.code_action()
-	end, opts)
-	vim.keymap.set("n", "<leader>vrr", function()
-		vim.lsp.buf.references()
-	end, opts)
-	vim.keymap.set("n", "<leader>vrn", function()
-		vim.lsp.buf.rename()
-	end, opts)
-	vim.keymap.set("i", "<C-h>", function()
-		vim.lsp.buf.signature_help()
-	end, opts)
-end)
-
-local lspconfig = require("lspconfig")
-
+-- lua/plugins/lsp.lua
 return {
 	{
-		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-		end,
-		priority = 1000,
-	},
-	{
-		"VonHeikemen/lsp-zero.nvim",
+		"neovim/nvim-lspconfig",
 		dependencies = {
-			{ "neovim/nvim-lspconfig" },
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			{ "j-hui/fidget.nvim", opts = {} },
+			"folke/neodev.nvim",
 		},
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		opts = {
-			automatic_installation = true,
-			ensure_installed = {
+		config = function()
+			local servers = {
 				"arduino_language_server",
 				"ast_grep",
 				"astro",
@@ -82,26 +96,13 @@ return {
 				"texlab",
 				"ts_ls",
 				"yamlls",
-			},
-			handlers = {
-				lsp_zero.default_setup,
-				html = function()
-					lspconfig.html.setup({
-						filetypes = { "html", "templ" },
-					})
-				end,
-				htmx = function()
-					lspconfig.htmx.setup({
-						filetypes = { "html", "templ" },
-					})
-				end,
-				tailwindcss = function()
-					lspconfig.tailwindcss.setup({
-						filetypes = { "templ", "astro", "javascript", "typescript", "react" },
-						init_options = { userLanguages = { templ = "html" } },
-					})
-				end,
-			},
-		},
+			}
+			require("neodev").setup()
+			local mason_lspconfig = require("mason-lspconfig")
+			require("mason").setup()
+			mason_lspconfig.setup({
+				ensure_installed = servers,
+			})
+		end,
 	},
 }

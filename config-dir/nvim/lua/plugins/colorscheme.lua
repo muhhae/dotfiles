@@ -138,18 +138,10 @@ colorscheme_mod[vim.g.COLORSCHEMEI] = {
 	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.opt.background = vim.g.COLORMODE
-
-		-- if vim.g.neovide ~= true then
-		-- 	vim.cmd([[highlight Normal guibg=none]])
-		-- end
-
-		-- vim.cmd([[highlight Normal guibg=none]])
-
 		vim.cmd("highlight clear")
+		vim.opt.background = vim.g.COLORMODE
 		vim.cmd("colorscheme " .. colorscheme[vim.g.COLORSCHEMEI][2])
 		if vim.g.TRANSPARENT == true then
-			-- Make both active and inactive windows transparent
 			MakeTransparent()
 		end
 	end,
@@ -245,7 +237,6 @@ colorscheme_mod[vim.g.COLORSCHEMEI] = {
 				:find()
 		end
 
-		-- Create command for it
 		vim.api.nvim_create_user_command("CustomColorscheme", colorscheme_picker, {})
 		vim.api.nvim_create_user_command("ToggleColormode", function()
 			if vim.g.COLORMODE == "dark" then

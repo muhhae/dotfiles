@@ -1,6 +1,7 @@
 return {
 	"rmagatti/auto-session",
 	init = function()
+		vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 		vim.api.nvim_create_user_command("LoadSession", function(opts)
 			local path = opts.fargs[1]
 			vim.cmd("cd " .. path)

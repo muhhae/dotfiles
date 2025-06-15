@@ -208,21 +208,21 @@ return {
 			end
 		end)
 
-		local lazygit = require("FTerm"):new({
-			cmd = "lazygit",
-			border = "rounded",
-			winblend = winblend,
-			dimensions = {
-				height = 0.8, -- Height of the terminal window
-				width = 0.8, -- Width of the terminal window
-				x = 0.5, -- X axis of the terminal window
-				y = 0.5, -- Y axis of the terminal window
-			},
-		})
-
-		vim.keymap.set({ "n", "t" }, "<A-g>", function()
-			lazygit:toggle()
-		end)
+		-- local lazygit = require("FTerm"):new({
+		-- 	cmd = "lazygit",
+		-- 	border = "rounded",
+		-- 	winblend = winblend,
+		-- 	dimensions = {
+		-- 		height = 0.8, -- Height of the terminal window
+		-- 		width = 0.8, -- Width of the terminal window
+		-- 		x = 0.5, -- X axis of the terminal window
+		-- 		y = 0.5, -- Y axis of the terminal window
+		-- 	},
+		-- })
+		--
+		-- vim.keymap.set({ "n", "t" }, "<A-g>", function()
+		-- 	lazygit:toggle()
+		-- end)
 
 		local function deepCopyWithMetatable(orig)
 			if type(orig) ~= "table" then

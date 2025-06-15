@@ -32,17 +32,12 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set({ "n" }, "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
-vim.keymap.set("n", "<leader><leader>", function()
-	vim.cmd("so")
-end)
 
 vim.keymap.set("n", "<C-q>", "<C-v>")
 
 vim.keymap.set("n", "<leader>ww", "<cmd>w<CR>")
 vim.keymap.set("n", "<leader>wq", "<cmd>wq<CR>")
-vim.keymap.set("n", "<leader>q", "<cmd>q<CR>")
+vim.keymap.set("n", "<leader>q", "<cmd>qa<CR>")
 vim.keymap.set("n", "<leader>aq", "<cmd>qa!<CR>")
 
 -- TAB
@@ -57,3 +52,26 @@ vim.keymap.set("n", "vs", "viws", { desc = "Select current word and replace" })
 
 vim.keymap.set("n", "<C-f>", [[:%s~~~gI<left><Left><Left><Left>]])
 vim.keymap.set("x", "<C-f>", [[:s~~~gI<left><Left><Left><Left>]])
+
+-- LSP
+vim.keymap.set("n", "K", function()
+	vim.lsp.buf.hover()
+end, opts)
+vim.keymap.set("n", "[d", function()
+	vim.diagnostic.goto_next()
+end, opts)
+vim.keymap.set("n", "]d", function()
+	vim.diagnostic.goto_prev()
+end, opts)
+vim.keymap.set("n", "<leader>vca", function()
+	vim.lsp.buf.code_action()
+end, opts)
+vim.keymap.set("n", "<leader>vrr", function()
+	vim.lsp.buf.references()
+end, opts)
+vim.keymap.set("n", "<leader>vrn", function()
+	vim.lsp.buf.rename()
+end, opts)
+vim.keymap.set("i", "<C-h>", function()
+	vim.lsp.buf.signature_help()
+end, opts)

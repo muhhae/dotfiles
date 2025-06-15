@@ -1,5 +1,14 @@
 return {
 	"stevearc/aerial.nvim",
+	keys = {
+		{
+			"<leader>sa",
+			function()
+				vim.cmd("AerialToggle")
+			end,
+			desc = "Toggle Aerial (symbol navigation)",
+		},
+	},
 	opts = {
 		backends = { "treesitter", "lsp", "markdown", "asciidoc", "man" },
 		layout = {

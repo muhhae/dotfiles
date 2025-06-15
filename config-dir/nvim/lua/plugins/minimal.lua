@@ -9,18 +9,13 @@ return {
 	},
 	{
 		"mbbill/undotree",
-		keys = {
-			{
-				"<leader>u",
-				vim.cmd.UndotreeToggle,
-				desc = "Diagnostics (Trouble)",
-			},
-		},
 	},
 	"lervag/vimtex",
 	"nvim-pack/nvim-spectre",
 	{
 		"MaximilianLloyd/ascii.nvim",
+		lazy = false,
+		priority = 1000,
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 		},
