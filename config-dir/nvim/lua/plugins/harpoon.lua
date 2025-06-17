@@ -18,7 +18,7 @@ return {
 		end)
 		for i = 1, 9 do
 			vim.keymap.set("n", "<leader>" .. i, function()
-				harpoo:list():select(i)
+				harpoon:list():select(i)
 			end)
 		end
 	end,

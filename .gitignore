@@ -4,3 +4,5 @@ nvim/plugin/packer_compiled.lua
 config-dir/kitty/theme.conf
 config-dir/hypr/themes
 config-dir/tmux/plugins
+config-dir/yazi/plugins
+config-dir/yazi/package.toml

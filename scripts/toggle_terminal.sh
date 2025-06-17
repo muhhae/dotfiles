@@ -13,7 +13,7 @@ WORKSPACE=$(echo "$INFO" | jq -r '.workspace | .name')
 ADDR=$(echo "$INFO" | jq -r '.address')
 
 if [[ "$INFO" == "null" ]]; then
-    exec "$APP" &
+    exec $APP --class="main-terminal" -e 'tmux a || tmux' &
     exit 0
 fi
 

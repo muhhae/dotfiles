@@ -4,6 +4,7 @@ require("config.remap")
 require("config.lazy")
 require("config.set")
 require("config.autocmd")
+require("config.lsp")
 
 if vim.g.neovide == true then
 	require("config.neovide")
