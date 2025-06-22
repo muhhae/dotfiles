@@ -54,7 +54,7 @@ alias catat="export DIR=$(pwd -P); cd $HOME/Documents/data-kuliah/ && git add -A
 alias ino="arduino-cli"
 
 export PATH=$PATH:$HOME/.spicetify
-export EDITOR=neovide
+export EDITOR=nvim
 
 eval "$(zoxide init zsh)"
 

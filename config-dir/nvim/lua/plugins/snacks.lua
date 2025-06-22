@@ -42,6 +42,13 @@ return {
 			desc = "Quickfix List",
 		},
 		{
+			"<A-g>",
+			function()
+				Snacks.lazygit()
+			end,
+			desc = "Lazygit",
+		},
+		{
 			"<leader>gg",
 			function()
 				Snacks.lazygit()

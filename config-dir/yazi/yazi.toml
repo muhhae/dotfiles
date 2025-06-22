@@ -1,9 +1,11 @@
 [mgr]
-ratio          = [ 1, 4, 8 ]
+ratio          = [ 2, 2, 4 ]
+
 [preview]
 wrap = "yes"
 max_width = 1000
 max_height = 1000
+
 [opener]
 edit = [
     { run = 'nvim "$@"', block = true },
@@ -13,3 +15,36 @@ edit = [
 rules = [
     { mime = "text/*", use = "edit" },
 ]
+
+[[plugin.prepend_previewers]]
+name = "*.csv"
+run  = 'piper -- bat -p --color=always "$1"'
+
+[[plugin.prepend_previewers]]
+name = "*/"
+run  = 'piper -- eza -TL=3 --color=always --icons=always --group-directories-first --no-quotes "$1"'
+
+[[mgr.prepend_keymap]]
+on   = [ "R" ]
+run  = "plugin rsync"
+desc = "Copy files using rsync"
+
+[[mgr.prepend_keymap]]
+on   = [ "R" ]
+run  = "plugin rsync --args='muhhae@n0'"
+desc = "Copy files using rsync to cloudlab master node"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "i" ]
+run  = "plugin lazygit"
+desc = "run lazygit"
+
+# [[plugin.prepend_fetchers]]
+# id   = "git"
+# name = "*"
+# run  = "git"
+#
+# [[plugin.prepend_fetchers]]
+# id   = "git"
+# name = "*/"
+# run  = "git"

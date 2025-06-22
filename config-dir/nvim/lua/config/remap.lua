@@ -37,7 +37,7 @@ vim.keymap.set("n", "<C-q>", "<C-v>")
 
 vim.keymap.set("n", "<leader>ww", "<cmd>w<CR>")
 vim.keymap.set("n", "<leader>wq", "<cmd>wq<CR>")
-vim.keymap.set("n", "<leader>q", "<cmd>qa<CR>")
+vim.keymap.set("n", "<leader>q", "<cmd>qa!<CR>")
 vim.keymap.set("n", "<leader>aq", "<cmd>qa!<CR>")
 
 -- TAB

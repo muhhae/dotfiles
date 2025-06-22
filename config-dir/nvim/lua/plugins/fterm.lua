@@ -191,8 +191,22 @@ return {
 
 		vim.keymap.set("n", "<leader><Enter>", function()
 			local cmd = vim.fn.systemlist("cat .vimrunner")
-			if vim.v.shell_error == 0 and cmd[1] ~= "" then
-				run(cmd[1], false)
+			if vim.v.shell_error == 0 then
+				if cmd[2] == nil then
+					run("echo '" .. cmd[1] .. "'" .. ";" .. cmd[1], false)
+					return
+				end
+				vim.ui.select(cmd, {
+					prompt = "Commands to run",
+					format_item = function(item)
+						return "" .. item
+					end,
+				}, function(choice)
+					if choice == nil then
+						return
+					end
+					run("echo '" .. choice .. "'" .. ";" .. choice, false)
+				end)
 				return
 			end
 
