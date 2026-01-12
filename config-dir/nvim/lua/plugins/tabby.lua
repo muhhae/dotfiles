@@ -1,14 +1,7 @@
 return {
 	"nanozuki/tabby.nvim",
-	config = function()
+	init = function()
 		require("tabby.tabline").use_preset("active_wins_at_tail")
-
-		for i = 1, 9 do
-			vim.keymap.set("n", "<leader>t" .. i, "<cmd>tabnext " .. i .. "<CR>")
-		end
-
-		vim.keymap.set("n", "<M-s>", "<cmd>+tabmove<CR>")
-		vim.keymap.set("n", "<M-a>", "<cmd>-tabmove<CR>")
 
 		local theme = {
 			fill = "TabLineFill",

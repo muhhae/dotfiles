@@ -16,7 +16,6 @@ vim.opt.termguicolors = true
 -- vim.api.nvim_set_hl(0, "TermCursor", { reverse = true })
 
 vim.wo.fillchars = "eob: "
-vim.cmd("highlight SignColumn guibg=transparent")
 
 vim.opt.cursorline = true -- Highlight the line the cursor is on
 vim.opt.cursorlineopt = "number" -- Only highlight the line number, not the whole line

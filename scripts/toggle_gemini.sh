@@ -1,8 +1,10 @@
 #!/bin/bash
 
 SPECIAL_WORKSPACE_NAME="Gemini"
+APP_INITIAL_TITLE="chatgpt.com_/"
 APP_INITIAL_TITLE="gemini.google.com_/app"
 APP="/home/muhhae/gemini-client/dist/gemini-client/gemini-client-linux_x64"
+size=15
 
 GEMINI_INFO=$(hyprctl clients -j | jq -r '
         [

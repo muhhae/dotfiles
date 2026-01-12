@@ -224,6 +224,7 @@ colorscheme_mod[vim.g.COLORSCHEMEI] = {
 								if vim.g.TRANSPARENT == true then
 									MakeTransparent()
 								end
+								vim.cmd("wshada")
 							end
 						end,
 					}),
@@ -251,6 +252,7 @@ colorscheme_mod[vim.g.COLORSCHEMEI] = {
 			if vim.g.TRANSPARENT == true then
 				MakeTransparent()
 			end
+			vim.cmd("wshada")
 		end, {})
 	end,
 }

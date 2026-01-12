@@ -10,10 +10,11 @@ return {
 		local arch_btw = ascii.art.text.slogons.arch_btw_doom
 		local saturn_plus = ascii.art.planets.planets.saturn_plus
 
-		table.insert(make_cool_stuff, 1, "")
-		table.insert(make_cool_stuff, 1, "")
-		vim.list_extend(make_cool_stuff, { "", "" })
 		local logo = make_cool_stuff
+
+		table.insert(logo, 1, "")
+		table.insert(logo, 1, "")
+		vim.list_extend(logo, { "", "" })
 
 		require("dashboard").setup({
 			theme = "hyper",

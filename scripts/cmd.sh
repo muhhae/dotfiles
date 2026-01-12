@@ -2,7 +2,7 @@
 
 nvim ~/cmd
 
-command=$(sed -n '/--COMMAND START--/,/--COMMAND END--/{//!p; /--COMMAND END--/q}' ~/cmd)
+command=$(sed -n '/# --COMMAND START--/,/--COMMAND END--/{//!p; /--COMMAND END--/q}' ~/cmd)
 if [[ -z $command ]]; then
     echo "No command to run!"
     exit 1

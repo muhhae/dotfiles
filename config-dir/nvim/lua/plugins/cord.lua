@@ -2,7 +2,6 @@ return {
 	"vyfor/cord.nvim",
 	build = ":Cord update",
 	opts = {
-
 		enabled = true,
 		log_level = vim.log.levels.OFF,
 		editor = {

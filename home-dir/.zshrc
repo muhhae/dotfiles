@@ -87,6 +87,9 @@ function y() {
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# oh-my-logo "I USE\nARCH\nBTW!" --filled
+# oh-my-logo "ARCHNEMESIS" --filled
+
 alias lz=lazygit
 export PATH="$PATH:$HOME/personal/research-note:$HOME/dotfiles/scripts"
 alias so="source $HOME/.zshrc"
@@ -124,3 +127,13 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 alias cmd="cmd.sh"
+
+timem() {
+    { /usr/bin/time -f "%M" "$@" ; } 2>&1 | awk 'END{print $1/1024 " MB"}'
+}
+
+alias note="cd ~/personal/research-note && glow ."
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+

@@ -1,10 +1,13 @@
-theme = carbonfox
+# theme = carbonfox
 # theme = catppuccin-mocha
 # theme = catppuccin-frappe
 # theme = Oxocarbon
 # theme = IR_Black
+theme = Black Metal (Dark Funeral)
+
 background = 000000
 font-family = IosevkaTerm Nerd Font
+font-size = 12
 background-opacity = 0.7
 working-directory = inherit
 window-padding-x = 8
