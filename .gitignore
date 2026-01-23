@@ -6,3 +6,5 @@ config-dir/hypr/themes
 config-dir/tmux/plugins
 config-dir/yazi/plugins
 config-dir/yazi/package.toml
+config-dir/zsh/.zcompdump-archnemesis-5.9
+config-dir/zsh/.zcompdump-archnemesis-5.9.zwc
